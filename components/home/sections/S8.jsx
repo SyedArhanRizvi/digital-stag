@@ -74,7 +74,7 @@ function ProximityHeading({ text }) {
       ref={containerRef}
       style={{
         fontFamily: "'Sora', sans-serif",
-        fontSize: "clamp(2rem, 4vw, 3.6rem)",
+        fontSize: "clamp(1.5rem, 4vw, 3.6rem)",
         fontWeight: 600,
         lineHeight: 1.08,
         letterSpacing: "-0.03em",
@@ -116,7 +116,11 @@ const testimonialsData = [
     rating: 5,
     text: "Great quality products and helpful customer support. Highly recommended for everyday shopping needs.",
     image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format",
-    pos: { top: "50%", left: "50%", size: "clamp(120px, 12vw, 160px)" }, 
+    pos: { 
+      top: "50%", 
+      left: "50%", 
+      size: "clamp(120px, 12vw, 160px)" 
+    }, 
   },
   {
     id: 2,
@@ -125,7 +129,11 @@ const testimonialsData = [
     rating: 5,
     text: "The shipping was incredibly fast, and the packaging felt premium. Will definitely be a returning customer!",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format",
-    pos: { top: "35%", left: "31%", size: "clamp(70px, 7vw, 90px)" },
+    pos: { 
+      top: "35%", 
+      left: "31%", 
+      size: "clamp(50px, 7vw, 90px)" 
+    },
   },
   {
     id: 3,
@@ -134,7 +142,11 @@ const testimonialsData = [
     rating: 4,
     text: "Excellent curation of gadgets. Customer service helped me pick the right size instantly. 10/10.",
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format",
-    pos: { top: "45%", left: "14%", size: "clamp(75px, 8vw, 100px)" },
+    pos: { 
+      top: "45%", 
+      left: "14%", 
+      size: "clamp(55px, 8vw, 100px)" 
+    },
   },
   {
     id: 4,
@@ -143,7 +155,11 @@ const testimonialsData = [
     rating: 5,
     text: "ShopEase has completely changed how I source my decor. Affordable yet incredibly chic and durable.",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format",
-    pos: { top: "70%", left: "9%", size: "clamp(65px, 6vw, 85px)" },
+    pos: { 
+      top: "70%", 
+      left: "9%", 
+      size: "clamp(45px, 6vw, 85px)" 
+    },
   },
   {
     id: 5,
@@ -152,7 +168,11 @@ const testimonialsData = [
     rating: 5,
     text: "In love with their sustainable lineup. Genuine materials, sleek UI, and crisp tracking updates.",
     image: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=400&auto=format",
-    pos: { top: "62%", left: "27%", size: "clamp(55px, 5vw, 75px)" },
+    pos: { 
+      top: "62%", 
+      left: "27%", 
+      size: "clamp(40px, 5vw, 75px)" 
+    },
   },
   {
     id: 6,
@@ -161,7 +181,11 @@ const testimonialsData = [
     rating: 5,
     text: "Unbeatable wholesale rates and unmatched premium fidelity. Highly recommended to all peers.",
     image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=400&auto=format",
-    pos: { top: "42%", left: "73%", size: "clamp(60px, 6vw, 80px)" },
+    pos: { 
+      top: "42%", 
+      left: "73%", 
+      size: "clamp(45px, 6vw, 80px)" 
+    },
   },
   {
     id: 7,
@@ -170,7 +194,11 @@ const testimonialsData = [
     rating: 4,
     text: "Sturdy products that hold up to heavy wear. Support team solved my billing query within minutes.",
     image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=400&auto=format",
-    pos: { top: "33%", left: "91%", size: "clamp(65px, 6vw, 85px)" },
+    pos: { 
+      top: "33%", 
+      left: "91%", 
+      size: "clamp(50px, 6vw, 85px)" 
+    },
   },
   {
     id: 8,
@@ -179,7 +207,11 @@ const testimonialsData = [
     rating: 5,
     text: "Everything down to the UI flows perfectly. Hassle-free checkouts make this my absolute favorite stop.",
     image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format",
-    pos: { top: "57%", left: "86%", size: "clamp(80px, 8vw, 105px)" },
+    pos: { 
+      top: "57%", 
+      left: "86%", 
+      size: "clamp(55px, 8vw, 105px)" 
+    },
   },
   {
     id: 9,
@@ -188,25 +220,67 @@ const testimonialsData = [
     rating: 5,
     text: "The returns policy is so smooth it keeps me coming back risk-free. Amazing overall lifecycle ecosystem.",
     image: "https://images.unsplash.com/photo-1488161628813-04466f872be2?q=80&w=400&auto=format",
-    pos: { top: "69%", left: "71%", size: "clamp(70px, 7vw, 90px)" },
+    pos: { 
+      top: "69%", 
+      left: "71%", 
+      size: "clamp(50px, 7vw, 90px)" 
+    },
   },
 ];
 
 export default function S8() {
   const [activeId, setActiveId] = useState(1);
+  const [windowWidth, setWindowWidth] = useState(0);
   const activeData = testimonialsData.find((item) => item.id === activeId) || testimonialsData[0];
   
   const containerRef = useRef(null);
   const textCardRef = useRef(null);
   const auraRef = useRef(null);
 
+  // Track window width for responsive adjustments
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+    
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Responsive avatar positions based on screen width
+  const getResponsivePositions = (pos, width) => {
+    if (width < 640) {
+      // Mobile: Adjust positions to be more compact and avoid overflow
+      const mobileAdjustments = {
+        top: parseFloat(pos.top) * 0.85, // Move slightly up
+        left: Math.min(Math.max(parseFloat(pos.left), 8), 92), // Keep within bounds
+      };
+      return {
+        top: `${mobileAdjustments.top}%`,
+        left: `${mobileAdjustments.left}%`,
+      };
+    } else if (width < 1024) {
+      // Tablet: Slight adjustments
+      return {
+        top: pos.top,
+        left: Math.min(Math.max(parseFloat(pos.left), 5), 95),
+      };
+    }
+    // Desktop: Original positions
+    return {
+      top: pos.top,
+      left: pos.left,
+    };
+  };
+
   useEffect(() => {
     const avatars = containerRef.current?.querySelectorAll(".orbit-avatar");
     if (!avatars) return;
     
     avatars.forEach((avatar, index) => {
-      const randomX = 10 + Math.random() * 15;
-      const randomY = 10 + Math.random() * 15;
+      const randomX = 8 + Math.random() * 10; // Reduced movement for smaller screens
+      const randomY = 8 + Math.random() * 10;
       const duration = 4 + Math.random() * 3;
 
       gsap.to(avatar, {
@@ -242,7 +316,7 @@ export default function S8() {
   return (
     <section
       ref={containerRef}
-      className="relative w-full min-h-screen bg-[#fafafa] flex flex-col justify-between py-16 px-4 overflow-hidden select-none"
+      className="relative w-full min-h-screen bg-[#fafafa] flex flex-col justify-between py-8 sm:py-12 md:py-16 px-3 sm:px-4 md:px-6 overflow-hidden select-none"
       style={{
         backgroundImage: `
           linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
@@ -253,17 +327,23 @@ export default function S8() {
       }}
     >
       {/* ── HEADER ── */}
-      <div className="relative z-10 text-center max-w-3xl mx-auto mt-4">
+      <div className="relative z-10 text-center max-w-3xl mx-auto mt-2 sm:mt-4 px-2 sm:px-4">
         <ProximityHeading text="What Our Customers Say" />
-        <p className="text-[#737373] text-sm sm:text-base font-normal max-w-2xl mx-auto leading-relaxed px-2 mt-3 pointer-events-none">
+        <p className="text-[#737373] text-xs sm:text-sm md:text-base font-normal max-w-2xl mx-auto leading-relaxed px-2 mt-2 sm:mt-3 pointer-events-none">
           See how our customers share their real experiences with ShopEase and why they continue to trust us for their everyday shopping needs.
         </p>
       </div>
 
       {/* ── ORBITAL AVATARS ── */}
-      <div className="absolute inset-0 w-full h-full my-auto flex items-center justify-center">
+      <div className="absolute inset-0 w-full h-full flex items-center justify-center"
+        style={{
+          // Responsive padding for avatar area
+          padding: windowWidth < 640 ? '60px 20px' : windowWidth < 1024 ? '80px 40px' : '0px',
+        }}
+      >
         {testimonialsData.map((item) => {
           const isActive = item.id === activeId;
+          const responsivePos = getResponsivePositions(item.pos, windowWidth);
           
           return (
             <div
@@ -271,10 +351,12 @@ export default function S8() {
               onClick={() => setActiveId(item.id)}
               className="orbit-avatar absolute flex items-center justify-center cursor-pointer transition-all duration-500 ease-out"
               style={{
-                top: item.pos.top,
-                left: item.pos.left,
+                top: responsivePos.top,
+                left: responsivePos.left,
                 width: item.pos.size,
                 height: item.pos.size,
+                maxWidth: windowWidth < 640 ? '80px' : 'none',
+                maxHeight: windowWidth < 640 ? '80px' : 'none',
                 transform: "translate(-50%, -50%)",
                 zIndex: isActive ? 40 : 10,
               }}
@@ -285,14 +367,14 @@ export default function S8() {
                     ref={auraRef}
                     className="absolute inset-0 rounded-full border-2 border-[#f25c05]/40 pointer-events-none scale-110"
                   />
-                  <div className="absolute -inset-6 bg-[radial-gradient(circle,_rgba(242,92,5,0.12)_0%,_transparent_70%)] rounded-full animate-pulse pointer-events-none" />
+                  <div className="absolute -inset-4 sm:-inset-5 md:-inset-6 bg-[radial-gradient(circle,_rgba(242,92,5,0.12)_0%,_transparent_70%)] rounded-full animate-pulse pointer-events-none" />
                 </>
               )}
 
               <div
-                className={`w-full h-full rounded-full p-[3px] transition-all duration-500 relative ${
+                className={`w-full h-full rounded-full p-[2px] sm:p-[3px] transition-all duration-500 relative ${
                   isActive 
-                    ? "bg-gradient-to-tr from-[#f25c05] to-[#ff8f43] shadow-[0_15px_40px_rgba(242,92,5,0.3)] scale-110" 
+                    ? "bg-gradient-to-tr from-[#f25c05] to-[#ff8f43] shadow-[0_10px_30px_rgba(242,92,5,0.3)] sm:shadow-[0_15px_40px_rgba(242,92,5,0.3)] scale-105 sm:scale-110" 
                     : "bg-white hover:bg-[#f25c05]/30 border border-black/5 shadow-md hover:scale-105"
                 }`}
               >
@@ -313,23 +395,23 @@ export default function S8() {
       </div>
 
       {/* ── BOTTOM CARD ── */}
-      <div className="relative z-30 w-full max-w-xl mx-auto mb-6 px-4">
+      <div className="relative z-30 w-full max-w-[95%] sm:max-w-lg md:max-w-xl mx-auto mt-auto mb-4 sm:mb-6 px-2 sm:px-4">
         <div
           ref={textCardRef}
-          className="bg-white/95 backdrop-blur-md rounded-2xl border border-black/[0.06] shadow-[0_20px_50px_rgba(0,0,0,0.05)] p-6 sm:p-8 text-center relative"
+          className="bg-white/95 backdrop-blur-md rounded-xl sm:rounded-2xl border border-black/[0.06] shadow-[0_10px_30px_rgba(0,0,0,0.05)] sm:shadow-[0_20px_50px_rgba(0,0,0,0.05)] p-4 sm:p-6 md:p-8 text-center relative"
         >
-          <span className="absolute top-4 left-6 text-5xl font-serif text-[#f25c05] opacity-20 leading-none select-none">
+          <span className="absolute top-2 sm:top-4 left-4 sm:left-6 text-3xl sm:text-4xl md:text-5xl font-serif text-[#f25c05] opacity-20 leading-none select-none">
             &ldquo;
           </span>
 
-          <p className="text-[#404040] text-sm sm:text-base font-medium leading-relaxed mb-4 italic">
+          <p className="text-[#404040] text-xs sm:text-sm md:text-base font-medium leading-relaxed mb-3 sm:mb-4 italic px-2 sm:px-0">
             &ldquo;{activeData.text}&rdquo;
           </p>
 
-          <h4 className="text-[#0a0a0a] font-bold text-base tracking-tight">
+          <h4 className="text-[#0a0a0a] font-bold text-sm sm:text-base tracking-tight">
             {activeData.name}
           </h4>
-          <p className="text-[#a3a3a3] text-xs font-semibold uppercase tracking-wider mb-3">
+          <p className="text-[#a3a3a3] text-[10px] sm:text-xs font-semibold uppercase tracking-wider mb-2 sm:mb-3">
             {activeData.role}
           </p>
 
@@ -337,7 +419,7 @@ export default function S8() {
             {[...Array(5)].map((_, idx) => (
               <svg
                 key={idx}
-                className={`w-4 h-4 ${
+                className={`w-3 h-3 sm:w-4 sm:h-4 ${
                   idx < activeData.rating ? "text-[#f25c05]" : "text-gray-200"
                 }`}
                 fill="currentColor"

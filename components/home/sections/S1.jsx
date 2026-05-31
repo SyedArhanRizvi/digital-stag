@@ -1,6 +1,5 @@
 "use client"
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 
 // ── Dummy avatar images (replace with actuals) ──────────────────────────────
 const AVATARS = [
@@ -30,36 +29,12 @@ const FLOAT_TAGS = [
   { id: 3, label: "Web Dev", color: "bg-sky-100 text-sky-700" },
 ];
 
-// ── Variants ────────────────────────────────────────────────────────────────
-const fadeUp = (delay = 0) => ({
-  hidden: { opacity: 0, y: 32 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.65, delay, ease: [0.22, 1, 0.36, 1] } },
-});
-
-const fadeLeft = (delay = 0) => ({
-  hidden: { opacity: 0, x: -48 },
-  show: { opacity: 1, x: 0, transition: { duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] } },
-});
-
-const fadeRight = (delay = 0) => ({
-  hidden: { opacity: 0, x: 48 },
-  show: { opacity: 1, x: 0, transition: { duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] } },
-});
-
-const scaleIn = (delay = 0) => ({
-  hidden: { opacity: 0, scale: 0.85 },
-  show: { opacity: 1, scale: 1, transition: { duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] } },
-});
-
-// ── Floating animation (infinite loop) ──────────────────────────────────────
-const floatAnim = (y = 12, duration = 3.5) => ({
-  y: [0, -y, 0],
-  transition: { duration, repeat: Infinity, ease: "easeInOut" },
-});
-
 // ── Component ────────────────────────────────────────────────────────────────
 export default function HeroSection() {
   const [count, setCount] = useState(530);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   // Simulate a live counter for the "clients satisfied" badge
   useEffect(() => {
@@ -69,104 +44,128 @@ export default function HeroSection() {
     return () => clearInterval(t);
   }, []);
 
+  // Responsive device detection
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 640);
+      setIsTablet(window.innerWidth >= 640 && window.innerWidth < 1024);
+    };
+    
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Trigger entrance animations
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 100);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <section className="relative min-h-[120vh] w-full overflow-hidden bg-[#e8ecf4] flex items-center font-sans">
+    <section className="relative min-h-[100vh] sm:min-h-[110vh] w-full overflow-hidden bg-[#e8ecf4] flex items-center font-sans">
       {/* ── Soft background blobs ── */}
       <div className="pointer-events-none absolute inset-0 z-0">
-        <div className="absolute -top-32 -left-32 h-[420px] w-[420px] rounded-full bg-violet-300/30 blur-[100px]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[340px] w-[640px] rounded-full bg-indigo-200/20 blur-[120px]" />
-        <div className="absolute -bottom-24 right-0 h-[360px] w-[360px] rounded-full bg-orange-300/25 blur-[100px]" />
+        <div className="absolute -top-20 sm:-top-32 -left-20 sm:-left-32 h-[280px] sm:h-[340px] md:h-[420px] w-[280px] sm:w-[340px] md:w-[420px] rounded-full bg-violet-300/30 blur-[80px] sm:blur-[100px]" />
+        <div className="absolute top-1/3 sm:top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[240px] sm:h-[280px] md:h-[340px] w-[360px] sm:w-[480px] md:w-[640px] rounded-full bg-indigo-200/20 blur-[80px] sm:blur-[100px] md:blur-[120px]" />
+        <div className="absolute -bottom-16 sm:-bottom-24 right-0 h-[240px] sm:h-[300px] md:h-[360px] w-[240px] sm:w-[300px] md:w-[360px] rounded-full bg-orange-300/25 blur-[80px] sm:blur-[100px]" />
       </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-0">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-8 lg:gap-4 items-center min-h-[80vh]">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 lg:py-0">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-6 sm:gap-8 lg:gap-4 items-center min-h-[80vh]">
 
           {/* ════════════════════════════════════════
               LEFT - Device Mock-ups Cluster
           ════════════════════════════════════════ */}
-          <motion.div
-            className="relative flex items-center justify-center lg:justify-end h-[340px] sm:h-[400px] lg:h-[520px]"
-            variants={fadeLeft(0.1)}
-            initial="hidden"
-            animate="show"
+          <div 
+            className={`relative flex items-center justify-center lg:justify-end h-[280px] sm:h-[340px] md:h-[400px] lg:h-[520px] order-2 lg:order-1 mt-8 lg:mt-0 transition-all duration-700 ${
+              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'
+            }`}
           >
             {/* Main card */}
-            <motion.div
-              className="absolute left-1/2 top-1/2 -translate-x-[55%] -translate-y-1/2 w-[260px] sm:w-[300px] lg:w-[330px] rounded-3xl overflow-hidden shadow-2xl border border-white/60"
-              animate={floatAnim(10, 4)}
-            >
+            <div className="absolute left-1/2 top-1/2 -translate-x-[55%] -translate-y-1/2 w-[200px] sm:w-[260px] md:w-[300px] lg:w-[330px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl sm:shadow-2xl border border-white/60 animate-float-slow">
               <img src={MOCKUP_LEFT_MAIN} alt="Dashboard mockup" className="w-full h-full object-cover" />
-            </motion.div>
+            </div>
 
             {/* Floating mini-card 1 - top-right overlap */}
-            <motion.div
-              className="absolute right-4 sm:right-8 lg:right-0 top-6 sm:top-8 w-[130px] sm:w-[155px] rounded-2xl overflow-hidden shadow-xl border border-white/70 rotate-2"
-              animate={floatAnim(8, 3.2)}
+            <div 
+              className="absolute right-2 sm:right-4 md:right-8 lg:right-0 top-4 sm:top-6 md:top-8 w-[100px] sm:w-[130px] md:w-[145px] lg:w-[155px] rounded-xl sm:rounded-2xl overflow-hidden shadow-lg sm:shadow-xl border border-white/70 rotate-2 animate-float-medium"
               style={{ animationDelay: "0.5s" }}
             >
               <img src={MOCKUP_LEFT_CARD1} alt="Analytics card" className="w-full h-full object-cover" />
-            </motion.div>
+            </div>
 
             {/* Floating mini-card 2 - bottom-left overlap */}
-            <motion.div
-              className="absolute left-4 sm:left-8 lg:left-4 bottom-4 sm:bottom-8 w-[120px] sm:w-[145px] rounded-2xl overflow-hidden shadow-xl border border-white/70 -rotate-3"
-              animate={floatAnim(6, 3.8)}
-            >
+            <div className="absolute left-2 sm:left-4 md:left-8 lg:left-4 bottom-3 sm:bottom-4 md:bottom-8 w-[90px] sm:w-[120px] md:w-[135px] lg:w-[145px] rounded-xl sm:rounded-2xl overflow-hidden shadow-lg sm:shadow-xl border border-white/70 -rotate-3 animate-float-fast">
               <img src={MOCKUP_LEFT_CARD2} alt="Campaign card" className="w-full h-full object-cover" />
-            </motion.div>
+            </div>
 
-            {/* Pill tag */}
-            {FLOAT_TAGS.map((tag, i) => (
-              <motion.span
-                key={tag.id}
-                className={`absolute text-[11px] font-semibold px-3 py-1 rounded-full shadow ${tag.color}`}
-                style={{
-                  top: `${20 + i * 28}%`,
-                  left: i % 2 === 0 ? "4%" : "auto",
-                  right: i % 2 !== 0 ? "2%" : "auto",
-                }}
-                animate={floatAnim(5, 2.8 + i * 0.5)}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ delay: 0.4 + i * 0.15 }}
-              >
-                {tag.label}
-              </motion.span>
-            ))}
-          </motion.div>
+            {/* Pill tags - hidden on mobile, visible on tablet+ */}
+            <div className="hidden sm:block">
+              {FLOAT_TAGS.map((tag, i) => (
+                <span
+                  key={tag.id}
+                  className={`absolute text-[10px] sm:text-[11px] font-semibold px-2 sm:px-3 py-1 rounded-full shadow ${tag.color} animate-float-tag opacity-0`}
+                  style={{
+                    top: `${20 + i * 28}%`,
+                    left: i % 2 === 0 ? "4%" : "auto",
+                    right: i % 2 !== 0 ? "2%" : "auto",
+                    animationDelay: `${0.4 + i * 0.15}s`,
+                    animationFillMode: 'forwards'
+                  }}
+                >
+                  {tag.label}
+                </span>
+              ))}
+            </div>
+            {/* Mobile-specific simplified tags */}
+            <div className="block sm:hidden">
+              {FLOAT_TAGS.slice(0, 2).map((tag, i) => (
+                <span
+                  key={tag.id}
+                  className={`absolute text-[9px] font-semibold px-2 py-0.5 rounded-full shadow ${tag.color} animate-float-tag opacity-0`}
+                  style={{
+                    top: `${25 + i * 30}%`,
+                    right: "5%",
+                    animationDelay: `${0.4 + i * 0.15}s`,
+                    animationFillMode: 'forwards'
+                  }}
+                >
+                  {tag.label}
+                </span>
+              ))}
+            </div>
+          </div>
 
           {/* ════════════════════════════════════════
               CENTER - Hero Copy
           ════════════════════════════════════════ */}
-          <div className="flex flex-col items-center lg:items-start text-center lg:text-left max-w-[480px] mx-auto lg:mx-0 lg:px-8 xl:px-10">
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-left max-w-[380px] sm:max-w-[440px] md:max-w-[480px] mx-auto lg:mx-0 lg:px-6 xl:px-10 order-1 lg:order-2">
 
             {/* Eyebrow badge */}
-            <motion.div
-              variants={fadeUp(0.05)}
-              initial="hidden"
-              animate="show"
-              className="mb-5 inline-flex items-center gap-2 rounded-full bg-white/70 backdrop-blur-sm border border-violet-200 px-4 py-1.5 text-xs font-semibold text-violet-600 shadow-sm"
+            <div 
+              className={`mb-3 sm:mb-5 inline-flex items-center gap-2 rounded-full bg-white/70 backdrop-blur-sm border border-violet-200 px-3 sm:px-4 py-1 sm:py-1.5 text-[10px] sm:text-xs font-semibold text-violet-600 shadow-sm transition-all duration-700 delay-100 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
             >
-              <span className="h-2 w-2 rounded-full bg-violet-500 animate-pulse" />
+              <span className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-violet-500 animate-pulse" />
               Award-winning Design Studio
-            </motion.div>
+            </div>
 
             {/* Headline */}
-            <motion.h1
-              variants={fadeUp(0.15)}
-              initial="hidden"
-              animate="show"
-              className="text-4xl sm:text-5xl xl:text-6xl font-extrabold leading-[1.08] tracking-tight text-gray-900"
+            <h1 
+              className={`text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-extrabold leading-[1.08] tracking-tight text-gray-900 transition-all duration-700 delay-200 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
               style={{ fontFamily: "'Sora', 'DM Sans', sans-serif" }}
             >
               Empowering{" "}
               <span className="relative inline-block">
                 <span className="relative z-10 text-violet-600">Brands</span>
-                <motion.span
-                  className="absolute inset-x-0 bottom-1 h-3 rounded-sm bg-violet-200/70 -z-0"
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: 1 }}
-                  transition={{ delay: 0.55, duration: 0.5, ease: "easeOut" }}
+                <span 
+                  className="absolute inset-x-0 bottom-0.5 sm:bottom-1 h-2 sm:h-3 rounded-sm bg-violet-200/70 -z-0 animate-underline-reveal"
                   style={{ transformOrigin: "left" }}
                 />
               </span>{" "}
@@ -177,42 +176,37 @@ export default function HeroSection() {
               <span className="bg-gradient-to-r from-violet-600 to-indigo-500 bg-clip-text text-transparent">
                 Solutions
               </span>
-            </motion.h1>
+            </h1>
 
             {/* Sub-copy */}
-            <motion.p
-              variants={fadeUp(0.25)}
-              initial="hidden"
-              animate="show"
-              className="mt-5 text-base sm:text-lg text-gray-500 leading-relaxed max-w-sm"
+            <p 
+              className={`mt-3 sm:mt-5 text-sm sm:text-base md:text-lg text-gray-500 leading-relaxed max-w-[280px] sm:max-w-sm px-2 sm:px-0 transition-all duration-700 delay-300 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
             >
               We empower brands with innovative design solutions, crafting distinctive
               visual identities that attract people and drive success.
-            </motion.p>
+            </p>
 
             {/* CTA row */}
-            <motion.div
-              variants={fadeUp(0.35)}
-              initial="hidden"
-              animate="show"
-              className="mt-8 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
+            <div 
+              className={`mt-6 sm:mt-8 flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full sm:w-auto transition-all duration-700 delay-400 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
             >
               {/* Primary CTA */}
-              <motion.button
-                whileHover={{ scale: 1.04, boxShadow: "0 8px 30px rgba(109,40,217,0.35)" }}
-                whileTap={{ scale: 0.97 }}
-                className="group flex items-center gap-2 rounded-full bg-gray-900 px-6 py-3.5 text-sm font-semibold text-white shadow-lg transition-all"
+              <button
+                className="group flex items-center gap-2 rounded-full bg-gray-900 px-5 sm:px-6 py-3 sm:py-3.5 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:scale-[1.04] hover:shadow-[0_8px_30px_rgba(109,40,217,0.35)] active:scale-[0.97] w-full sm:w-auto justify-center"
               >
                 Our Work
-                <span className="ml-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-violet-500 text-xs transition-transform group-hover:translate-x-1">
+                <span className="ml-1 inline-flex h-5 w-5 sm:h-6 sm:w-6 items-center justify-center rounded-full bg-violet-500 text-xs transition-transform duration-300 group-hover:translate-x-1">
                   →
                 </span>
-              </motion.button>
+              </button>
 
               {/* Social proof pill */}
-              <motion.div
-                whileHover={{ scale: 1.03 }}
-                className="flex items-center gap-3 rounded-full bg-white/80 backdrop-blur-sm border border-gray-200 shadow px-4 py-2.5 cursor-default"
+              <div
+                className="flex items-center gap-2 sm:gap-3 rounded-full bg-white/80 backdrop-blur-sm border border-gray-200 shadow px-3 sm:px-4 py-2 sm:py-2.5 cursor-default w-full sm:w-auto justify-center transition-transform duration-300 hover:scale-[1.03]"
               >
                 {/* Avatar stack */}
                 <div className="flex -space-x-2">
@@ -221,59 +215,48 @@ export default function HeroSection() {
                       key={i}
                       src={src}
                       alt={`Client ${i + 1}`}
-                      className="h-7 w-7 rounded-full border-2 border-white object-cover"
+                      className="h-6 w-6 sm:h-7 sm:w-7 rounded-full border-2 border-white object-cover"
                     />
                   ))}
                 </div>
                 {/* Live counter badge */}
-                <AnimatePresence mode="wait">
-                  <motion.span
-                    key={count}
-                    initial={{ y: -8, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    exit={{ y: 8, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="rounded-full bg-violet-600 px-2.5 py-0.5 text-xs font-bold text-white shadow-sm"
-                  >
-                    {count}
-                  </motion.span>
-                </AnimatePresence>
-                <span className="text-xs text-gray-500 hidden sm:inline">happy clients</span>
-              </motion.div>
-            </motion.div>
+                <span className="rounded-full bg-violet-600 px-2 sm:px-2.5 py-0.5 text-[10px] sm:text-xs font-bold text-white shadow-sm animate-counter-pop">
+                  {count}
+                </span>
+                <span className="text-[10px] sm:text-xs text-gray-500 hidden sm:inline">happy clients</span>
+              </div>
+            </div>
 
             {/* Stats strip */}
-            <motion.div
-              variants={fadeUp(0.45)}
-              initial="hidden"
-              animate="show"
-              className="mt-10 flex items-center gap-6 sm:gap-8 divide-x divide-gray-300/60"
+            <div 
+              className={`mt-6 sm:mt-10 flex items-center gap-4 sm:gap-6 md:gap-8 divide-x divide-gray-300/60 transition-all duration-700 delay-500 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
             >
               {[
                 { value: "8+", label: "Years experience" },
                 { value: "320+", label: "Projects delivered" },
                 { value: "98%", label: "Client satisfaction" },
               ].map((stat, i) => (
-                <div key={i} className={`${i !== 0 ? "pl-6 sm:pl-8" : ""} flex flex-col`}>
-                  <span className="text-2xl sm:text-3xl font-extrabold text-gray-900">{stat.value}</span>
-                  <span className="text-[11px] sm:text-xs text-gray-400 mt-0.5">{stat.label}</span>
+                <div key={i} className={`${i !== 0 ? "pl-4 sm:pl-6 md:pl-8" : ""} flex flex-col`}>
+                  <span className="text-xl sm:text-2xl md:text-3xl font-extrabold text-gray-900">{stat.value}</span>
+                  <span className="text-[9px] sm:text-[11px] md:text-xs text-gray-400 mt-0.5">{stat.label}</span>
                 </div>
               ))}
-            </motion.div>
+            </div>
           </div>
 
           {/* ════════════════════════════════════════
               RIGHT - Phone mock-up
           ════════════════════════════════════════ */}
-          <motion.div
-            className="relative flex items-center justify-center lg:justify-start h-[280px] sm:h-[380px] lg:h-[520px]"
-            variants={fadeRight(0.2)}
-            initial="hidden"
-            animate="show"
+          <div 
+            className={`relative flex items-center justify-center lg:justify-start h-[240px] sm:h-[300px] md:h-[380px] lg:h-[520px] order-3 mt-8 lg:mt-0 transition-all duration-700 ${
+              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'
+            }`}
           >
             {/* Orange gradient blob behind phone */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div className="h-[240px] w-[180px] sm:h-[320px] sm:w-[240px] rounded-[60px] shadow-2xl opacity-90" 
+              <div className="h-[180px] sm:h-[240px] md:h-[280px] lg:h-[320px] w-[140px] sm:w-[180px] md:w-[210px] lg:w-[240px] rounded-[40px] sm:rounded-[50px] md:rounded-[60px] shadow-xl sm:shadow-2xl opacity-90" 
               style={{
                 backgroundImage:"url('/home/hero/tab2.jpg')",
                 backgroundSize:"cover",
@@ -283,54 +266,43 @@ export default function HeroSection() {
             </div>
 
             {/* Phone frame */}
-<motion.div
-  className="relative z-10 w-[140px] sm:w-[170px] lg:w-[190px] rounded-[32px] overflow-hidden shadow-2xl border-4 border-white/80"
-  animate={floatAnim(12, 4.2)}
->
-  <video 
-    autoPlay 
-    loop 
-    muted 
-    playsInline 
-    className="w-full object-cover"
-  >
-    <source src="/home/hero/v1.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
-</motion.div>
+            <div className="relative z-10 w-[110px] sm:w-[140px] md:w-[170px] lg:w-[190px] rounded-[24px] sm:rounded-[28px] md:rounded-[32px] overflow-hidden shadow-xl sm:shadow-2xl border-3 sm:border-4 border-white/80 animate-float-slow">
+              <video 
+                autoPlay 
+                loop 
+                muted 
+                playsInline 
+                className="w-full object-cover"
+              >
+                <source src="/home/hero/v1.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
 
             {/* Brand badge card - floating top-left */}
-            <motion.div
-              className="absolute left-0 sm:left-2 lg:-left-2 top-6 sm:top-1 lg:-top-12 z-20 w-[140px] sm:w-[158px] rounded-2xl overflow-hidden shadow-xl border border-white/60 bg-white"
-              animate={floatAnim(7, 3.4)}
-            >
-             <video 
-    autoPlay 
-    loop 
-    muted 
-    playsInline 
-    className="w-full object-cover"
-  >
-    <source src="/home/hero/web.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
-              <div className="px-3 py-2 bg-white">
-                <p className="text-[10px] font-bold text-gray-800 truncate">InnovateBrand Studio</p>
-                <p className="text-[9px] text-gray-400">Podcast · Season 3</p>
+            <div className="absolute left-0 sm:left-1 md:left-2 lg:-left-2 top-4 sm:top-2 md:top-1 lg:-top-12 z-20 w-[110px] sm:w-[130px] md:w-[145px] lg:w-[158px] rounded-xl sm:rounded-2xl overflow-hidden shadow-lg sm:shadow-xl border border-white/60 bg-white animate-float-medium">
+              <video 
+                autoPlay 
+                loop 
+                muted 
+                playsInline 
+                className="w-full object-cover"
+              >
+                <source src="/home/hero/web.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <div className="px-2 sm:px-3 py-1.5 sm:py-2 bg-white">
+                <p className="text-[8px] sm:text-[9px] md:text-[10px] font-bold text-gray-800 truncate">InnovateBrand Studio</p>
+                <p className="text-[7px] sm:text-[8px] md:text-[9px] text-gray-400">Podcast · Season 3</p>
               </div>
-            </motion.div>
+            </div>
 
             {/* Small floating notification chip */}
-            <motion.div
-              className="absolute right-2 bottom-10 sm:bottom-14 z-20 flex items-center gap-2 rounded-xl bg-white shadow-lg border border-gray-100 px-3 py-2"
-              initial={{ opacity: 0, scale: 0.7 }}
-              animate={{ opacity: 1, scale: 1, ...floatAnim(5, 3).y }}
-              transition={{ delay: 0.6, duration: 0.5 }}
-            >
-              <span className="h-2.5 w-2.5 rounded-full bg-green-400 animate-pulse" />
-              <span className="text-[11px] font-semibold text-gray-700">New project live!</span>
-            </motion.div>
-          </motion.div>
+            <div className="absolute right-1 sm:right-2 bottom-8 sm:bottom-10 md:bottom-14 z-20 flex items-center gap-1.5 sm:gap-2 rounded-lg sm:rounded-xl bg-white shadow-lg border border-gray-100 px-2 sm:px-3 py-1.5 sm:py-2 animate-float-fast">
+              <span className="h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full bg-green-400 animate-pulse" />
+              <span className="text-[9px] sm:text-[10px] md:text-[11px] font-semibold text-gray-700">New project live!</span>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -344,9 +316,77 @@ export default function HeroSection() {
         }}
       />
 
-      {/* ── Google Fonts loader (Sora) ── */}
+      {/* ── CSS Animations ── */}
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&display=swap');
+        
+        /* Floating animations for images and videos */
+        @keyframes floatSlow {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes floatMedium {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-8px); }
+        }
+        
+        @keyframes floatFast {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-6px); }
+        }
+        
+        @keyframes floatTag {
+          0% { 
+            opacity: 0;
+            transform: translateY(0px); 
+          }
+          10% {
+            opacity: 1;
+          }
+          50% { 
+            transform: translateY(-5px); 
+          }
+          100% { 
+            opacity: 1;
+            transform: translateY(0px); 
+          }
+        }
+        
+        @keyframes underlineReveal {
+          0% { transform: scaleX(0); }
+          100% { transform: scaleX(1); }
+        }
+        
+        @keyframes counterPop {
+          0% { transform: scale(1); }
+          50% { transform: scale(1.1); }
+          100% { transform: scale(1); }
+        }
+        
+        .animate-float-slow {
+          animation: floatSlow 4s ease-in-out infinite;
+        }
+        
+        .animate-float-medium {
+          animation: floatMedium 3.2s ease-in-out infinite;
+        }
+        
+        .animate-float-fast {
+          animation: floatFast 2.8s ease-in-out infinite;
+        }
+        
+        .animate-float-tag {
+          animation: floatTag 2.8s ease-in-out infinite;
+        }
+        
+        .animate-underline-reveal {
+          animation: underlineReveal 0.5s ease-out 0.55s forwards;
+        }
+        
+        .animate-counter-pop {
+          animation: counterPop 0.3s ease-in-out;
+        }
       `}</style>
     </section>
   );

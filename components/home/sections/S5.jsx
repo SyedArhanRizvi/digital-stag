@@ -264,18 +264,73 @@ function S5() {
           border-color: #d4d4d4;
         }
 
+        /* Responsive Styles */
         @media (max-width: 1023px) {
           .s5-grid {
             grid-template-columns: 1fr !important;
-            gap: 40px !important;
+            gap: 48px !important;
           }
-          .s5-left { text-align: center !important; }
-          .contact-cards { align-items: center !important; }
+          .s5-left { 
+            text-align: center !important;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+          .contact-cards { 
+            align-items: center !important;
+            width: 100% !important;
+          }
+          .contact-cards a {
+            max-width: 100% !important;
+            width: 100% !important;
+          }
+          .s5-desc {
+            max-width: 100% !important;
+            text-align: center !important;
+          }
         }
+        
         @media (max-width: 640px) {
+          .s5-grid {
+            gap: 36px !important;
+          }
           .step-buttons {
             flex-direction: column;
             gap: 12px !important;
+          }
+          .step-buttons button {
+            width: 100% !important;
+            justify-content: center !important;
+          }
+          .contact-card {
+            flex-direction: column;
+            align-items: flex-start !important;
+            text-align: left;
+          }
+          .contact-card:hover {
+            transform: translateY(-2px) !important;
+          }
+          .input-field {
+            font-size: 14px !important;
+            padding: 12px 16px !important;
+          }
+          .step-indicator {
+            width: 26px !important;
+            height: 26px !important;
+            font-size: 10px !important;
+          }
+        }
+        
+        @media (max-width: 480px) {
+          .s5-heading {
+            font-size: clamp(28px, 7vw, 32px) !important;
+          }
+          .contact-card {
+            padding: 12px 16px !important;
+          }
+          .social-icons-container {
+            justify-content: center !important;
+            flex-wrap: wrap;
           }
         }
       `}</style>
@@ -352,13 +407,14 @@ function S5() {
             {/* Description */}
             <p
               ref={descRef}
-              className={`fade-in-up ${descInView ? 'visible' : ''}`}
+              className={`s5-desc fade-in-up ${descInView ? 'visible' : ''}`}
               style={{
                 fontSize: "clamp(14px, 1.2vw, 16px)",
                 color: "#737373",
                 lineHeight: 1.7,
                 marginBottom: "40px",
                 maxWidth: "480px",
+                width: "100%",
                 transitionDelay: descInView ? '0.2s' : '0s',
               }}
             >
@@ -366,8 +422,8 @@ function S5() {
               and we&apos;ll respond within 24 hours.
             </p>
 
-            {/* Contact Cards */}
-            <div className="contact-cards" style={{ display: "flex", flexDirection: "column", gap: "14px", marginBottom: "40px" }}>
+            {/* Contact Cards - Same width on all screens */}
+            <div className="contact-cards" style={{ display: "flex", flexDirection: "column", gap: "14px", marginBottom: "40px", width: "100%", maxWidth: "380px" }}>
               {contactItems.map((item, index) => {
                 const [cardRef, cardInView] = useInView({ once: true, margin: '-30px' });
                 return (
@@ -386,7 +442,7 @@ function S5() {
                       textDecoration: "none",
                       color: "inherit",
                       border: "1px solid #f0f0f0",
-                      maxWidth: "380px",
+                      width: "100%",
                       transitionDelay: `${0.3 + index * 0.1}s`,
                     }}
                   >
@@ -397,11 +453,11 @@ function S5() {
                     }}>
                       <item.icon size={18} color="#0a0a0a" />
                     </div>
-                    <div>
+                    <div style={{ flex: 1, minWidth: 0 }}>
                       <div style={{ fontSize: "11px", fontWeight: 600, color: "#a3a3a3", letterSpacing: "0.05em", textTransform: "uppercase", marginBottom: "3px" }}>
                         {item.title}
                       </div>
-                      <div style={{ fontSize: "14px", fontWeight: 500, color: "#0a0a0a" }}>
+                      <div style={{ fontSize: "14px", fontWeight: 500, color: "#0a0a0a", wordBreak: "break-word" }}>
                         {item.value}
                       </div>
                     </div>
@@ -412,10 +468,11 @@ function S5() {
 
             {/* Social Links */}
             <div
-              className={`fade-in-up ${descInView ? 'visible' : ''}`}
+              className={`social-icons-container fade-in-up ${descInView ? 'visible' : ''}`}
               style={{
                 display: "flex", gap: "10px", alignItems: "center",
                 transitionDelay: '0.7s',
+                flexWrap: "wrap",
               }}
             >
               <span style={{ fontSize: "12px", fontWeight: 600, color: "#a3a3a3", letterSpacing: "0.06em", marginRight: "4px" }}>
@@ -446,11 +503,12 @@ function S5() {
             style={{
               background: "#fff",
               borderRadius: "20px",
-              padding: "clamp(28px, 4vw, 44px)",
+              padding: "clamp(24px, 4vw, 44px)",
               boxShadow: "0 1px 3px rgba(0,0,0,0.04), 0 8px 32px rgba(0,0,0,0.04)",
               border: "1px solid #f0f0f0",
               position: "relative",
               overflow: "hidden",
+              width: "100%",
             }}
           >
             {/* Top accent line - only purple decorative element */}
@@ -461,7 +519,7 @@ function S5() {
 
             {/* Progress Bar */}
             {currentStep < 5 && (
-              <div style={{ marginBottom: "36px" }}>
+              <div style={{ marginBottom: "clamp(24px, 3vw, 36px)" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "18px", position: "relative" }}>
                   <div style={{ position: "absolute", top: "15px", left: "0", right: "0", height: "1.5px", background: "#f0f0f0", zIndex: 0 }}>
                     <div style={{
@@ -476,19 +534,24 @@ function S5() {
                       <div
                         className={`step-indicator ${currentStep > step.id ? "completed" : currentStep === step.id ? "active" : ""}`}
                         style={{
-                          width: "30px", height: "30px", borderRadius: "50%",
+                          width: "clamp(24px, 3vw, 30px)", 
+                          height: "clamp(24px, 3vw, 30px)", 
+                          borderRadius: "50%",
                           display: "flex", alignItems: "center", justifyContent: "center",
                           background: currentStep > step.id ? "#0a0a0a" : currentStep === step.id ? "#0a0a0a" : "#f5f5f5",
                           color: currentStep >= step.id ? "#fff" : "#a3a3a3",
-                          fontWeight: 600, fontSize: "12px",
+                          fontWeight: 600, fontSize: "clamp(10px, 1.2vw, 12px)",
                           border: currentStep === step.id ? "2px solid #e5e5e5" : "2px solid transparent",
                         }}
                       >
                         {currentStep > step.id ? <FiCheck size={14} /> : <step.icon size={14} />}
                       </div>
                       <span style={{
-                        fontSize: "10px", fontWeight: currentStep === step.id ? 600 : 500,
-                        color: currentStep >= step.id ? "#0a0a0a" : "#b0b0b0", letterSpacing: "0.03em",
+                        fontSize: "clamp(8px, 1vw, 10px)", 
+                        fontWeight: currentStep === step.id ? 600 : 500,
+                        color: currentStep >= step.id ? "#0a0a0a" : "#b0b0b0", 
+                        letterSpacing: "0.03em",
+                        textAlign: "center",
                       }}>
                         {step.title}
                       </span>
@@ -499,24 +562,28 @@ function S5() {
             )}
 
             {/* Step Content */}
-            <div style={{ minHeight: "300px", position: "relative" }}>
+            <div style={{ minHeight: "clamp(260px, 30vw, 300px)", position: "relative" }}>
               {/* Step 1 */}
-              <div className={`step-content ${currentStep === 1 ? 'active' : ''}`} style={{ display: currentStep === 1 ? 'flex' : 'none', flexDirection: "column", alignItems: "center", justifyContent: "center", minHeight: "300px", textAlign: "center" }}>
+              <div className={`step-content ${currentStep === 1 ? 'active' : ''}`} style={{ display: currentStep === 1 ? 'flex' : 'none', flexDirection: "column", alignItems: "center", justifyContent: "center", minHeight: "clamp(260px, 30vw, 300px)", textAlign: "center" }}>
                 <div className="float-animation" style={{
-                  width: "72px", height: "72px", borderRadius: "20px",
+                  width: "clamp(56px, 6vw, 72px)", 
+                  height: "clamp(56px, 6vw, 72px)", 
+                  borderRadius: "20px",
                   background: "#f5f5f5",
                   display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "24px",
                 }}>
                   <FiZap size={32} color="#7c3aed" />
                 </div>
-                <h3 style={{ fontSize: "22px", fontWeight: 700, color: "#0a0a0a", marginBottom: "10px" }}>Start Your Project</h3>
-                <p style={{ fontSize: "14px", color: "#737373", lineHeight: 1.6, marginBottom: "28px", maxWidth: "380px" }}>
+                <h3 style={{ fontSize: "clamp(18px, 2vw, 22px)", fontWeight: 700, color: "#0a0a0a", marginBottom: "10px" }}>Start Your Project</h3>
+                <p style={{ fontSize: "clamp(13px, 1.2vw, 14px)", color: "#737373", lineHeight: 1.6, marginBottom: "28px", maxWidth: "380px", padding: "0 10px" }}>
                   Ready to bring your ideas to life? Let&apos;s begin your journey with us. It only takes a few minutes.
                 </p>
                 <button onClick={handleNext} className="btn-primary"
                   style={{
-                    padding: "14px 36px", background: "#0a0a0a", color: "#fff",
-                    border: "none", borderRadius: "12px", fontSize: "15px", fontWeight: 600,
+                    padding: "clamp(12px, 2vw, 14px) clamp(28px, 4vw, 36px)", 
+                    background: "#0a0a0a", color: "#fff",
+                    border: "none", borderRadius: "12px", 
+                    fontSize: "clamp(14px, 1.5vw, 15px)", fontWeight: 600,
                     display: "flex", alignItems: "center", gap: "8px",
                   }}
                 >
@@ -526,16 +593,16 @@ function S5() {
 
               {/* Step 2 */}
               <div className={`step-content ${currentStep === 2 ? 'active' : ''}`} style={{ display: currentStep === 2 ? 'block' : 'none' }}>
-                <h3 style={{ fontSize: "20px", fontWeight: 700, color: "#0a0a0a", marginBottom: "6px" }}>Tell us about yourself</h3>
-                <p style={{ fontSize: "13px", color: "#a3a3a3", marginBottom: "28px" }}>We&apos;ll use this to get in touch with you.</p>
-                <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
+                <h3 style={{ fontSize: "clamp(18px, 2vw, 20px)", fontWeight: 700, color: "#0a0a0a", marginBottom: "6px" }}>Tell us about yourself</h3>
+                <p style={{ fontSize: "clamp(12px, 1.2vw, 13px)", color: "#a3a3a3", marginBottom: "clamp(20px, 3vw, 28px)" }}>We&apos;ll use this to get in touch with you.</p>
+                <div style={{ display: "flex", flexDirection: "column", gap: "clamp(14px, 2vw, 18px)" }}>
                   <div>
-                    <label style={{ display: "block", fontSize: "12px", fontWeight: 600, color: "#0a0a0a", marginBottom: "6px", letterSpacing: "0.02em" }}>Full Name *</label>
+                    <label style={{ display: "block", fontSize: "clamp(11px, 1vw, 12px)", fontWeight: 600, color: "#0a0a0a", marginBottom: "6px", letterSpacing: "0.02em" }}>Full Name *</label>
                     <input type="text" name="name" value={formData.name} onChange={handleInputChange} placeholder="John Doe" className={`input-field ${errors.name ? "error" : ""}`} />
                     {errors.name && <span style={{ color: "#dc2626", fontSize: "11px", marginTop: "4px", display: "block" }}>{errors.name}</span>}
                   </div>
                   <div>
-                    <label style={{ display: "block", fontSize: "12px", fontWeight: 600, color: "#0a0a0a", marginBottom: "6px", letterSpacing: "0.02em" }}>Email Address *</label>
+                    <label style={{ display: "block", fontSize: "clamp(11px, 1vw, 12px)", fontWeight: 600, color: "#0a0a0a", marginBottom: "6px", letterSpacing: "0.02em" }}>Email Address *</label>
                     <input type="email" name="email" value={formData.email} onChange={handleInputChange} placeholder="john@example.com" className={`input-field ${errors.email ? "error" : ""}`} />
                     {errors.email && <span style={{ color: "#dc2626", fontSize: "11px", marginTop: "4px", display: "block" }}>{errors.email}</span>}
                   </div>
@@ -544,17 +611,17 @@ function S5() {
 
               {/* Step 3 */}
               <div className={`step-content ${currentStep === 3 ? 'active' : ''}`} style={{ display: currentStep === 3 ? 'block' : 'none' }}>
-                <h3 style={{ fontSize: "20px", fontWeight: 700, color: "#0a0a0a", marginBottom: "6px" }}>Project Details</h3>
-                <p style={{ fontSize: "13px", color: "#a3a3a3", marginBottom: "28px" }}>Help us understand your needs better.</p>
-                <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
+                <h3 style={{ fontSize: "clamp(18px, 2vw, 20px)", fontWeight: 700, color: "#0a0a0a", marginBottom: "6px" }}>Project Details</h3>
+                <p style={{ fontSize: "clamp(12px, 1.2vw, 13px)", color: "#a3a3a3", marginBottom: "clamp(20px, 3vw, 28px)" }}>Help us understand your needs better.</p>
+                <div style={{ display: "flex", flexDirection: "column", gap: "clamp(14px, 2vw, 18px)" }}>
                   <div>
-                    <label style={{ display: "block", fontSize: "12px", fontWeight: 600, color: "#0a0a0a", marginBottom: "6px", letterSpacing: "0.02em" }}>Phone Number *</label>
+                    <label style={{ display: "block", fontSize: "clamp(11px, 1vw, 12px)", fontWeight: 600, color: "#0a0a0a", marginBottom: "6px", letterSpacing: "0.02em" }}>Phone Number *</label>
                     <input type="tel" name="phone" value={formData.phone} onChange={handleInputChange} placeholder="+1 (555) 123-4567" className={`input-field ${errors.phone ? "error" : ""}`} />
                     {errors.phone && <span style={{ color: "#dc2626", fontSize: "11px", marginTop: "4px", display: "block" }}>{errors.phone}</span>}
                   </div>
                   <div>
-                    <label style={{ display: "block", fontSize: "12px", fontWeight: 600, color: "#0a0a0a", marginBottom: "6px", letterSpacing: "0.02em" }}>Message *</label>
-                    <textarea name="message" value={formData.message} onChange={handleInputChange} placeholder="Tell us about your project..." className={`input-field ${errors.message ? "error" : ""}`} rows={4} style={{ resize: "vertical", minHeight: "110px" }} />
+                    <label style={{ display: "block", fontSize: "clamp(11px, 1vw, 12px)", fontWeight: 600, color: "#0a0a0a", marginBottom: "6px", letterSpacing: "0.02em" }}>Message *</label>
+                    <textarea name="message" value={formData.message} onChange={handleInputChange} placeholder="Tell us about your project..." className={`input-field ${errors.message ? "error" : ""}`} rows={4} style={{ resize: "vertical", minHeight: "clamp(90px, 12vw, 110px)" }} />
                     {errors.message && <span style={{ color: "#dc2626", fontSize: "11px", marginTop: "4px", display: "block" }}>{errors.message}</span>}
                   </div>
                 </div>
@@ -562,9 +629,9 @@ function S5() {
 
               {/* Step 4 */}
               <div className={`step-content ${currentStep === 4 ? 'active' : ''}`} style={{ display: currentStep === 4 ? 'block' : 'none' }}>
-                <h3 style={{ fontSize: "20px", fontWeight: 700, color: "#0a0a0a", marginBottom: "6px" }}>Review Your Details</h3>
-                <p style={{ fontSize: "13px", color: "#a3a3a3", marginBottom: "28px" }}>Please verify your information before submitting.</p>
-                <div style={{ background: "#fafafa", borderRadius: "12px", padding: "20px", display: "flex", flexDirection: "column", gap: "14px", border: "1px solid #f0f0f0" }}>
+                <h3 style={{ fontSize: "clamp(18px, 2vw, 20px)", fontWeight: 700, color: "#0a0a0a", marginBottom: "6px" }}>Review Your Details</h3>
+                <p style={{ fontSize: "clamp(12px, 1.2vw, 13px)", color: "#a3a3a3", marginBottom: "clamp(20px, 3vw, 28px)" }}>Please verify your information before submitting.</p>
+                <div style={{ background: "#fafafa", borderRadius: "12px", padding: "clamp(16px, 2vw, 20px)", display: "flex", flexDirection: "column", gap: "14px", border: "1px solid #f0f0f0" }}>
                   {[
                     { label: "Name", value: formData.name },
                     { label: "Email", value: formData.email },
@@ -575,29 +642,33 @@ function S5() {
                       display: "flex", justifyContent: "space-between", alignItems: "flex-start",
                       paddingBottom: index < 3 ? "14px" : "0",
                       borderBottom: index < 3 ? "1px solid #e5e5e5" : "none",
+                      flexDirection: "column",
+                      gap: "4px",
                     }}>
-                      <span style={{ fontSize: "12px", fontWeight: 600, color: "#a3a3a3", minWidth: "65px" }}>{item.label}</span>
-                      <span style={{ fontSize: "13px", fontWeight: 500, color: "#0a0a0a", textAlign: "right", flex: 1, marginLeft: "14px", wordBreak: "break-word" }}>{item.value}</span>
+                      <span style={{ fontSize: "clamp(11px, 1vw, 12px)", fontWeight: 600, color: "#a3a3a3" }}>{item.label}</span>
+                      <span style={{ fontSize: "clamp(12px, 1.2vw, 13px)", fontWeight: 500, color: "#0a0a0a", wordBreak: "break-word" }}>{item.value}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* Step 5 */}
-              <div className={`step-content ${currentStep === 5 ? 'active' : ''}`} style={{ display: currentStep === 5 ? 'flex' : 'none', flexDirection: "column", alignItems: "center", justifyContent: "center", minHeight: "300px", textAlign: "center" }}>
+              <div className={`step-content ${currentStep === 5 ? 'active' : ''}`} style={{ display: currentStep === 5 ? 'flex' : 'none', flexDirection: "column", alignItems: "center", justifyContent: "center", minHeight: "clamp(260px, 30vw, 300px)", textAlign: "center" }}>
                 <div className="scale-in" style={{
-                  width: "72px", height: "72px", borderRadius: "50%",
+                  width: "clamp(56px, 6vw, 72px)", 
+                  height: "clamp(56px, 6vw, 72px)", 
+                  borderRadius: "50%",
                   background: "#0a0a0a",
                   display: "flex", alignItems: "center", justifyContent: "center",
                   marginBottom: "24px",
                 }}>
                   <FiCheck size={36} color="#fff" />
                 </div>
-                <h3 style={{ fontSize: "24px", fontWeight: 700, color: "#0a0a0a", marginBottom: "10px" }}>Thank You!</h3>
-                <p style={{ fontSize: "14px", color: "#737373", lineHeight: 1.6, marginBottom: "6px", maxWidth: "380px" }}>
+                <h3 style={{ fontSize: "clamp(20px, 2.5vw, 24px)", fontWeight: 700, color: "#0a0a0a", marginBottom: "10px" }}>Thank You!</h3>
+                <p style={{ fontSize: "clamp(13px, 1.2vw, 14px)", color: "#737373", lineHeight: 1.6, marginBottom: "6px", maxWidth: "380px", padding: "0 10px" }}>
                   Your enquiry has been submitted successfully.
                 </p>
-                <p style={{ fontSize: "13px", color: "#a3a3a3", lineHeight: 1.6, maxWidth: "380px" }}>
+                <p style={{ fontSize: "clamp(12px, 1.1vw, 13px)", color: "#a3a3a3", lineHeight: 1.6, maxWidth: "380px", padding: "0 10px" }}>
                   We&apos;ll review your request and get back to you within 24 hours.
                 </p>
               </div>
@@ -605,11 +676,13 @@ function S5() {
 
             {/* Navigation Buttons */}
             {currentStep > 1 && currentStep < 5 && (
-              <div className="step-buttons" style={{ display: "flex", justifyContent: "space-between", marginTop: "36px", gap: "14px" }}>
+              <div className="step-buttons" style={{ display: "flex", justifyContent: "space-between", marginTop: "clamp(24px, 3vw, 36px)", gap: "14px" }}>
                 <button onClick={handleBack} className="btn-secondary"
                   style={{
-                    padding: "12px 24px", background: "#fff", color: "#0a0a0a",
-                    border: "1.5px solid #e5e5e5", borderRadius: "10px", fontSize: "13px",
+                    padding: "clamp(10px, 1.5vw, 12px) clamp(20px, 3vw, 24px)", 
+                    background: "#fff", color: "#0a0a0a",
+                    border: "1.5px solid #e5e5e5", borderRadius: "10px", 
+                    fontSize: "clamp(12px, 1.2vw, 13px)",
                     fontWeight: 600, display: "flex", alignItems: "center", gap: "6px",
                   }}
                 >
@@ -619,10 +692,13 @@ function S5() {
                 {currentStep === 4 ? (
                   <button onClick={handleSubmit} disabled={isSubmitting} className="btn-primary"
                     style={{
-                      padding: "12px 28px", background: isSubmitting ? "#737373" : "#0a0a0a",
-                      color: "#fff", border: "none", borderRadius: "10px", fontSize: "13px",
+                      padding: "clamp(10px, 1.5vw, 12px) clamp(24px, 3vw, 28px)", 
+                      background: isSubmitting ? "#737373" : "#0a0a0a",
+                      color: "#fff", border: "none", borderRadius: "10px", 
+                      fontSize: "clamp(12px, 1.2vw, 13px)",
                       fontWeight: 600, display: "flex", alignItems: "center", gap: "6px",
-                      cursor: isSubmitting ? "not-allowed" : "pointer", minWidth: "110px", justifyContent: "center",
+                      cursor: isSubmitting ? "not-allowed" : "pointer", 
+                      minWidth: "110px", justifyContent: "center",
                     }}
                   >
                     {isSubmitting ? (
@@ -640,8 +716,10 @@ function S5() {
                 ) : (
                   <button onClick={handleNext} className="btn-primary"
                     style={{
-                      padding: "12px 28px", background: "#0a0a0a", color: "#fff",
-                      border: "none", borderRadius: "10px", fontSize: "13px", fontWeight: 600,
+                      padding: "clamp(10px, 1.5vw, 12px) clamp(24px, 3vw, 28px)", 
+                      background: "#0a0a0a", color: "#fff",
+                      border: "none", borderRadius: "10px", 
+                      fontSize: "clamp(12px, 1.2vw, 13px)", fontWeight: 600,
                       display: "flex", alignItems: "center", gap: "6px",
                     }}
                   >

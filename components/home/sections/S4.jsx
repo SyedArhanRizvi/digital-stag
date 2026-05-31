@@ -60,7 +60,8 @@ const servicesData = [
             headline: "Semantic Content Architecture",
             para: "Rank for competitive industry core vectors through structured thematic authority maps.",
             gradient: "linear-gradient(135deg, #fef9c3 0%, #fef08a 100%)"
-          }
+          },
+          
         ]
       },
       {
@@ -94,6 +95,18 @@ const servicesData = [
             headline: "Custom Engine Software",
             para: "Develop highly secure, auto-scaling backend databases tailored to intense enterprise workflows.",
             gradient: "linear-gradient(135deg, #fae8ff 0%, #f5d0fe 100%)"
+          },
+             {
+            img: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80",
+            headline: "Native Ads",
+            para: "Use native ad placements for low-cost customer acquisition with contextual targeting.",
+            gradient: "linear-gradient(135deg, #ffedd5 0%, #fed7aa 100%)"
+          },
+          {
+            img: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80",
+            headline: "Marketplace Ads",
+            para: "Promote your products on Amazon, eBay & more with automated product push tools.",
+            gradient: "linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%)"
           }
         ]
       }
