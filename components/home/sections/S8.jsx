@@ -111,119 +111,127 @@ function ProximityHeading({ text }) {
 const testimonialsData = [
   {
     id: 1,
-    name: "Ethan Chan",
-    role: "Verified Buyer",
+    name: "Priya Sharma",
+    role: "Business Owner",
     rating: 5,
-    text: "Great quality products and helpful customer support. Highly recommended for everyday shopping needs.",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format",
-    pos: { 
-      top: "50%", 
-      left: "50%", 
-      size: "clamp(120px, 12vw, 160px)" 
-    }, 
+    text: "Their digital marketing strategy significantly improved our online visibility and generated quality business leads consistently.",
+    image: "https://i.pinimg.com/736x/0e/8a/08/0e8a08b2b2cecc9a79f9d2489e2e6a76.jpg",
+    pos: {
+      top: "50%",
+      left: "50%",
+      size: "clamp(120px, 12vw, 160px)"
+    },
   },
+
   {
     id: 2,
-    name: "Sarah Jenkins",
-    role: "Fashion Enthusiast",
+    name: "Rahul Verma",
+    role: "Startup Founder",
     rating: 5,
-    text: "The shipping was incredibly fast, and the packaging felt premium. Will definitely be a returning customer!",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format",
-    pos: { 
-      top: "35%", 
-      left: "31%", 
-      size: "clamp(50px, 7vw, 90px)" 
+    text: "The team built our website exactly as envisioned. Fast, responsive, and optimized for conversions.",
+    image: "https://i.pinimg.com/1200x/a0/18/3e/a0183e01ba50404f0796597c57e7f320.jpg",
+    pos: {
+      top: "35%",
+      left: "31%",
+      size: "clamp(50px, 7vw, 90px)"
     },
   },
+
   {
     id: 3,
-    name: "Marcus Brodie",
-    role: "Tech Reviewer",
-    rating: 4,
-    text: "Excellent curation of gadgets. Customer service helped me pick the right size instantly. 10/10.",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format",
-    pos: { 
-      top: "45%", 
-      left: "14%", 
-      size: "clamp(55px, 8vw, 100px)" 
+    name: "Aman Gupta",
+    role: "E-commerce Owner",
+    rating: 5,
+    text: "Their SEO services helped us rank higher on Google and increased our organic traffic substantially.",
+    image: "https://i.pinimg.com/736x/59/81/4a/59814a7da0068901825d51c059864c5b.jpg",
+    pos: {
+      top: "45%",
+      left: "14%",
+      size: "clamp(55px, 8vw, 100px)"
     },
   },
+
   {
     id: 4,
-    name: "Elena Rostova",
-    role: "Power Shopper",
+    name: "Neha Kapoor",
+    role: "Brand Manager",
     rating: 5,
-    text: "ShopEase has completely changed how I source my decor. Affordable yet incredibly chic and durable.",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format",
-    pos: { 
-      top: "70%", 
-      left: "9%", 
-      size: "clamp(45px, 6vw, 85px)" 
+    text: "Creative designs and branding solutions perfectly reflected our company's identity and professional vision.",
+    image: "https://i.pinimg.com/736x/93/81/a5/9381a5c582e3c3abd539286451d914fb.jpg",
+    pos: {
+      top: "70%",
+      left: "9%",
+      size: "clamp(45px, 6vw, 85px)"
     },
   },
+
   {
     id: 5,
-    name: "David K.",
-    role: "Lifestyle Blogger",
+    name: "Rohit Mehta",
+    role: "Marketing Consultant",
     rating: 5,
-    text: "In love with their sustainable lineup. Genuine materials, sleek UI, and crisp tracking updates.",
-    image: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=400&auto=format",
-    pos: { 
-      top: "62%", 
-      left: "27%", 
-      size: "clamp(40px, 5vw, 75px)" 
+    text: "Exceptional campaign management and detailed reporting helped us achieve measurable business growth.",
+    image: "https://i.pinimg.com/1200x/0a/92/cb/0a92cbef5fc9e68a9f5586121ebfca9d.jpg",
+    pos: {
+      top: "62%",
+      left: "27%",
+      size: "clamp(40px, 5vw, 75px)"
     },
   },
+
   {
     id: 6,
-    name: "Aisha Rahman",
+    name: "Ananya Singh",
     role: "Interior Designer",
     rating: 5,
-    text: "Unbeatable wholesale rates and unmatched premium fidelity. Highly recommended to all peers.",
-    image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=400&auto=format",
-    pos: { 
-      top: "42%", 
-      left: "73%", 
-      size: "clamp(45px, 6vw, 80px)" 
+    text: "Professional communication, creative execution, and timely delivery exceeded our expectations completely.",
+    image: "https://i.pinimg.com/1200x/fd/61/17/fd611756381e7d3c7a37ea63d41554da.jpg",
+    pos: {
+      top: "42%",
+      left: "73%",
+      size: "clamp(45px, 6vw, 80px)"
     },
   },
+
   {
     id: 7,
-    name: "Liam Foster",
-    role: "Fitness Coach",
-    rating: 4,
-    text: "Sturdy products that hold up to heavy wear. Support team solved my billing query within minutes.",
-    image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=400&auto=format",
-    pos: { 
-      top: "33%", 
-      left: "91%", 
-      size: "clamp(50px, 6vw, 85px)" 
+    name: "Vikram Malhotra",
+    role: "Real Estate Developer",
+    rating: 5,
+    text: "Their automation solutions streamlined our lead management process and improved operational efficiency.",
+    image: "https://i.pinimg.com/1200x/94/d1/6a/94d16aae96c4f1f5145e4ed588411d3f.jpg",
+    pos: {
+      top: "33%",
+      left: "91%",
+      size: "clamp(50px, 6vw, 85px)"
     },
   },
+
   {
     id: 8,
-    name: "Chloe Bennett",
-    role: "Daily Creator",
+    name: "Sneha Patel",
+    role: "Content Creator",
     rating: 5,
-    text: "Everything down to the UI flows perfectly. Hassle-free checkouts make this my absolute favorite stop.",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format",
-    pos: { 
-      top: "57%", 
-      left: "86%", 
-      size: "clamp(55px, 8vw, 105px)" 
+    text: "Video editing quality was outstanding. The final content looked polished, engaging, and highly professional.",
+    image: "https://i.pinimg.com/1200x/13/7d/d9/137dd9f454e3017b5f21df318f52a4c4.jpg",
+    pos: {
+      top: "57%",
+      left: "86%",
+      size: "clamp(55px, 8vw, 105px)"
     },
   },
+
   {
     id: 9,
-    name: "Julian Alvarez",
-    role: "Regular Customer",
+    name: "Arjun Nair",
+    role: "Technology Consultant",
     rating: 5,
-    text: "The returns policy is so smooth it keeps me coming back risk-free. Amazing overall lifecycle ecosystem.",
-    image: "https://images.unsplash.com/photo-1488161628813-04466f872be2?q=80&w=400&auto=format",
-    pos: { 
-      top: "69%", 
-      left: "71%", 
-      size: "clamp(50px, 7vw, 90px)" 
+    text: "AI automation implementation reduced repetitive tasks and helped our team focus on strategic work.",
+    image: "https://i.pinimg.com/1200x/be/96/4a/be964af4ea2a357b7cfe3101174b1546.jpg",
+    pos: {
+      top: "69%",
+      left: "71%",
+      size: "clamp(50px, 7vw, 90px)"
     },
   },
 ];

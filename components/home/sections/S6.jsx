@@ -26,95 +26,103 @@ const categories = [
 const projects = [
   {
     id: 1,
-    title: "Luxury E-Commerce Platform",
+    title: "Luxury Fashion E-Commerce Store",
     category: "Web Development",
     image:
       "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
     size: "large",
     description:
-      "A fully responsive e-commerce platform with advanced filtering and payment integration.",
+      "Developed a premium e-commerce platform featuring secure payments, advanced product filtering, and responsive shopping experiences.",
   },
+
   {
     id: 2,
-    title: "Brand Identity System",
+    title: "Modern Brand Identity Design",
     category: "Graphic Design",
     image:
-      "https://images.unsplash.com/photo-1634942537034-2531766767d1?w=600&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=600&h=600&fit=crop",
     size: "small",
     description:
-      "Complete brand identity including logo, typography, and visual guidelines.",
+      "Created a complete visual identity system including logo design, brand guidelines, and marketing collateral assets.",
   },
+
   {
     id: 3,
-    title: "FinTech Mobile App",
+    title: "AI SaaS Dashboard Interface",
     category: "UI/UX Design",
     image:
-      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1559028012-481c04fa702d?w=600&h=800&fit=crop",
     size: "tall",
     description:
-      "User-centered design for a financial technology mobile application.",
+      "Designed an intuitive AI platform dashboard focused on usability, workflow efficiency, and data-driven experiences.",
   },
+
   {
     id: 4,
-    title: "Social Media Campaign",
+    title: "Social Media Growth Campaign",
     category: "Digital Marketing",
     image:
-      "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?w=600&h=600&fit=crop",
     size: "small",
     description:
-      "Multi-platform social media campaign with viral content strategy.",
+      "Executed a multi-channel marketing campaign that increased engagement, reach, and qualified lead generation.",
   },
+
   {
     id: 5,
-    title: "Corporate Website Redesign",
+    title: "Corporate Business Website",
     category: "Web Development",
     image:
       "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop",
     size: "wide",
     description:
-      "Modern corporate website with dynamic content management system.",
+      "Built a modern corporate website with CMS integration, performance optimization, and responsive user interfaces.",
   },
+
   {
     id: 6,
-    title: "Product Launch Video",
+    title: "Product Promotion Video",
     category: "Video Editing",
     image:
-      "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=600&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&h=600&fit=crop",
     size: "small",
     description:
-      "Cinematic product launch video with motion graphics and sound design.",
+      "Produced a high-converting promotional video featuring motion graphics, visual effects, and professional editing.",
   },
+
   {
     id: 7,
-    title: "SEO Optimization Campaign",
-    category: "SEO Marketing",
+    title: "Organic SEO Growth Strategy",
+    category: "SEO",
     image:
-      "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=600&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=600&fit=crop",
     size: "small",
     description:
-      "Comprehensive SEO strategy resulting in 200% organic traffic increase.",
+      "Implemented technical SEO, content optimization, and link-building strategies that significantly improved search rankings.",
   },
+
   {
     id: 8,
-    title: "Analytics Dashboard",
-    category: "Web Development",
+    title: "AI Business Automation System",
+    category: "AI Automation",
     image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop",
     size: "large",
     description:
-      "Real-time analytics dashboard with interactive data visualization.",
+      "Developed intelligent automation workflows integrating AI tools, lead management, and customer communication systems.",
   },
-  {
-    id: 9,
-    title: "Restaurant Branding",
-    category: "Graphic Design",
-    image:
-      "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=600&h=600&fit=crop",
-    size: "small",
-    description: "Complete branding package for a high-end restaurant chain.",
-  },
-];
 
+{
+  id: 9,
+  title: "Restaurant Branding Package",
+  category: "Graphic Design",
+  image:
+    "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=600&fit=crop",
+  size: "small",
+  description:
+    "Designed complete restaurant branding including menu layouts, packaging concepts, and promotional design materials.",
+},
+];
 /* ── per-char accent seeding ── */
 function getAccent(ci, seed) {
   const h = (ci * 2654435761 + seed) >>> 0;
@@ -879,7 +887,7 @@ export default function S6() {
               lineHeight: 1.8,
             }}
           >
-            Crafted with precision — a curated selection of projects across design, development, and marketing.
+            Crafted with precision - a curated selection of projects across design, development, and marketing.
           </p>
         </div>
 

@@ -1,0 +1,206 @@
+[
+  {
+    "slug": "/digital-marketing",
+    "title": "Digital Marketing",
+    "meta_title": "Expert Digital Marketing Services | Scale Your Growth",
+    "meta_description": "Data-driven digital marketing campaigns engineered to capture attention, convert prospects, and compound your brand authority across every channel.",
+    "meta_keywords": "digital marketing services, growth at scale, google ads management, meta advertising, social media growth, marketing analytics",
+    "description": "Data-driven campaigns engineered to capture attention, convert prospects, and compound your brand authority across every digital channel.",
+    "cards": [
+      {
+        "id": 1,
+        "title": "Google Ads Management",
+        "description": "Maximize your ROI with highly targeted search and display campaigns designed to capture high-intent buyers and drive immediate conversions.",
+        "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format"
+      },
+      {
+        "id": 2,
+        "title": "Meta Advertising",
+        "description": "Engage your ideal audience on Facebook and Instagram with visually compelling, data-backed ad campaigns that scale your revenue.",
+        "image": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&auto=format"
+      },
+      {
+        "id": 3,
+        "title": "Social Media Growth",
+        "description": "Build a loyal community and amplify your organic reach with strategic content planning and active audience engagement.",
+        "image": "https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=800&auto=format"
+      },
+      {
+        "id": 4,
+        "title": "Marketing Analytics",
+        "description": "Transform raw data into actionable strategies with comprehensive tracking, reporting, and conversion rate optimization.",
+        "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format"
+      }
+    ]
+  },
+  {
+    "slug": "/seo",
+    "title": "SEO",
+    "meta_title": "Professional SEO Services | Rank & Dominate Search",
+    "meta_description": "End-to-end search engine optimization that places your business at the top of relevant queries. Technical SEO, keyword research, content, and link building.",
+    "meta_keywords": "SEO services, search engine optimization, technical SEO, keyword research, content SEO, link building services",
+    "description": "End-to-end search engine optimisation that places your business at the top of every relevant query — and keeps it there for the long term.",
+    "cards": [
+      {
+        "id": 1,
+        "title": "Technical SEO",
+        "description": "Ensure your website is perfectly optimized for search engine crawlers with fast load times, clean code, and flawless site architecture.",
+        "image": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=800&auto=format"
+      },
+      {
+        "id": 2,
+        "title": "Keyword Research",
+        "description": "Discover high-value search terms and uncover untapped opportunities to drive qualified, high-converting traffic to your website.",
+        "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&auto=format"
+      },
+      {
+        "id": 3,
+        "title": "Content SEO",
+        "description": "Craft deeply researched, engaging content that perfectly aligns with search intent and satisfies both users and search algorithms.",
+        "image": "https://images.unsplash.com/photo-1455390582262-044cdead2708?w=800&auto=format"
+      },
+      {
+        "id": 4,
+        "title": "Link Building",
+        "description": "Acquire high-authority, relevant backlinks through strategic outreach and digital PR to boost your domain rating and search visibility.",
+        "image": "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&auto=format"
+      }
+    ]
+  },
+  {
+    "slug": "/web-development",
+    "title": "Web Development",
+    "meta_title": "Custom Web Development Services | Fast & Scalable Sites",
+    "meta_description": "Architect and build digital products that perform beautifully. We offer business websites, e-commerce stores, custom web apps, and website maintenance.",
+    "meta_keywords": "web development services, business websites, e-commerce stores, custom web apps, website maintenance, web design",
+    "description": "From blazing-fast business sites to complex web applications — we architect and build digital products that perform beautifully and convert visitors.",
+    "cards": [
+      {
+        "id": 1,
+        "title": "Business Websites",
+        "description": "Establish a powerful online presence with custom-designed, fast-loading corporate websites that build trust and capture leads.",
+        "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&auto=format"
+      },
+      {
+        "id": 2,
+        "title": "E-Commerce Stores",
+        "description": "Launch scalable, highly optimized online stores equipped with seamless checkout experiences to maximize your digital sales.",
+        "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&auto=format"
+      },
+      {
+        "id": 3,
+        "title": "Custom Web Apps",
+        "description": "Develop complex, tailored web applications designed to solve unique business challenges and streamline your digital operations.",
+        "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&auto=format"
+      },
+      {
+        "id": 4,
+        "title": "Website Maintenance",
+        "description": "Keep your digital assets secure, up-to-date, and running flawlessly with comprehensive ongoing support and performance monitoring.",
+        "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format"
+      }
+    ]
+  },
+  {
+    "slug": "/video-editing",
+    "title": "Video Editing",
+    "meta_title": "Professional Video Editing Services | Reels, YouTube & Corporate",
+    "meta_description": "Transform raw footage into compelling visual narratives. Our video editing services cover Reels, Shorts, YouTube videos, and corporate content.",
+    "meta_keywords": "video editing services, reels editing, shorts editing, youtube video editing, corporate videos, motion graphics",
+    "description": "Professional post-production that transforms raw footage into compelling visual narratives — reels, YouTube, corporate, and beyond.",
+    "cards": [
+      {
+        "id": 1,
+        "title": "Reels & Shorts Editing",
+        "description": "Capture attention in seconds with dynamic, fast-paced editing designed for maximum engagement on TikTok, Instagram, and YouTube Shorts.",
+        "image": "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&auto=format"
+      },
+      {
+        "id": 2,
+        "title": "YouTube Video Editing",
+        "description": "Retain viewership and grow your channel with professional long-form editing that ensures crisp pacing, sound design, and visual polish.",
+        "image": "https://images.unsplash.com/photo-1536240478700-b869070f9279?w=800&auto=format"
+      },
+      {
+        "id": 3,
+        "title": "Corporate Videos",
+        "description": "Communicate your company's vision and values through high-quality brand films, testimonials, and internal training videos.",
+        "image": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&auto=format"
+      },
+      {
+        "id": 4,
+        "title": "Motion Graphics",
+        "description": "Elevate your storytelling with custom animations, kinetic typography, and visual effects that make complex ideas easy to digest.",
+        "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&auto=format"
+      }
+    ]
+  },
+  {
+    "slug": "/graphic-designing",
+    "title": "Graphic Designing",
+    "meta_title": "Creative Graphic Design Services | Branding & UI/UX",
+    "meta_description": "Strategic visual design that builds instant brand recognition. Services include logo design, social media creatives, branding materials, and UI/UX.",
+    "meta_keywords": "graphic designing services, logo design, social media creatives, branding materials, UI/UX design, visual identity",
+    "description": "Strategic visual design that builds instant brand recognition, communicates value, and makes your business utterly unforgettable.",
+    "cards": [
+      {
+        "id": 1,
+        "title": "Logo Design",
+        "description": "Forge a strong, memorable brand identity with custom logos that perfectly encapsulate your business values and vision.",
+        "image": "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&auto=format"
+      },
+      {
+        "id": 2,
+        "title": "Social Media Creatives",
+        "description": "Stand out in crowded feeds with eye-catching, tailored graphics that drive engagement and maintain visual consistency across platforms.",
+        "image": "https://images.unsplash.com/photo-1613909207039-6b173b755cc1?w=800&auto=format"
+      },
+      {
+        "id": 3,
+        "title": "Branding Materials",
+        "description": "Equip your business with professional collateral, including business cards, brochures, and pitch decks that leave a lasting impression.",
+        "image": "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=800&auto=format"
+      },
+      {
+        "id": 4,
+        "title": "UI/UX Design",
+        "description": "Design intuitive, beautiful user interfaces and experiences that delight customers and seamlessly guide them toward conversion.",
+        "image": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&auto=format"
+      }
+    ]
+  },
+  {
+    "slug": "/ai-automation",
+    "title": "AI Automation",
+    "meta_title": "AI Automation Services | Work Smarter & Scale Faster",
+    "meta_description": "Eliminate repetitive tasks and qualify leads automatically with our AI automation solutions. Featuring chatbots, workflow automation, and BI.",
+    "meta_keywords": "AI automation services, AI chatbots, workflow automation, AI lead generation, business intelligence, business automation",
+    "description": "Intelligent systems that eliminate repetitive tasks, qualify leads automatically, and surface insights that power your strategic decisions.",
+    "cards": [
+      {
+        "id": 1,
+        "title": "AI Chatbots",
+        "description": "Provide 24/7 customer support and instantly answer inquiries with intelligent conversational agents tailored to your brand voice.",
+        "image": "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&auto=format"
+      },
+      {
+        "id": 2,
+        "title": "Workflow Automation",
+        "description": "Connect your favorite apps and eliminate manual data entry with seamless, automated workflows that save your team hundreds of hours.",
+        "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format"
+      },
+      {
+        "id": 3,
+        "title": "AI Lead Generation",
+        "description": "Automatically identify, score, and nurture high-quality prospects using advanced machine learning models that optimize your sales funnel.",
+        "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format"
+      },
+      {
+        "id": 4,
+        "title": "Business Intelligence",
+        "description": "Transform raw operational data into predictive insights and visual dashboards that empower smarter, faster executive decisions.",
+        "image": "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&auto=format"
+      }
+    ]
+  }
+]

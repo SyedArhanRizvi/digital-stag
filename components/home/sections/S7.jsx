@@ -2,16 +2,15 @@
 
 import React, { useState } from 'react'
 
-// Dummy luxury/minimal corporate client logos using clean SVG mock designs
+// Dummy luxury/minimal corporate client logos using image references
 const clientLogos = [
-  { id: 1, name: "REAL STATE", type: "property" },
-  { id: 2, name: "CREATIVE", type: "agency" },
-  { id: 3, name: "BUSINESS ESTATES", type: "corporate" },
-  { id: 4, name: "GLOBAL HOMES", type: "global" },
-  { id: 5, name: "LUXURY HOMES", type: "luxury" },
-  { id: 6, name: "DUPLEX ESTATES", type: "architecture" },
-  { id: 7, name: "GREEN HOUSE", type: "eco" },
-  { id: 8, name: "ALPHA DIGITAL", type: "tech" }
+  { id: 1, name: "DXP REALTORS", img: "/clients/cl1.jpeg" },
+  { id: 2, name: "RRR PVT LTD", img: "/clients/cl2.jpeg"  },
+  { id: 3, name: "DST REALTORS", img: "/clients/cl3.jpeg"  },
+  { id: 4, name: "JAIN REALTORS", img: "/clients/cl4.jpeg"  },
+  { id: 5, name: "SG ORCHARD", img: "/clients/cl5.jpeg"  },
+  { id: 6, name: "DUPLEX ESTATES", img: "/clients/cl6.jpeg"  },
+  { id: 7, name: "RATAN PEARLS", img: "/clients/cl7.jpeg"  }
 ];
 
 export default function S7() {
@@ -21,7 +20,7 @@ export default function S7() {
     <section 
       className="relative w-full py-20 px-4 sm:px-6 lg:px-8 bg-[#fafafa] overflow-hidden select-none"
       style={{
-        // Premium fine grid backdrop inspired by the first reference design
+        // Premium fine grid backdrop
         backgroundImage: `
           linear-gradient(to right, rgba(0, 0, 0, 0.02) 1px, transparent 1px),
           linear-gradient(to bottom, rgba(0, 0, 0, 0.02) 1px, transparent 1px)
@@ -72,9 +71,9 @@ export default function S7() {
 
       <div className="s7-container">
         
-        {/* ── LEFT COLUMN: INTRODUCTION (Taking reference from Image 2 Layout) ── */}
+        {/* ── LEFT COLUMN: INTRODUCTION ── */}
         <div className="flex flex-col items-start max-w-md lg:max-w-none">
-          {/* Subtle Orange Line Accent from reference */}
+          {/* Subtle Orange/Purple Line Accent */}
           <div 
             className="w-8 h-[3px] mb-4 rounded-full" 
             style={{ backgroundColor: '#6D28D9' }}
@@ -95,7 +94,7 @@ export default function S7() {
           </p>
         </div>
 
-        {/* ── RIGHT COLUMN: LOGO GRID (Clean, Minimalist Architecture) ── */}
+        {/* ── RIGHT COLUMN: LOGO GRID ── */}
         <div className="logo-grid">
           {clientLogos.map((logo) => {
             const isHovered = hoveredId === logo.id;
@@ -122,60 +121,27 @@ export default function S7() {
                   }}
                 />
 
-                {/* Vector Minimalist SVG Dummies (Adapts cleanly dynamically to fill look) */}
+                {/* Client Logo Image Container */}
                 <div 
-                  className="w-12 h-12 flex items-center justify-center mb-2 transition-all duration-300"
+                  className="w-full h-14 flex items-center justify-center mb-3 transition-transform duration-300 overflow-hidden"
                   style={{
-                    color: isHovered ? '#6D28D9' : 'rgba(13,13,13,0.45)',
                     transform: isHovered ? "scale(1.05)" : "scale(1)"
                   }}
                 >
-                  <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    {logo.type === "property" && (
-                      <>
-                        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                        <path d="M9 22V12h6v10" />
-                      </>
-                    )}
-                    {logo.type === "agency" && (
-                      <>
-                        <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
-                        <path d="m10 10 4 4M14 10l-4 4" />
-                      </>
-                    )}
-                    {logo.type === "corporate" && (
-                      <>
-                        <rect width="16" height="20" x="4" y="2" rx="2" ry="2" />
-                        <path d="M9 22v-4h6v4M8 6h.01M16 6h.01M8 10h.01M16 10h.01M8 14h.01M16 14h.01" />
-                      </>
-                    )}
-                    {logo.type === "global" && (
-                      <>
-                        <circle cx="12" cy="12" r="10" />
-                        <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20" />
-                      </>
-                    )}
-                    {logo.type === "luxury" && (
-                      <path d="M12 2 2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                    )}
-                    {logo.type === "architecture" && (
-                      <>
-                        <path d="M2 22h20M6 12V2h12v10M10 22V16h4v6" />
-                        <path d="M6 6h12M6 10h12" />
-                      </>
-                    )}
-                    {logo.type === "eco" && (
-                      <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 3.5 0 8.5C17 15 15 18 11 20z" />
-                    )}
-                    {logo.type === "tech" && (
-                      <path d="M4 14h6v8H4zm10-10h6v8h-6zm0 12h6v6h-6zM4 2h6v8H4z" />
-                    )}
-                  </svg>
+                  <img 
+                    src={logo.img} 
+                    alt={`${logo.name} logo`} 
+                    className="max-w-full max-h-full object-contain transition-all duration-500 ease-in-out"
+                    style={{
+                      // Premium touch: Logos appear slightly muted/grayscale until hovered
+                      filter: isHovered ? "grayscale(0%) opacity(100%)" : "grayscale(100%) opacity(50%)"
+                    }}
+                  />
                 </div>
 
-                {/* Text Title details matching luxury guidelines */}
+                {/* Text Title */}
                 <span 
-                  className="text-[10px] font-bold uppercase tracking-[0.14em] text-center transition-colors duration-300"
+                  className="text-[10px] font-bold uppercase tracking-[0.14em] text-center transition-colors duration-300 line-clamp-1"
                   style={{
                     fontFamily: "'Sora', sans-serif",
                     letterSpacing: '0.12em',

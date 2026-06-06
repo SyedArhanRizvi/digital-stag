@@ -116,9 +116,9 @@ function S5() {
   const progressPercentage = currentStep < 5 ? ((currentStep - 1) / (totalSteps - 2)) * 100 : 100;
 
   const contactItems = [
-    { icon: FiMail, title: "Email Us", value: "hello@digitalstag.com", href: "mailto:hello@digitalstag.com" },
-    { icon: FiPhone, title: "Call Us", value: "+1 (555) 123-4567", href: "tel:+15551234567" },
-    { icon: FiMapPin, title: "Visit Us", value: "123 Agency Street, NY 10001", href: "#" },
+    { icon: FiMail, title: "Email Us", value: "Info@digitalstag.in", href: "mailto:Info@digitalstag.in" },
+    { icon: FiPhone, title: "Call Us", value: "9354683813", href: "tel:+15551234567" },
+    { icon: FiMapPin, title: "Visit Us", value: "1ST FLOOR  A-64 SECTOR 04 NOIDA BUILDING", href: "#" },
     { icon: FiClock, title: "Working Hours", value: "Mon - Fri, 9:00 AM - 6:00 PM", href: "#" },
   ];
 
@@ -616,7 +616,7 @@ function S5() {
                 <div style={{ display: "flex", flexDirection: "column", gap: "clamp(14px, 2vw, 18px)" }}>
                   <div>
                     <label style={{ display: "block", fontSize: "clamp(11px, 1vw, 12px)", fontWeight: 600, color: "#0a0a0a", marginBottom: "6px", letterSpacing: "0.02em" }}>Phone Number *</label>
-                    <input type="tel" name="phone" value={formData.phone} onChange={handleInputChange} placeholder="+1 (555) 123-4567" className={`input-field ${errors.phone ? "error" : ""}`} />
+                    <input type="tel" name="phone" value={formData.phone} onChange={handleInputChange} placeholder="9354683813" className={`input-field ${errors.phone ? "error" : ""}`} />
                     {errors.phone && <span style={{ color: "#dc2626", fontSize: "11px", marginTop: "4px", display: "block" }}>{errors.phone}</span>}
                   </div>
                   <div>
