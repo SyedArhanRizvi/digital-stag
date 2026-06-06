@@ -151,26 +151,28 @@ export default function Footer() {
             {/* Column 2: Our Services Link Directory (Spans 3 Columns) */}
             <div className="lg:col-span-3 lg:col-start-7 flex flex-col gap-4">
               <span className="text-[11px] font-bold tracking-[0.2em] text-gray-400 uppercase block">
-                Capabilities
+                Services
               </span>
               <ul className="flex flex-col gap-2.5 m-0 p-0 list-none">
-                <li><a href="#" className="footer-link">Enterprise Web Engineering</a></li>
-                <li><a href="#" className="footer-link">Headless Architecture</a></li>
-                <li><a href="#" className="footer-link">Brand Systems Optimization</a></li>
-                <li><a href="#" className="footer-link">Data Engine Infrastructure</a></li>
+                <li><a href="/services/digital-marketing" className="footer-link">Digital Marketing</a></li>
+                <li><a href="/services/seo" className="footer-link">SEO</a></li>
+                <li><a href="/services/web-development" className="footer-link">Web Development</a></li>
+                <li><a href="/services/video-editing" className="footer-link">Video Editing</a></li>
+                <li><a href="/services/graphic-designing" className="footer-link">Graphic Design</a></li>
+                <li><a href="/services/social-media" className="footer-link">Social Media</a></li>
               </ul>
             </div>
 
             {/* Column 3: Corporate Studio Links (Spans 2 Columns) */}
             <div className="lg:col-span-2 flex flex-col gap-4">
               <span className="text-[11px] font-bold tracking-[0.2em] text-gray-400 uppercase block">
-                Studio
+                Company
               </span>
               <ul className="flex flex-col gap-2.5 m-0 p-0 list-none">
-                <li><a href="#" className="footer-link">Our Showcase</a></li>
-                <li><a href="#" className="footer-link">Internal Insights</a></li>
-                <li><a href="#" className="footer-link">Operational Roles</a></li>
-                <li><a href="#" className="footer-link">Contact Desk</a></li>
+                <li><a href="/" className="footer-link">Home</a></li>
+                <li><a href="/about" className="footer-link">About Us</a></li>
+                <li><a href="/services" className="footer-link">All Services</a></li>
+                <li><a href="/contact" className="footer-link">Contact</a></li>
               </ul>
             </div>
 

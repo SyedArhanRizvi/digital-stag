@@ -485,7 +485,7 @@ export default function ServicesPage() {
                   className="opacity-0 text-gray-900 leading-[0.92] mb-6"
                   style={{
                     fontFamily: "'Sora', sans-serif",
-                    fontWeight: 900,
+                    fontWeight: 600,
                     fontSize: "clamp(3rem, 6.5vw, 5.5rem)",
                   }}
                 >
@@ -739,7 +739,7 @@ export default function ServicesPage() {
                 </svg>
               </a>
               <a
-                href="tel:+1234567890"
+                href="tel:+9354683813"
                 className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white font-semibold text-sm px-8 py-4 rounded-full hover:bg-white/10 transition-all duration-300"
                 style={{ fontFamily: "'DM Sans', sans-serif" }}
               >

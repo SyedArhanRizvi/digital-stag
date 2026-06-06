@@ -148,119 +148,127 @@ function S3() {
   const decorativeElementsRef = useRef([])
 
   useEffect(() => {
-    // Set initial state for timeline items
-    timelineItemsRef.current.forEach(item => {
-      if (item) {
-        gsap.set(item, { 
-          opacity: 0,
-          x: 0,
-          y: 60
+    let ctx = gsap.context(() => {
+      let mm = gsap.matchMedia()
+
+      // Reset states
+      timelineItemsRef.current.forEach(item => {
+        if (item) gsap.set(item, { opacity: 0, x: 0, y: 60 })
+      })
+
+      // Responsive GSAP animations
+      mm.add({
+        isMobile: "(max-width: 639px)",
+        isDesktop: "(min-width: 640px)"
+      }, (context) => {
+        let { isMobile, isDesktop } = context.conditions
+
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 70%",
+            toggleActions: "play none none reverse",
+          }
         })
-      }
-    })
 
-    // Master timeline
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top 70%",
-        toggleActions: "play none none reverse",
-      }
-    })
-
-    // Animate heading
-    tl.fromTo(
-      headingRef.current,
-      { y: 60, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1, ease: "power3.out" }
-    )
-
-    // Animate timeline line
-    tl.fromTo(
-      timelineLineRef.current,
-      { scaleY: 0, transformOrigin: "top center" },
-      { 
-        scaleY: 1, 
-        duration: 1.5, 
-        ease: "power3.inOut",
-      },
-      "-=0.5"
-    )
-
-    // Animate each timeline item
-    timelineItemsRef.current.forEach((item, index) => {
-      if (item) {
-        const isLeft = TIMELINE_DATA[index].side === "left"
-        
+        // Animate heading
         tl.fromTo(
-          item,
-          { 
-            opacity: 0,
-            x: isLeft ? -80 : 80,
-            y: 40,
-            scale: 0.9
-          },
-          { 
-            opacity: 1,
-            x: 0,
-            y: 0,
-            scale: 1,
-            duration: 0.8, 
-            ease: "back.out(1.2)",
-          },
-          `-=${index === 0 ? 0.3 : 0.6}`
+          headingRef.current,
+          { y: 60, opacity: 0 },
+          { y: 0, opacity: 1, duration: 1, ease: "power3.out" }
         )
 
-        // Create scroll trigger for parallax effect
-        ScrollTrigger.create({
-          trigger: item,
-          start: "top bottom",
-          end: "bottom top",
-          onUpdate: (self) => {
-            const speed = index % 2 === 0 ? 20 : -20
-            gsap.to(item, {
-              y: speed * self.progress,
-              duration: 0,
-              ease: "none",
+        // Animate timeline line
+        tl.fromTo(
+          timelineLineRef.current,
+          { scaleY: 0, transformOrigin: "top center" },
+          { 
+            scaleY: 1, 
+            duration: 1.5, 
+            ease: "power3.inOut",
+          },
+          "-=0.5"
+        )
+
+        // Animate each timeline item
+        timelineItemsRef.current.forEach((item, index) => {
+          if (item) {
+            const isLeft = TIMELINE_DATA[index].side === "left"
+            
+            // Fix: Slide from side on desktop, just fade up on mobile
+            const startX = isDesktop ? (isLeft ? -80 : 80) : 0
+            
+            tl.fromTo(
+              item,
+              { 
+                opacity: 0,
+                x: startX,
+                y: 40,
+                scale: 0.95
+              },
+              { 
+                opacity: 1,
+                x: 0,
+                y: 0,
+                scale: 1,
+                duration: 0.8, 
+                ease: "back.out(1.2)",
+              },
+              `-=${index === 0 ? 0.3 : 0.6}`
+            )
+
+            // Create scroll trigger for parallax effect
+            ScrollTrigger.create({
+              trigger: item,
+              start: "top bottom",
+              end: "bottom top",
+              onUpdate: (self) => {
+                // Parallax is less aggressive on mobile
+                const maxParallax = isMobile ? 10 : 20
+                const speed = index % 2 === 0 ? maxParallax : -maxParallax
+                gsap.to(item, {
+                  y: speed * self.progress,
+                  duration: 0,
+                  ease: "none",
+                })
+              }
             })
           }
         })
-      }
-    })
+      }) // End matchMedia
 
-    // Animate decorative elements
-    decorativeElementsRef.current.forEach((el, index) => {
-      if (el) {
-        gsap.fromTo(
-          el,
-          { scale: 0, opacity: 0 },
-          {
-            scale: 1,
-            opacity: 0.4,
-            duration: 1.5,
-            delay: 0.5 + index * 0.3,
-            ease: "elastic.out(1, 0.6)",
-            scrollTrigger: {
-              trigger: sectionRef.current,
-              start: "top 80%",
+      // Animate decorative elements (Keep as is, they are hidden on mobile anyway)
+      decorativeElementsRef.current.forEach((el, index) => {
+        if (el) {
+          gsap.fromTo(
+            el,
+            { scale: 0, opacity: 0 },
+            {
+              scale: 1,
+              opacity: 0.4,
+              duration: 1.5,
+              delay: 0.5 + index * 0.3,
+              ease: "elastic.out(1, 0.6)",
+              scrollTrigger: {
+                trigger: sectionRef.current,
+                start: "top 80%",
+              }
             }
-          }
-        )
+          )
 
-        // Floating animation
-        gsap.to(el, {
-          y: -15,
-          duration: 3 + index * 0.5,
-          repeat: -1,
-          yoyo: true,
-          ease: "power1.inOut",
-        })
-      }
-    })
+          gsap.to(el, {
+            y: -15,
+            duration: 3 + index * 0.5,
+            repeat: -1,
+            yoyo: true,
+            ease: "power1.inOut",
+          })
+        }
+      })
 
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill())
-    }
+    }, sectionRef)
+
+    return () => ctx.revert() // Cleanup GSAP perfectly
   }, [])
 
   return (
@@ -323,10 +331,10 @@ function S3() {
 
         {/* ── Timeline ── */}
         <div className="relative">
-          {/* Center Line */}
+          {/* Center Line: Positioned left-6 on mobile, centered on desktop */}
           <div 
             ref={timelineLineRef}
-            className="absolute left-4 sm:left-1/2 transform sm:-translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-violet-500 via-indigo-500 to-blue-500 opacity-40"
+            className="absolute left-6 sm:left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-violet-500 via-indigo-500 to-blue-500 opacity-40"
             style={{ transformOrigin: "top center" }}
           />
 
@@ -340,8 +348,8 @@ function S3() {
                   item.side === 'right' ? 'sm:flex-row-reverse' : ''
                 }`}
               >
-                {/* Content Card */}
-                <div className={`w-full sm:w-[calc(50%-30px)] ml-12 sm:ml-0 ${
+                {/* Content Card: Padded cleanly on mobile so it doesn't overlap line */}
+                <div className={`w-full sm:w-[calc(50%-30px)] pl-14 sm:pl-0 sm:ml-0 ${
                   item.side === 'left' ? 'sm:pr-8 lg:pr-12' : 'sm:pl-8 lg:pl-12'
                 }`}>
                   <div 
@@ -400,8 +408,8 @@ function S3() {
                   </div>
                 </div>
 
-                {/* Timeline Dot */}
-                <div className={`absolute left-4 sm:left-1/2 transform sm:-translate-x-1/2 flex items-center justify-center`}>
+                {/* Timeline Dot: Positioned cleanly down the line */}
+                <div className={`absolute left-6 sm:left-1/2 transform -translate-x-1/2 flex items-center justify-center top-6 sm:top-1/2 sm:-translate-y-1/2`}>
                   {/* Dot */}
                   <div className={`relative w-8 h-8 sm:w-10 sm:h-10 rounded-full ${item.dotColor} flex items-center justify-center shadow-lg`}
                     style={{ boxShadow: `0 0 20px ${item.glowColor}` }}

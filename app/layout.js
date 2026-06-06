@@ -2,11 +2,12 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css"; 
 import Footer from "@/components/layout/Footer";
+import CallNowModal from "@/components/layout/CallNowModal";
 import { TbSeo } from "react-icons/tb";
 import { CgWebsite } from "react-icons/cg";
 import { IoAnalytics, IoShareSocialOutline } from "react-icons/io5";
 import { FaPhotoVideo } from "react-icons/fa";
-import { MdOutlineGraphicEq } from "react-icons/md";
+import { MdAutoMode, MdOutlineGraphicEq } from "react-icons/md";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import PillNav from "@/components/layout/Navbar";
@@ -23,7 +24,7 @@ const SERVICES = [
   { label: "Digital Marketing",      href: "/services/digital-marketing", icon: <IoAnalytics />, desc: "Results-driven campaigns" },
   { label: "Video Editing",          href: "/services/video-editing",     icon: <FaPhotoVideo />, desc: "Cinematic post-production" },
   { label: "Graphic Designing",      href: "/services/graphic-designing", icon: <MdOutlineGraphicEq />, desc: "Visuals that stop the scroll" },
-  { label: "Social Media Marketing", href: "/services/social-media",      icon: <IoShareSocialOutline />, desc: "Build and engage your audience" },
+  { label: "AI Automation", href: "/services/ai-automation",      icon: <IoShareSocialOutline />, desc: "Build and engage your audience" },
 ];
 
 const NAV_LINKS = [
@@ -36,7 +37,7 @@ const NAV_LINKS = [
 /* ═══════════════════════════════════════════════════════════════
    MOBILE FULL-SCREEN DRAWER
 ═══════════════════════════════════════════════════════════════ */
-function MobileDrawer({ isOpen, onClose }) {
+function MobileDrawer({ isOpen, onClose, onCallNowClick }) {
   const drawerRef   = useRef(null);
   const overlayRef  = useRef(null);
   const panelRef    = useRef(null);
@@ -102,7 +103,7 @@ function MobileDrawer({ isOpen, onClose }) {
       >
         {/* Header */}
         <div className="flex items-center justify-between px-6 pt-6 pb-4 border-b" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
-          <img src="/logo/digital-logo.png" alt="Digital Stag" className="h-8 w-auto" />
+          <img src="/logo/logo6.png" alt="Digital Stag" className="h-8 w-auto" />
           <button
             ref={closeRef}
             onClick={onClose}
@@ -181,9 +182,12 @@ function MobileDrawer({ isOpen, onClose }) {
 
         {/* Footer CTA */}
         <div className="px-6 pb-8 pt-4 border-t" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
-          <a
-            href="tel:+911234567890"
-            className="flex items-center justify-center gap-2 w-full py-3.5 rounded-2xl font-bold text-base no-underline transition-all"
+          <button
+            onClick={() => {
+              onClose();
+              onCallNowClick();
+            }}
+            className="flex items-center justify-center gap-2 w-full py-3.5 rounded-2xl font-bold text-base no-underline transition-all border-0 cursor-pointer"
             style={{ background: "white", color: "#0a0a0a" }}
             onMouseEnter={e => { e.currentTarget.style.background = "#e0e0e0"; }}
             onMouseLeave={e => { e.currentTarget.style.background = "white"; }}
@@ -193,7 +197,7 @@ function MobileDrawer({ isOpen, onClose }) {
               <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 012 2.22 2 2 0 013.68 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 9.91a16 16 0 006.16 6.16l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="#0a0a0a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
             Call Now
-          </a>
+          </button>
         </div>
       </div>
     </div>
@@ -203,7 +207,7 @@ function MobileDrawer({ isOpen, onClose }) {
 /* ═══════════════════════════════════════════════════════════════
    MAIN NAVBAR SHELL
 ═══════════════════════════════════════════════════════════════ */
-function SiteNav() {
+function SiteNav({ onCallNowClick }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const hamburgerRef   = useRef(null);
   const navbarRef      = useRef(null);
@@ -252,7 +256,7 @@ function SiteNav() {
             {/* ── LEFT: logo (always visible) ── */}
             <Link href="/" className="flex-shrink-0 no-underline" aria-label="Digital Stag Home">
               <img
-                src="/logo/digital-logo.png"
+                src="/logo/logo6.png"
                 alt="Digital Stag"
                 className="h-9 w-auto"
                 onError={e => { e.currentTarget.style.display = "none"; }}
@@ -282,9 +286,9 @@ function SiteNav() {
             {/* ── RIGHT: Call Now + hamburger ── */}
             <div className="flex items-center gap-3">
               {/* Call Now - visible on all breakpoints */}
-              <a
-                href="tel:+911234567890"
-                className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold no-underline transition-all duration-200"
+              <button
+                onClick={onCallNowClick}
+                className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold no-underline transition-all duration-200 border-0 cursor-pointer"
                 style={{
                   background: "#0a0a0a",
                   color: "#fff",
@@ -298,7 +302,7 @@ function SiteNav() {
                   <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 012 2.22 2 2 0 013.68 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 9.91a16 16 0 006.16 6.16l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
                 Call Now
-              </a>
+              </button>
 
               {/* Hamburger - visible on < 1024 px */}
               <button
@@ -321,7 +325,7 @@ function SiteNav() {
       </header>
 
       {/* ── Full-screen mobile drawer ── */}
-      <MobileDrawer isOpen={mobileOpen} onClose={() => setMobileOpen(false)} />
+      <MobileDrawer isOpen={mobileOpen} onClose={() => setMobileOpen(false)} onCallNowClick={onCallNowClick} />
 
       {/* ── Spacer so content doesn't hide under navbar ── */}
       <div style={{ height: "68px" }} aria-hidden="true" />
@@ -335,10 +339,13 @@ function SiteNav() {
 
 
 export default function RootLayout({ children }) {
+  const [callNowOpen, setCallNowOpen] = useState(false);
+
   return (
     <html lang="en" className="h-full antialiased">
       <body className={`min-h-full flex flex-col ${geistSans.variable} ${geistMono.variable}`}>
-        <SiteNav />
+        <SiteNav onCallNowClick={() => setCallNowOpen(true)} />
+        <CallNowModal isOpen={callNowOpen} onClose={() => setCallNowOpen(false)} />
         <main className="flex-1">{children}</main>
         <Footer />
       </body>
