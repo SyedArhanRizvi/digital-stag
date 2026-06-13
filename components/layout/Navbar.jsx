@@ -638,29 +638,58 @@ const PillNav = ({
       <div
         ref={mobileMenuRef}
         className="md:hidden absolute top-[3em] left-4 right-4 rounded-[27px] shadow-[0_8px_32px_rgba(0,0,0,0.12)] z-[998] origin-top"
-        style={{ ...cssVars, background: "var(--base, #f0f0f0)" }}
+        style={{ ...cssVars, background: "#ffffff" }}
       >
         <ul className="list-none m-0 p-[3px] flex flex-col gap-[3px]">
           {items.map((item) => {
             const isServices = item.label?.toLowerCase() === "services";
             const defaultStyle = {
-              background: "var(--pill-bg, #fff)",
-              color: "var(--pill-text, #fff)",
+              background: "#ffffff",
+              color: "#0a0a0a",
+              border: "1px solid #e5e5e5",
             };
             const hoverIn = (e) => {
-              e.currentTarget.style.background = "var(--base)";
-              e.currentTarget.style.color = "var(--hover-text, #fff)";
+              e.currentTarget.style.background = "#f5f5f5";
+              e.currentTarget.style.borderColor = "#d4d4d4";
             };
             const hoverOut = (e) => {
-              e.currentTarget.style.background = "var(--pill-bg, #fff)";
-              e.currentTarget.style.color = "var(--pill-text, #fff)";
+              e.currentTarget.style.background = "#ffffff";
+              e.currentTarget.style.borderColor = "#e5e5e5";
             };
             const linkClasses =
               "block py-3 px-4 text-[16px] font-medium rounded-[50px] transition-all duration-200 ease-[cubic-bezier(0.25,0.1,0.25,1)]";
 
             return (
               <li key={item.href}>
-                {isRouterLink(item.href) ? (
+                {isServices ? (
+                  <div
+                    className={linkClasses}
+                    style={defaultStyle}
+                    onMouseEnter={hoverIn}
+                    onMouseLeave={hoverOut}
+                    onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                  >
+                    <span className="flex items-center justify-between cursor-pointer">
+                      <span>{item.label}</span>
+                      <svg
+                        className="w-4 h-4 transition-transform"
+                        style={{
+                          transform: mobileServicesOpen ? "rotate(180deg)" : "rotate(0deg)",
+                        }}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                ) : isRouterLink(item.href) ? (
                   <Link
                     href={item.href}
                     className={linkClasses}
@@ -683,17 +712,30 @@ const PillNav = ({
                     {item.label}
                   </a>
                 )}
-                {isServices && (
-                  <ul className="list-none m-0 pl-4 flex flex-col gap-1 mt-1">
+                {isServices && mobileServicesOpen && (
+                  <ul className="list-none m-0 pl-4 flex flex-col gap-2 mt-2">
                     {SERVICES.map((svc) => (
                       <li key={svc.href}>
                         <Link
                           href={svc.href}
-                          className="block py-2 px-4 text-sm font-medium rounded-[50px] transition-all duration-200"
-                          style={defaultStyle}
+                          className="flex items-center gap-2 py-2 px-4 text-sm font-medium rounded-[50px] transition-all duration-200"
+                          style={{
+                            background: "#f9f9f9",
+                            color: "#0a0a0a",
+                            border: "1px solid #e5e5e5",
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.background = "#f0f0f0";
+                            e.currentTarget.style.borderColor = "#d4d4d4";
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.background = "#f9f9f9";
+                            e.currentTarget.style.borderColor = "#e5e5e5";
+                          }}
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
-                          {svc.icon} {svc.label}
+                          <span className="text-base">{svc.icon}</span>
+                          <span>{svc.label}</span>
                         </Link>
                       </li>
                     ))}

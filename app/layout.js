@@ -13,6 +13,8 @@ import Link from "next/link";
 import PillNav from "@/components/layout/Navbar";
 import gsap from "gsap";
 import logo from "../public/logo/logo5.png"
+import { GrBusinessService } from "react-icons/gr";
+
 /* ─── fonts ───────────────────────────────────────────────────── */
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
@@ -24,6 +26,8 @@ const SERVICES = [
   { label: "Digital Marketing",      href: "/services/digital-marketing", icon: <IoAnalytics />, desc: "Results-driven campaigns" },
   { label: "Video Editing",          href: "/services/video-editing",     icon: <FaPhotoVideo />, desc: "Cinematic post-production" },
   { label: "Graphic Designing",      href: "/services/graphic-designing", icon: <MdOutlineGraphicEq />, desc: "Visuals that stop the scroll" },
+ 
+  { label: "Lead Generation",      href: "/services/lead-generation", icon: <GrBusinessService  />, desc: "Organic leads generation for your growth" },
   { label: "AI Automation", href: "/services/ai-automation",      icon: <IoShareSocialOutline />, desc: "Build and engage your audience" },
 ];
 
@@ -87,35 +91,31 @@ function MobileDrawer({ isOpen, onClose, onCallNowClick }) {
       {/* Overlay */}
       <div
         ref={overlayRef}
-        className="absolute inset-0"
-        style={{ background: "rgba(0,0,0,0.55)", backdropFilter: "blur(4px)" }}
+        className="absolute inset-0 bg-black/60 backdrop-blur-sm"
         onClick={onClose}
       />
 
-      {/* Panel */}
+      {/* Panel - WHITE BACKGROUND */}
       <div
         ref={panelRef}
-        className="absolute right-0 top-0 h-full w-full sm:w-[420px] flex flex-col"
+        className="absolute right-0 top-0 h-full w-full sm:w-[420px] flex flex-col bg-white"
         style={{
-          background: "linear-gradient(160deg, #0a0a0a 0%, #111 60%, #1a1a1a 100%)",
-          borderLeft: "1px solid rgba(255,255,255,0.07)",
+          borderLeft: "1px solid rgba(0,0,0,0.08)",
+          boxShadow: "-4px 0 40px rgba(0,0,0,0.1)",
         }}
       >
         {/* Header */}
-        <div className="flex items-center justify-between px-6 pt-6 pb-4 border-b" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
+        <div className="flex items-center justify-between px-6 pt-6 pb-4 border-b border-gray-100">
           <img src="/logo/logo6.png" alt="Digital Stag" className="h-8 w-auto" />
           <button
             ref={closeRef}
             onClick={onClose}
             aria-label="Close menu"
-            className="w-9 h-9 rounded-full flex items-center justify-center cursor-pointer border-0 transition-colors"
-            style={{ background: "rgba(255,255,255,0.08)" }}
-            onMouseEnter={e => { e.currentTarget.style.background = "rgba(255,255,255,0.16)"; }}
-            onMouseLeave={e => { e.currentTarget.style.background = "rgba(255,255,255,0.08)"; }}
+            className="w-9 h-9 rounded-full flex items-center justify-center cursor-pointer border-0 transition-colors bg-gray-100 hover:bg-gray-200"
           >
-            {/* Close SVG */}
+            {/* Close SVG - Dark color */}
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-              <path d="M1 1l12 12M13 1L1 13" stroke="white" strokeWidth="1.8" strokeLinecap="round"/>
+              <path d="M1 1l12 12M13 1L1 13" stroke="#1a1a1a" strokeWidth="1.8" strokeLinecap="round"/>
             </svg>
           </button>
         </div>
@@ -126,38 +126,47 @@ function MobileDrawer({ isOpen, onClose, onCallNowClick }) {
             <div key={link.href} ref={el => { itemsRef.current[i] = el; }}>
               {link.hasDropdown ? (
                 <>
-                  <button
-                    className="w-full text-left flex items-center justify-between px-4 py-3.5 rounded-2xl text-white font-semibold text-lg tracking-wide cursor-pointer border-0 transition-colors"
-                    style={{ background: svcOpen ? "rgba(255,255,255,0.07)" : "transparent" }}
-                    onClick={() => setSvcOpen(v => !v)}
-                    onMouseEnter={e => { e.currentTarget.style.background = "rgba(255,255,255,0.07)"; }}
-                    onMouseLeave={e => { if (!svcOpen) e.currentTarget.style.background = "transparent"; }}
-                  >
-                    <span>{link.label}</span>
-                    <svg
-                      width="12" height="7" viewBox="0 0 12 7" fill="none"
-                      style={{ transition: "transform .25s", transform: svcOpen ? "rotate(180deg)" : "rotate(0)" }}
+                  <div className="flex items-center gap-1">
+                    {/* Text part - redirects to /services */}
+                    <Link
+                      href="/services"
+                      onClick={onClose}
+                      className="flex-1 text-left flex items-center px-4 py-3.5 rounded-2xl text-gray-900 font-semibold text-lg tracking-wide no-underline transition-colors hover:bg-gray-100"
                     >
-                      <path d="M1 1l5 5 5-5" stroke="white" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </button>
+                      {link.label}
+                    </Link>
+                    {/* Chevron button - toggles dropdown */}
+                    <button
+                      className="w-11 h-11 flex items-center justify-center rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-100 transition-colors cursor-pointer border-0"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setSvcOpen(v => !v);
+                      }}
+                      aria-label={svcOpen ? "Close services menu" : "Open services menu"}
+                    >
+                      <svg
+                        width="12" height="7" viewBox="0 0 12 7" fill="none"
+                        className="transition-transform duration-300"
+                        style={{ transform: svcOpen ? "rotate(180deg)" : "rotate(0)" }}
+                      >
+                        <path d="M1 1l5 5 5-5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </button>
+                  </div>
 
                   {svcOpen && (
-                    <div className="mt-1 ml-2 flex flex-col gap-0.5 pl-2" style={{ borderLeft: "1px solid rgba(255,255,255,0.1)" }}>
+                    <div className="mt-1 ml-2 flex flex-col gap-0.5 pl-2 border-l border-gray-200">
                       {SERVICES.map(svc => (
                         <Link
                           key={svc.href}
                           href={svc.href}
                           onClick={onClose}
-                          className="flex items-center gap-3 px-4 py-3 rounded-xl no-underline group transition-colors"
-                          style={{ color: "rgba(255,255,255,0.7)" }}
-                          onMouseEnter={e => { e.currentTarget.style.background = "rgba(255,255,255,0.06)"; e.currentTarget.style.color = "white"; }}
-                          onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "rgba(255,255,255,0.7)"; }}
+                          className="flex items-center gap-3 px-4 py-3 rounded-xl no-underline group transition-colors text-gray-600 hover:text-gray-900 hover:bg-gray-50"
                         >
-                          <span className="text-xl w-7 text-center">{svc.icon}</span>
+                          <span className="text-xl w-7 text-center text-gray-700 group-hover:text-gray-900">{svc.icon}</span>
                           <div>
-                            <div className="font-semibold text-sm">{svc.label}</div>
-                            <div className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>{svc.desc}</div>
+                            <div className="font-semibold text-sm text-gray-900">{svc.label}</div>
+                            <div className="text-xs text-gray-400">{svc.desc}</div>
                           </div>
                         </Link>
                       ))}
@@ -168,10 +177,7 @@ function MobileDrawer({ isOpen, onClose, onCallNowClick }) {
                 <Link
                   href={link.href}
                   onClick={onClose}
-                  className="block px-4 py-3.5 rounded-2xl text-white font-semibold text-lg tracking-wide no-underline transition-colors"
-                  style={{ background: "transparent" }}
-                  onMouseEnter={e => { e.currentTarget.style.background = "rgba(255,255,255,0.07)"; }}
-                  onMouseLeave={e => { e.currentTarget.style.background = "transparent"; }}
+                  className="block px-4 py-3.5 rounded-2xl text-gray-900 font-semibold text-lg tracking-wide no-underline transition-colors hover:bg-gray-100"
                 >
                   {link.label}
                 </Link>
@@ -181,20 +187,17 @@ function MobileDrawer({ isOpen, onClose, onCallNowClick }) {
         </nav>
 
         {/* Footer CTA */}
-        <div className="px-6 pb-8 pt-4 border-t" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
+        <div className="px-6 pb-8 pt-4 border-t border-gray-100">
           <button
             onClick={() => {
               onClose();
               onCallNowClick();
             }}
-            className="flex items-center justify-center gap-2 w-full py-3.5 rounded-2xl font-bold text-base no-underline transition-all border-0 cursor-pointer"
-            style={{ background: "white", color: "#0a0a0a" }}
-            onMouseEnter={e => { e.currentTarget.style.background = "#e0e0e0"; }}
-            onMouseLeave={e => { e.currentTarget.style.background = "white"; }}
+            className="flex items-center justify-center gap-2 w-full py-3.5 rounded-2xl font-bold text-base no-underline transition-all border-0 cursor-pointer bg-gray-900 text-white hover:bg-gray-700 active:scale-[0.98]"
           >
             {/* Phone SVG */}
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 012 2.22 2 2 0 013.68 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 9.91a16 16 0 006.16 6.16l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="#0a0a0a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 012 2.22 2 2 0 013.68 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 9.91a16 16 0 006.16 6.16l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
             Call Now
           </button>
@@ -343,7 +346,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en" className="h-full antialiased">
-      <body className={`min-h-full flex flex-col ${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`min-h-full flex flex-col ${geistSans.variable} ${geistMono.variable}`} suppressHydrationWarning>
         <SiteNav onCallNowClick={() => setCallNowOpen(true)} />
         <CallNowModal isOpen={callNowOpen} onClose={() => setCallNowOpen(false)} />
         <main className="flex-1">{children}</main>

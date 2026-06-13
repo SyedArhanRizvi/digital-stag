@@ -267,8 +267,8 @@ function ServiceCard({ svc, index }) {
             Included Services
           </p>
           <ul className="flex flex-col gap-2">
-            {svc.subServices.map((sub) => (
-              <li key={sub.slug}>
+            {svc.subServices.map((sub, idx) => (
+              <li key={`${svc.id}-${idx}`}>
                 <Link
                   href={`/services/${sub.slug}`}
                   className="group/link flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900 transition-colors duration-200"
@@ -494,11 +494,10 @@ export default function ServicesPage() {
                 {/* Heading */}
                 <h1
                   ref={heroTitleRef}
-                  className="opacity-0 text-gray-900 leading-[0.92] mb-6"
+                  className="opacity-0 text-gray-900 leading-[0.92] mb-6 text-3xl lg:text-6xl"
                   style={{
                     fontFamily: "'Sora', sans-serif",
-                    fontWeight: 600,
-                    fontSize: "clamp(3rem, 6.5vw, 5.5rem)",
+                    fontWeight: 600, 
                   }}
                 >
                   Empowering<br />
@@ -712,9 +711,14 @@ export default function ServicesPage() {
         {/* ══════════════════════════════
             CTA BAND
         ══════════════════════════════ */}
-        <section className="relative overflow-hidden py-24 px-6 sm:px-10 lg:px-16">
+        <section className="relative bg-fixed overflow-hidden py-24 px-6 sm:px-10 lg:px-16" 
+          style={{
+    backgroundImage:
+      "linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1920&q=80')",
+  }}
+        >
           {/* Background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-700" />
+          {/* <div className="absolute inset-0 bg-fixed bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-700" /> */}
           <div
             className="absolute inset-0 opacity-10"
             style={{
@@ -728,10 +732,9 @@ export default function ServicesPage() {
               Ready to grow?
             </p>
             <h2
-              className="text-white font-black leading-tight mb-6"
+              className="text-white font-black leading-tight mb-6 text-[20px] md:text-[2rem]"
               style={{
-                fontFamily: "'Sora', sans-serif",
-                fontSize: "clamp(2rem, 5vw, 3.8rem)",
+                fontFamily: "'Sora', sans-serif", 
               }}
             >
               Let's build something remarkable together
