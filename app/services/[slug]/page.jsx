@@ -18,6 +18,7 @@ import {
   FaStar
 } from 'react-icons/fa'
 import data from "@/data.json"
+import Link from 'next/link'
 
 // Register GSAP plugins
 if (typeof window !== 'undefined') {
@@ -423,11 +424,11 @@ function ServicePage() {
               
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                 <button className={`group inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r ${colorScheme.primary} text-white font-semibold rounded-full transition-all duration-300 hover:shadow-2xl hover:scale-105 active:scale-95`}>
-                  Get Free Consultation
+                 <Link href={"/contact"} alt="Contact us"> Get Free Consultation</Link>
                   <FaArrowRight className="group-hover:translate-x-1 transition-transform duration-300" />
                 </button>
                 <button className="px-6 sm:px-8 py-3 sm:py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold rounded-full hover:bg-white/20 transition-all duration-300 hover:scale-105 active:scale-95">
-                  View Pricing Plans
+              <Link href={"/contact"} alt="Contact us">View Pricing Plans</Link>     
                 </button>
               </div>
             </div>

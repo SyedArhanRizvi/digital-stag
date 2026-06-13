@@ -22,10 +22,10 @@ const services = [
       </svg>
     ),
     subServices: [
-      { name: "Google Ads Management", slug: "google-ads-management" },
-      { name: "Meta Advertising", slug: "meta-advertising" },
-      { name: "Social Media Growth", slug: "social-media-growth" },
-      { name: "Marketing Analytics", slug: "marketing-analytics" },
+      { name: "Google Ads Management", slug: "digital-marketing" },
+      { name: "Meta Advertising", slug: "digital-marketing" },
+      { name: "Social Media Growth", slug: "digital-marketing" },
+      { name: "Marketing Analytics", slug: "digital-marketing" },
     ],
   },
   {
@@ -34,7 +34,7 @@ const services = [
     title: "SEO",
     tagline: "Rank. Dominate. Own.",
     description:
-      "End-to-end search engine optimisation that places your business at the top of every relevant query — and keeps it there for the long term.",
+      "End-to-end search engine optimisation that places your business at the top of every relevant query - and keeps it there for the long term.",
     accent: "#0EA5E9",
     lightBg: "#F0F9FF",
     icon: (
@@ -45,10 +45,10 @@ const services = [
       </svg>
     ),
     subServices: [
-      { name: "Technical SEO", slug: "technical-seo" },
-      { name: "Keyword Research", slug: "keyword-research" },
-      { name: "Content SEO", slug: "content-seo" },
-      { name: "Link Building", slug: "link-building" },
+      { name: "Technical SEO", slug: "seo" },
+      { name: "Keyword Research", slug: "seo" },
+      { name: "Content SEO", slug: "seo" },
+      { name: "Link Building", slug: "seo" },
     ],
   },
   {
@@ -57,7 +57,7 @@ const services = [
     title: "Web Development",
     tagline: "Precision-built digital products",
     description:
-      "From blazing-fast business sites to complex web applications — we architect and build digital products that perform beautifully and convert visitors.",
+      "From blazing-fast business sites to complex web applications - we architect and build digital products that perform beautifully and convert visitors.",
     accent: "#059669",
     lightBg: "#ECFDF5",
     icon: (
@@ -69,36 +69,48 @@ const services = [
       </svg>
     ),
     subServices: [
-      { name: "Business Websites", slug: "business-websites" },
-      { name: "E-Commerce Stores", slug: "ecommerce-stores" },
-      { name: "Custom Web Apps", slug: "custom-web-apps" },
-      { name: "Website Maintenance", slug: "website-maintenance" },
+      { name: "Business Websites", slug: "web-development" },
+      { name: "E-Commerce Stores", slug: "web-development" },
+      { name: "Custom Web Apps", slug: "web-development" },
+      { name: "Website Maintenance", slug: "web-development" },
     ],
   },
-  {
-    id: "video-editing",
-    number: "04",
-    title: "Video Editing",
-    tagline: "Stories that stop the scroll",
-    description:
-      "Professional post-production that transforms raw footage into compelling visual narratives — reels, YouTube, corporate, and beyond.",
-    accent: "#DC2626",
-    lightBg: "#FFF1F2",
-    icon: (
-      <svg viewBox="0 0 48 48" fill="none" className="w-full h-full">
-        <rect x="4" y="10" width="30" height="28" rx="3" fill="#FFE4E6" stroke="#DC2626" strokeWidth="1.5"/>
-        <path d="M34 18l10-6v24l-10-6V18z" fill="#FFE4E6" stroke="#DC2626" strokeWidth="1.5" strokeLinejoin="round"/>
-        <circle cx="19" cy="24" r="5" fill="#DC2626" opacity="0.15" stroke="#DC2626" strokeWidth="1.5"/>
-        <path d="M17 22l6 4-6 4V22z" fill="#DC2626"/>
-      </svg>
-    ),
-    subServices: [
-      { name: "Reels & Shorts Editing", slug: "reels-shorts-editing" },
-      { name: "YouTube Video Editing", slug: "youtube-video-editing" },
-      { name: "Corporate Videos", slug: "corporate-videos" },
-      { name: "Motion Graphics", slug: "motion-graphics" },
-    ],
-  },
+ {
+  id: "lead-generation",
+  number: "04",
+  title: "Lead Generation",
+  tagline: "Turn prospects into paying customers",
+  description:
+    "Fuel your sales pipeline with qualified prospects through strategic outreach, automation, and conversion-focused lead nurturing campaigns.",
+  accent: "#DC2626",
+  lightBg: "#FFF1F2",
+  icon: (
+    <svg viewBox="0 0 48 48" fill="none" className="w-full h-full">
+      <circle cx="18" cy="16" r="5" fill="#FFE4E6" stroke="#DC2626" strokeWidth="1.5" />
+      <circle cx="30" cy="16" r="5" fill="#FFE4E6" stroke="#DC2626" strokeWidth="1.5" />
+      <circle cx="24" cy="30" r="6" fill="#FFE4E6" stroke="#DC2626" strokeWidth="1.5" />
+      <path
+        d="M18 21L24 24M30 21L24 24"
+        stroke="#DC2626"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M24 12V8M24 40V36"
+        stroke="#DC2626"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+      <circle cx="24" cy="24" r="3" fill="#DC2626" />
+    </svg>
+  ),
+  subServices: [
+    { name: "B2B Lead Prospecting", slug: "lead-generation" },
+    { name: "Email Outreach Campaigns", slug: "lead-generation" },
+    { name: "Lead Nurturing", slug: "lead-generation" },
+    { name: "CRM Integration & Management", slug: "lead-generation" },
+  ],
+},
   {
     id: "graphic-designing",
     number: "05",
@@ -117,10 +129,10 @@ const services = [
       </svg>
     ),
     subServices: [
-      { name: "Logo Design", slug: "logo-design" },
-      { name: "Social Media Creatives", slug: "social-media-creatives" },
-      { name: "Branding Materials", slug: "branding-materials" },
-      { name: "UI/UX Design", slug: "ui-ux-design" },
+      { name: "Logo Design", slug: "graphic-designing" },
+      { name: "Social Media Creatives", slug: "graphic-designing" },
+      { name: "Branding Materials", slug: "graphic-designing" },
+      { name: "UI/UX Design", slug: "graphic-designing" },
     ],
   },
   {
@@ -142,10 +154,10 @@ const services = [
       </svg>
     ),
     subServices: [
-      { name: "AI Chatbots", slug: "ai-chatbots" },
-      { name: "Workflow Automation", slug: "workflow-automation" },
-      { name: "AI Lead Generation", slug: "ai-lead-generation" },
-      { name: "Business Intelligence", slug: "business-intelligence" },
+      { name: "AI Chatbots", slug: "ai-automation"},
+      { name: "Workflow Automation", slug: "ai-automation" },
+      { name: "AI Lead Generation", slug: "ai-automation" },
+      { name: "Business Intelligence", slug: "ai-automation" },
     ],
   },
 ];
@@ -466,7 +478,7 @@ export default function ServicesPage() {
           <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16 py-24 lg:py-0 lg:min-h-screen lg:flex lg:items-center">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center w-full">
 
-              {/* LEFT — Text */}
+              {/* LEFT - Text */}
               <div className="flex flex-col items-start">
                 {/* Badge */}
                 <div
@@ -501,7 +513,7 @@ export default function ServicesPage() {
                   className="opacity-0 text-gray-500 mb-8 max-w-md leading-relaxed"
                   style={{ fontSize: "clamp(0.95rem, 1.2vw, 1.05rem)" }}
                 >
-                  Six powerful service verticals. One obsession — measurable growth. We craft strategies that attract, convert, and retain the customers that matter most.
+                  Six powerful service verticals. One obsession - measurable growth. We craft strategies that attract, convert, and retain the customers that matter most.
                 </p>
 
                 {/* Buttons + social proof */}
@@ -537,7 +549,7 @@ export default function ServicesPage() {
                 </div>
               </div>
 
-              {/* RIGHT — Floating mockups */}
+              {/* RIGHT - Floating mockups */}
               <div className="relative h-[420px] sm:h-[520px] lg:h-[600px] hidden sm:block">
                 {/* Main big mockup */}
                 <FloatingCard className="top-8 left-1/2 -translate-x-1/2 w-72 lg:w-80" delay={0.3}>
@@ -568,7 +580,7 @@ export default function ServicesPage() {
                   </div>
                 </FloatingCard>
 
-                {/* Floating chip — UI/UX */}
+                {/* Floating chip - UI/UX */}
                 <FloatingCard className="top-4 left-0 lg:-left-8" delay={0.6}>
                   <div className="mockup-card px-3.5 py-2.5 flex items-center gap-2">
                     <div className="w-7 h-7 rounded-lg bg-blue-50 flex items-center justify-center">
@@ -581,7 +593,7 @@ export default function ServicesPage() {
                   </div>
                 </FloatingCard>
 
-                {/* Floating chip — Web Dev */}
+                {/* Floating chip - Web Dev */}
                 <FloatingCard className="top-1/3 right-0 lg:-right-4" delay={0.8}>
                   <div className="mockup-card px-3.5 py-2.5 flex items-center gap-2">
                     <div className="w-7 h-7 rounded-lg bg-green-50 flex items-center justify-center">
@@ -593,7 +605,7 @@ export default function ServicesPage() {
                   </div>
                 </FloatingCard>
 
-                {/* Floating chip — Branding */}
+                {/* Floating chip - Branding */}
                 <FloatingCard className="bottom-16 left-0 lg:-left-4" delay={1.0}>
                   <div className="mockup-card px-3.5 py-2.5 flex items-center gap-2">
                     <div className="w-7 h-7 rounded-lg bg-amber-50 flex items-center justify-center">
@@ -684,7 +696,7 @@ export default function ServicesPage() {
                 <span style={{ color: "#7C3AED" }}>to grow online</span>
               </h2>
               <p className="text-gray-500 max-w-xl mx-auto text-base leading-relaxed">
-                Click any service to explore the full details — or jump straight to a specialisation that matches your goal.
+                Click any service to explore the full details - or jump straight to a specialisation that matches your goal.
               </p>
             </div>
 
@@ -725,7 +737,7 @@ export default function ServicesPage() {
               Let's build something remarkable together
             </h2>
             <p className="text-purple-200 text-base mb-10 max-w-xl mx-auto leading-relaxed">
-              Book a free strategy call. No hard sell — just a genuine conversation about what's possible for your brand.
+              Book a free strategy call. No hard sell - just a genuine conversation about what's possible for your brand.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

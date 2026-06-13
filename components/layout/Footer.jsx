@@ -159,7 +159,7 @@ export default function Footer() {
                 <li><a href="/services/web-development" className="footer-link">Web Development</a></li>
                 <li><a href="/services/video-editing" className="footer-link">Video Editing</a></li>
                 <li><a href="/services/graphic-designing" className="footer-link">Graphic Design</a></li>
-                <li><a href="/services/social-media" className="footer-link">Social Media</a></li>
+                <li><a href="/services/lead-generation" className="footer-link">Lead Generation</a></li>
               </ul>
             </div>
 

@@ -39,7 +39,7 @@
     "meta_title": "Professional SEO Services | Rank & Dominate Search",
     "meta_description": "End-to-end search engine optimization that places your business at the top of relevant queries. Technical SEO, keyword research, content, and link building.",
     "meta_keywords": "SEO services, search engine optimization, technical SEO, keyword research, content SEO, link building services",
-    "description": "End-to-end search engine optimisation that places your business at the top of every relevant query — and keeps it there for the long term.",
+    "description": "End-to-end search engine optimisation that places your business at the top of every relevant query - and keeps it there for the long term.",
     "cards": [
       {
         "id": 1,
@@ -57,7 +57,7 @@
         "id": 3,
         "title": "Content SEO",
         "description": "Craft deeply researched, engaging content that perfectly aligns with search intent and satisfies both users and search algorithms.",
-        "image": "https://images.unsplash.com/photo-1455390582262-044cdead2708?w=800&auto=format"
+        "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&auto=format&fit=crop"
       },
       {
         "id": 4,
@@ -73,7 +73,7 @@
     "meta_title": "Custom Web Development Services | Fast & Scalable Sites",
     "meta_description": "Architect and build digital products that perform beautifully. We offer business websites, e-commerce stores, custom web apps, and website maintenance.",
     "meta_keywords": "web development services, business websites, e-commerce stores, custom web apps, website maintenance, web design",
-    "description": "From blazing-fast business sites to complex web applications — we architect and build digital products that perform beautifully and convert visitors.",
+    "description": "From blazing-fast business sites to complex web applications - we architect and build digital products that perform beautifully and convert visitors.",
     "cards": [
       {
         "id": 1,
@@ -107,7 +107,7 @@
     "meta_title": "Professional Video Editing Services | Reels, YouTube & Corporate",
     "meta_description": "Transform raw footage into compelling visual narratives. Our video editing services cover Reels, Shorts, YouTube videos, and corporate content.",
     "meta_keywords": "video editing services, reels editing, shorts editing, youtube video editing, corporate videos, motion graphics",
-    "description": "Professional post-production that transforms raw footage into compelling visual narratives — reels, YouTube, corporate, and beyond.",
+    "description": "Professional post-production that transforms raw footage into compelling visual narratives - reels, YouTube, corporate, and beyond.",
     "cards": [
       {
         "id": 1,
@@ -119,7 +119,8 @@
         "id": 2,
         "title": "YouTube Video Editing",
         "description": "Retain viewership and grow your channel with professional long-form editing that ensures crisp pacing, sound design, and visual polish.",
-        "image": "https://images.unsplash.com/photo-1536240478700-b869070f9279?w=800&auto=format"
+         "image": "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80"
+
       },
       {
         "id": 3,

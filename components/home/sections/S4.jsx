@@ -14,29 +14,29 @@ const servicesData = [
             img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=75&auto=format",
             headline: "Google Ads Management",
             para: "Drive qualified leads through high-converting Google Ads campaigns, smart bidding strategies, audience targeting, and continuous performance optimization.",
-            gradient: "linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%)"
+            gradient: "linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%)",
           },
           {
             img: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&q=75&auto=format",
             headline: "Meta Advertising",
             para: "Generate consistent customer acquisition using Facebook and Instagram ads with advanced audience segmentation and creative testing.",
-            gradient: "linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%)"
+            gradient: "linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%)",
           },
           {
             img: "https://images.unsplash.com/photo-1557838923-2985c318be48?w=600&q=75&auto=format",
             headline: "Social Media Growth",
             para: "Build strong brand visibility through strategic content planning, engagement campaigns, and platform-specific growth initiatives.",
-            gradient: "linear-gradient(135deg, #ffe4e6 0%, #fecdd3 100%)"
+            gradient: "linear-gradient(135deg, #ffe4e6 0%, #fecdd3 100%)",
           },
           {
             img: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=75&auto=format",
             headline: "Marketing Analytics",
             para: "Track campaign performance with detailed reporting, conversion insights, customer behavior analysis, and ROI-focused improvements.",
-            gradient: "linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%)"
-          }
-        ]
-      }
-    ]
+            gradient: "linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%)",
+          },
+        ],
+      },
+    ],
   },
   {
     id: "seo",
@@ -49,29 +49,29 @@ const servicesData = [
             img: "https://images.unsplash.com/photo-1571844307880-751c6d86f3f3?w=600&q=75&auto=format",
             headline: "Technical SEO",
             para: "Improve website performance through crawl optimization, indexing enhancements, structured data implementation, and site health monitoring.",
-            gradient: "linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%)"
+            gradient: "linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%)",
           },
           {
             img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&q=75&auto=format",
             headline: "Keyword Research",
             para: "Identify profitable search opportunities using competitor analysis, search intent mapping, and data-driven keyword strategies.",
-            gradient: "linear-gradient(135deg, #fef9c3 0%, #fef08a 100%)"
+            gradient: "linear-gradient(135deg, #fef9c3 0%, #fef08a 100%)",
           },
           {
             img: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=75&auto=format",
             headline: "Content SEO",
             para: "Create optimized content structures that improve rankings, increase organic visibility, and attract qualified website traffic.",
-            gradient: "linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%)"
+            gradient: "linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%)",
           },
           {
             img: "https://images.unsplash.com/photo-1556155092-490a1ba16284?w=600&q=75&auto=format",
             headline: "Link Building",
             para: "Strengthen domain authority through quality backlink acquisition, outreach campaigns, and long-term authority development.",
-            gradient: "linear-gradient(135deg, #fde68a 0%, #fcd34d 100%)"
-          }
-        ]
-      }
-    ]
+            gradient: "linear-gradient(135deg, #fde68a 0%, #fcd34d 100%)",
+          },
+        ],
+      },
+    ],
   },
   {
     id: "web-development",
@@ -84,29 +84,29 @@ const servicesData = [
             img: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&q=75&auto=format",
             headline: "Business Websites",
             para: "Develop modern and responsive business websites designed for performance, engagement, and long-term digital growth.",
-            gradient: "linear-gradient(135deg, #ccfbf1 0%, #99f6e4 100%)"
+            gradient: "linear-gradient(135deg, #ccfbf1 0%, #99f6e4 100%)",
           },
           {
             img: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&q=75&auto=format",
             headline: "E-Commerce Stores",
             para: "Build scalable online stores with secure payments, product management systems, and seamless customer experiences.",
-            gradient: "linear-gradient(135deg, #fae8ff 0%, #f5d0fe 100%)"
+            gradient: "linear-gradient(135deg, #fae8ff 0%, #f5d0fe 100%)",
           },
           {
             img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&q=75&auto=format",
             headline: "Custom Web Apps",
             para: "Create tailored web applications with advanced functionality, secure architecture, and optimized user workflows.",
-            gradient: "linear-gradient(135deg, #ffedd5 0%, #fed7aa 100%)"
+            gradient: "linear-gradient(135deg, #ffedd5 0%, #fed7aa 100%)",
           },
           {
             img: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=600&q=75&auto=format",
             headline: "Website Maintenance",
             para: "Ensure continuous performance through updates, security monitoring, bug fixes, and technical support services.",
-            gradient: "linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%)"
-          }
-        ]
-      }
-    ]
+            gradient: "linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%)",
+          },
+        ],
+      },
+    ],
   },
   {
     id: "video-editing",
@@ -119,29 +119,29 @@ const servicesData = [
             img: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&q=75&auto=format",
             headline: "Reels & Shorts Editing",
             para: "Produce engaging short-form videos with dynamic transitions, captions, sound design, and audience retention techniques.",
-            gradient: "linear-gradient(135deg, #ffe4e6 0%, #fecdd3 100%)"
+            gradient: "linear-gradient(135deg, #ffe4e6 0%, #fecdd3 100%)",
           },
           {
             img: "https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?w=600&q=75&auto=format",
             headline: "YouTube Video Editing",
             para: "Create polished long-form content featuring professional cuts, motion graphics, and storytelling enhancements.",
-            gradient: "linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%)"
+            gradient: "linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%)",
           },
           {
-            img: "https://images.unsplash.com/photo-1536240478700-b869070f9279?w=600&q=75&auto=format",
+            img: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=600&q=75",
             headline: "Corporate Videos",
             para: "Develop impactful business presentations with branded visuals, clean editing, and professional production standards.",
-            gradient: "linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%)"
+            gradient: "linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%)",
           },
           {
             img: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&q=75&auto=format",
             headline: "Motion Graphics",
             para: "Enhance visual communication using animated graphics, kinetic typography, and engaging visual storytelling elements.",
-            gradient: "linear-gradient(135deg, #fef9c3 0%, #fef08a 100%)"
-          }
-        ]
-      }
-    ]
+            gradient: "linear-gradient(135deg, #fef9c3 0%, #fef08a 100%)",
+          },
+        ],
+      },
+    ],
   },
   {
     id: "graphic-designing",
@@ -154,29 +154,29 @@ const servicesData = [
             img: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=75&auto=format",
             headline: "Logo Design",
             para: "Craft memorable brand identities through unique logo concepts, strategic design systems, and visual consistency.",
-            gradient: "linear-gradient(135deg, #fae8ff 0%, #f5d0fe 100%)"
+            gradient: "linear-gradient(135deg, #fae8ff 0%, #f5d0fe 100%)",
           },
           {
             img: "https://images.unsplash.com/photo-1586717799252-bd134ad00e26?w=600&q=75&auto=format",
             headline: "Social Media Creatives",
             para: "Design engaging visual assets that improve brand recognition, audience interaction, and campaign effectiveness.",
-            gradient: "linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%)"
+            gradient: "linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%)",
           },
           {
-            img: "https://images.unsplash.com/photo-1516321310764-8d45d3c1f5f8?w=600&q=75&auto=format",
+            img: "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=600&q=75",
             headline: "Branding Materials",
             para: "Develop professional marketing materials including brochures, business cards, and brand communication assets.",
-            gradient: "linear-gradient(135deg, #ffedd5 0%, #fed7aa 100%)"
+            gradient: "linear-gradient(135deg, #ffedd5 0%, #fed7aa 100%)",
           },
           {
             img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&q=75&auto=format",
             headline: "UI/UX Design",
             para: "Create intuitive digital experiences through user-centered interfaces, wireframes, and conversion-focused layouts.",
-            gradient: "linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%)"
-          }
-        ]
-      }
-    ]
+            gradient: "linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%)",
+          },
+        ],
+      },
+    ],
   },
   {
     id: "ai-automation",
@@ -189,30 +189,30 @@ const servicesData = [
             img: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&q=75&auto=format",
             headline: "AI Chatbots",
             para: "Automate customer interactions using intelligent chatbots that provide instant support and lead qualification.",
-            gradient: "linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%)"
+            gradient: "linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%)",
           },
           {
             img: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&q=75&auto=format",
             headline: "Workflow Automation",
             para: "Reduce manual tasks through automated workflows that streamline operations and improve business efficiency.",
-            gradient: "linear-gradient(135deg, #fef9c3 0%, #fef08a 100%)"
+            gradient: "linear-gradient(135deg, #fef9c3 0%, #fef08a 100%)",
           },
           {
             img: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=600&q=75&auto=format",
             headline: "AI Lead Generation",
             para: "Capture and nurture prospects using AI-powered systems that optimize outreach and conversion processes.",
-            gradient: "linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%)"
+            gradient: "linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%)",
           },
           {
             img: "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=600&q=75&auto=format",
             headline: "Business Intelligence",
             para: "Leverage AI-driven analytics to uncover actionable insights, forecast trends, and support strategic decisions.",
-            gradient: "linear-gradient(135deg, #ffe4e6 0%, #fecdd3 100%)"
-          }
-        ]
-      }
-    ]
-  }
+            gradient: "linear-gradient(135deg, #ffe4e6 0%, #fecdd3 100%)",
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 /* ── PROXIMITY HEADING ── */
@@ -226,8 +226,10 @@ function ProximityHeading({ text }) {
     if (!heading) return;
 
     const observer = new IntersectionObserver(
-      ([entry]) => { isVisibleRef.current = entry.isIntersecting; },
-      { threshold: 0 }
+      ([entry]) => {
+        isVisibleRef.current = entry.isIntersecting;
+      },
+      { threshold: 0 },
     );
     observer.observe(heading);
 
@@ -235,7 +237,7 @@ function ProximityHeading({ text }) {
     let charRects = [];
 
     const cacheRects = () => {
-      charRects = Array.from(chars).map(c => c.getBoundingClientRect());
+      charRects = Array.from(chars).map((c) => c.getBoundingClientRect());
     };
     cacheRects();
 
@@ -258,16 +260,22 @@ function ProximityHeading({ text }) {
           const dx = mx - (rect.left + rect.width / 2);
           const dy = my - (rect.top + rect.height / 2);
           const dist = Math.sqrt(dx * dx + dy * dy);
-          const weight = dist < maxDist
-            ? Math.max(300, Math.min(900, Math.round(900 - (dist / maxDist) * 600)))
-            : 300;
+          const weight =
+            dist < maxDist
+              ? Math.max(
+                  300,
+                  Math.min(900, Math.round(900 - (dist / maxDist) * 600)),
+                )
+              : 300;
           char.style.fontWeight = String(weight);
         });
       });
     };
 
     const onMouseLeave = () => {
-      chars.forEach(c => { c.style.fontWeight = "300"; });
+      chars.forEach((c) => {
+        c.style.fontWeight = "300";
+      });
     };
 
     window.addEventListener("mousemove", onMouseMove, { passive: true });
@@ -285,22 +293,25 @@ function ProximityHeading({ text }) {
   return (
     <h2
       ref={headingRef}
-      className="prox-heading text-4xl sm:text-5xl lg:text-6xl tracking-tight text-[#0A0A0A] mb-6 font-light"
+      className="prox-heading text-3xl lg:text-6xl tracking-tight text-[#0A0A0A] mb-6 font-light"
       aria-label={text}
     >
       {text.split("").map((char, i) =>
-        char === " "
-          ? <span key={i}>&nbsp;</span>
-          : (
-            <span
-              key={i}
-              className="prox-char inline-block"
-              style={{ fontWeight: 300, transition: "font-weight 0.2s cubic-bezier(0.16,1,0.3,1)" }}
-              aria-hidden="true"
-            >
-              {char}
-            </span>
-          )
+        char === " " ? (
+          <span key={i}>&nbsp;</span>
+        ) : (
+          <span
+            key={i}
+            className="prox-char inline-block"
+            style={{
+              fontWeight: 300,
+              transition: "font-weight 0.2s cubic-bezier(0.16,1,0.3,1)",
+            }}
+            aria-hidden="true"
+          >
+            {char}
+          </span>
+        ),
       )}
     </h2>
   );
@@ -367,7 +378,12 @@ function CardGrid({ cards, isFirstPanel }) {
                 viewBox="0 0 24 24"
                 aria-hidden="true"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2.5"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                />
               </svg>
             </a>
           </div>
@@ -383,8 +399,11 @@ function ServicePanel({ svc, isFirst }) {
   const panelRef = useRef(null);
 
   const currentCards = useMemo(
-    () => svc.subServices[activeIdx] ? svc.subServices[activeIdx].cards : svc.subServices[0].cards,
-    [svc, activeIdx]
+    () =>
+      svc.subServices[activeIdx]
+        ? svc.subServices[activeIdx].cards
+        : svc.subServices[0].cards,
+    [svc, activeIdx],
   );
 
   return (
@@ -393,7 +412,6 @@ function ServicePanel({ svc, isFirst }) {
       className="service-panel relative w-full min-h-screen lg:h-screen flex flex-col justify-start items-center bg-[#F9F9F9] pt-12 pb-16 lg:py-0 lg:justify-center"
     >
       <div className="w-full max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16 flex flex-col h-full justify-center">
-
         <div className="w-full mb-8 lg:mb-10">
           <ProximityHeading text={svc.title} />
 
@@ -418,7 +436,6 @@ function ServicePanel({ svc, isFirst }) {
         </div>
 
         <CardGrid cards={currentCards} isFirstPanel={isFirst} />
-
       </div>
     </div>
   );
@@ -433,11 +450,11 @@ export default function S4() {
 
     let gsapCtx = null;
 
-    // Load GSAP immediately on mount — panels must exist in DOM before ScrollTrigger runs
+    // Load GSAP immediately on mount - panels must exist in DOM before ScrollTrigger runs
     const initGsap = async () => {
       const [gsapMod, stMod] = await Promise.all([
         import("gsap"),
-        import("gsap/ScrollTrigger")
+        import("gsap/ScrollTrigger"),
       ]);
 
       const gsap = gsapMod.gsap || gsapMod.default;
@@ -452,9 +469,9 @@ export default function S4() {
           const mm = gsap.matchMedia();
 
           mm.add("(min-width: 1025px)", () => {
-            // Use plain querySelectorAll — no TS generics
+            // Use plain querySelectorAll - no TS generics
             const panels = Array.from(
-              containerRef.current.querySelectorAll(".service-panel")
+              containerRef.current.querySelectorAll(".service-panel"),
             );
 
             panels.forEach((panel, i) => {
@@ -515,13 +532,12 @@ export default function S4() {
         }
       `}</style>
 
-      <section ref={containerRef} className="s4-section relative w-full min-h-screen">
+      <section
+        ref={containerRef}
+        className="s4-section relative w-full min-h-screen"
+      >
         {servicesData.map((svc, idx) => (
-          <ServicePanel
-            key={svc.id}
-            svc={svc}
-            isFirst={idx === 0}
-          />
+          <ServicePanel key={svc.id} svc={svc} isFirst={idx === 0} />
         ))}
       </section>
     </>
