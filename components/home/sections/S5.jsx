@@ -107,10 +107,37 @@ function S5() {
   };
 
   const handleSubmit = async () => {
+    if (!validateStep(3)) return;
+    
     setIsSubmitting(true);
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    setIsSubmitting(false);
-    setCurrentStep(5);
+
+    try {
+      const response = await fetch('/api/save-enquiry', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setCurrentStep(5);
+      } else {
+        alert(`Error: ${result.message}`);
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      alert('Failed to submit. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const progressPercentage = currentStep < 5 ? ((currentStep - 1) / (totalSteps - 2)) * 100 : 100;

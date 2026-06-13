@@ -202,5 +202,39 @@
         "image": "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&auto=format"
       }
     ]
-  }
+  },
+  {
+  "slug": "/lead-generation",
+  "title": "Lead Generation",
+  "meta_title": "Lead Generation Services | High-Quality Sales Leads",
+  "meta_description": "Generate qualified leads consistently with data-driven prospecting, outreach campaigns, CRM integration, and conversion-focused lead nurturing.",
+  "meta_keywords": "lead generation services, b2b lead generation, sales leads, lead nurturing, crm integration, prospecting services",
+  "description": "Fuel your sales pipeline with qualified prospects through strategic outreach, automation, and conversion-focused lead nurturing campaigns.",
+  "cards": [
+    {
+      "id": 1,
+      "title": "B2B Lead Prospecting",
+      "description": "Identify and connect with decision-makers using advanced targeting strategies that deliver high-quality business opportunities.",
+      "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&auto=format"
+    },
+    {
+      "id": 2,
+      "title": "Email Outreach Campaigns",
+      "description": "Launch personalized cold email campaigns that generate responses, book meetings, and build meaningful business relationships.",
+      "image": "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&auto=format"
+    },
+    {
+      "id": 3,
+      "title": "Lead Nurturing",
+      "description": "Convert prospects into customers with automated follow-ups, targeted content, and strategic engagement workflows.",
+      "image": "https://images.unsplash.com/photo-1556740749-887f6717d7e4?w=800&auto=format"
+    },
+    {
+      "id": 4,
+      "title": "CRM Integration & Management",
+      "description": "Organize, track, and optimize every lead with seamless CRM integration and data-driven sales pipeline management.",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format"
+    }
+  ]
+}
 ]

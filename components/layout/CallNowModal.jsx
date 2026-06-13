@@ -6,6 +6,7 @@ import gsap from "gsap";
 export default function CallNowModal({ isOpen, onClose }) {
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const modalRef = useRef(null);
   const overlayRef = useRef(null);
   const contentRef = useRef(null);
@@ -49,15 +50,42 @@ export default function CallNowModal({ isOpen, onClose }) {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    setSubmitted(true);
-    setTimeout(() => {
-      onClose();
-      setSubmitted(false);
-      setFormData({ name: "", email: "", phone: "", message: "" });
-    }, 1500);
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/api/save-enquiry', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitted(true);
+        setTimeout(() => {
+          onClose();
+          setSubmitted(false);
+          setFormData({ name: "", email: "", phone: "", message: "" });
+        }, 1500);
+      } else {
+        alert(`Error: ${result.message}`);
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      alert('Failed to submit. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -206,34 +234,51 @@ export default function CallNowModal({ isOpen, onClose }) {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full py-3 rounded-lg font-bold text-base transition-all duration-200 flex items-center justify-center gap-2"
+                  disabled={isSubmitting}
+                  className="w-full py-3 rounded-lg font-bold text-base transition-all duration-200 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-wait"
                   style={{ background: "#0a0a0a", color: "white" }}
                   onMouseEnter={(e) => {
-                    gsap.to(e.currentTarget, {
-                      background: "#333",
-                      duration: 0.2,
-                      overwrite: "auto",
-                    });
+                    if (!isSubmitting) {
+                      gsap.to(e.currentTarget, {
+                        background: "#333",
+                        duration: 0.2,
+                        overwrite: "auto",
+                      });
+                    }
                   }}
                   onMouseLeave={(e) => {
-                    gsap.to(e.currentTarget, {
-                      background: "#0a0a0a",
-                      duration: 0.2,
-                      overwrite: "auto",
-                    });
+                    if (!isSubmitting) {
+                      gsap.to(e.currentTarget, {
+                        background: "#0a0a0a",
+                        duration: 0.2,
+                        overwrite: "auto",
+                      });
+                    }
                   }}
                 >
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 012 2.22 2 2 0 013.68 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 9.91a16 16 0 006.16 6.16l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
-                  </svg>
-                  Call Me Back
+                  {isSubmitting ? (
+                    <>
+                      <svg className="animate-spin w-4 h-4" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+                      </svg>
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                      >
+                        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 012 2.22 2 2 0 013.68 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 9.91a16 16 0 006.16 6.16l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+                      </svg>
+                      Call Me Back
+                    </>
+                  )}
                 </button>
               </div>
             </form>

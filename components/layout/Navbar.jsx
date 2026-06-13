@@ -39,6 +39,11 @@ const SERVICES = [
     href: "/services/ai-automation",
     icon: <IoShareSocialOutline />,
   },
+  {
+    label: "Lead Generation",
+    href:"/services/lead-generation",
+     icon: <MdOutlineGraphicEq />
+  }
 ];
 
 /* ─────────────────────────────────────────────────────────────────
