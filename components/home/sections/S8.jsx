@@ -111,10 +111,10 @@ function ProximityHeading({ text }) {
 const testimonialsData = [
   {
     id: 1,
-    name: "Priya Sharma",
-    role: "Business Owner",
+    name: "Mansi Panday",
+    role: "Marketing Consultant",
     rating: 5,
-    text: "Their digital marketing strategy significantly improved our online visibility and generated quality business leads consistently.",
+    text: "Exceptional campaign management and detailed reporting helped us achieve measurable business growth.",
     image: "https://i.pinimg.com/736x/0e/8a/08/0e8a08b2b2cecc9a79f9d2489e2e6a76.jpg",
     pos: {
       top: "50%",
@@ -125,10 +125,10 @@ const testimonialsData = [
 
   {
     id: 2,
-    name: "Rahul Verma",
-    role: "Startup Founder",
+    name: "Rahul",
+    role: "Director, RC Realtors",
     rating: 5,
-    text: "The team built our website exactly as envisioned. Fast, responsive, and optimized for conversions.",
+    text: "The team understood our business goals from day one. Their Google Ads strategy significantly improved the quality of our inquiries, and the reporting was transparent throughout the campaign. Highly professional and easy to work with.",
     image: "https://i.pinimg.com/1200x/a0/18/3e/a0183e01ba50404f0796597c57e7f320.jpg",
     pos: {
       top: "35%",
@@ -139,10 +139,10 @@ const testimonialsData = [
 
   {
     id: 3,
-    name: "Aman Gupta",
-    role: "E-commerce Owner",
+    name: "Amit Verma",
+    role: "Owner, Urban Furnishings",
     rating: 5,
-    text: "Their SEO services helped us rank higher on Google and increased our organic traffic substantially.",
+    text: "Their SEO strategy helped us improve our search visibility within a few months. The team was proactive, responsive, and always focused on delivering measurable results. We couldn't be happier with the partnership.",
     image: "https://i.pinimg.com/736x/59/81/4a/59814a7da0068901825d51c059864c5b.jpg",
     pos: {
       top: "45%",
@@ -154,9 +154,9 @@ const testimonialsData = [
   {
     id: 4,
     name: "Neha Kapoor",
-    role: "Brand Manager",
+    role: "Marketing Head, Elite Edu Services",
     rating: 5,
-    text: "Creative designs and branding solutions perfectly reflected our company's identity and professional vision.",
+    text: "Working with Digital Stag has been a great experience. Their Meta Ads campaigns generated quality leads, and the landing page they designed significantly improved our conversion rates. I highly recommend their services.",
     image: "https://i.pinimg.com/736x/93/81/a5/9381a5c582e3c3abd539286451d914fb.jpg",
     pos: {
       top: "70%",
@@ -167,10 +167,10 @@ const testimonialsData = [
 
   {
     id: 5,
-    name: "Rohit Mehta",
-    role: "Marketing Consultant",
-    rating: 5,
-    text: "Exceptional campaign management and detailed reporting helped us achieve measurable business growth.",
+    name: "Priya Mehta",
+    role: "Founder, Bloom Wellness Studio",
+    rating: 5, 
+    text: "From building our website to managing our social media campaigns, everything was handled with great attention to detail. Our online presence has improved tremendously, and we've seen consistent growth in customer engagement.",
     image: "https://i.pinimg.com/1200x/0a/92/cb/0a92cbef5fc9e68a9f5586121ebfca9d.jpg",
     pos: {
       top: "62%",

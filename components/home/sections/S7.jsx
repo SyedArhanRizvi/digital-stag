@@ -90,7 +90,8 @@ export default function S7() {
             style={{ fontFamily: "'Open Sans', sans-serif" }}
             className="text-sm sm:text-base text-[#737373] leading-relaxed font-normal"
           >
-            We have worked with renowned names. From hotels, offices, and smart premium homes, we have collaborated with visionary clients from all corporate backgrounds.
+          We have been in the industry for over 5 years, working with clients across diverse industries, from Real Estate and Education to Event Management. This diverse experience has given us valuable insights into what works, allowing us to create data-driven strategies that deliver measurable results and maximize ROI. 
+
           </p>
         </div>
 

@@ -21,7 +21,7 @@ function Home() {
         links={["/services/digital-marketing", "/services/seo", "/services/digital-marketing", "/services/seo", "/services/seo", ]}
         velocity={100}
       />
-      <S6 />
+      {/* <S6 />  */}
       <S7 />
       <S8/>
     </>

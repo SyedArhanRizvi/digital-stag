@@ -7,24 +7,24 @@ import React, { useEffect, useRef, useState } from 'react'
 ───────────────────────────────────────────────────────────── */
 const awards = [
   { img: "/home/s2/award1.jpg",  title: "Startup India",        desc: "Growing Startup Company"           },
-  { img: "/home/s2/award2.webp", title: "NSDC Certified",       desc: "Transforming the Skill Landscape"  },
-  { img: "/home/s2/award3.webp", title: "Entrepreneur",         desc: "Top Digital Marketing Agency India" },
-  { img: "/home/s2/award4.webp", title: "ISO/IEC (27001:2022)", desc: "ISO Certified Company"             },
-  { img: "/home/s2/award5.webp", title: "Forbes India",         desc: "Best SEO Company"                  },
-  { img: "/home/s2/award6.webp", title: "Clutch",               desc: "Top Digital Marketing Agency"      },
-  { img: "/home/s2/award7.webp", title: "Fit Small Business",   desc: "Top Digital Marketing Agency"      },
-  { img: "/home/s2/award8.webp", title: "Good Firms",           desc: "Best SEO Company In India"         },
-  { img: "/home/s2/award9.webp", title: "Plerdy",               desc: "Top SEO Experts"                   },
-  { img: "/home/s2/award10.webp",title: "G2",                   desc: "Best Local SEO Agency"             },
-  { img: "/home/s2/award11.webp",title: "Software World",       desc: "Best Marketing Consultant"         },
-  { img: "/home/s2/award12.webp",title: "Clouds Ways",          desc: "Best SEO Company in World"         },
+  // { img: "/home/s2/award2.webp", title: "NSDC Certified",       desc: "Transforming the Skill Landscape"  },
+  // { img: "/home/s2/award3.webp", title: "Entrepreneur",         desc: "Top Digital Marketing Agency India" },
+  // { img: "/home/s2/award4.webp", title: "ISO/IEC (27001:2022)", desc: "ISO Certified Company"             },
+  // { img: "/home/s2/award5.webp", title: "Forbes India",         desc: "Best SEO Company"                  },
+  // { img: "/home/s2/award6.webp", title: "Clutch",               desc: "Top Digital Marketing Agency"      },
+  // { img: "/home/s2/award7.webp", title: "Fit Small Business",   desc: "Top Digital Marketing Agency"      },
+  // { img: "/home/s2/award8.webp", title: "Good Firms",           desc: "Best SEO Company In India"         },
+  // { img: "/home/s2/award9.webp", title: "Plerdy",               desc: "Top SEO Experts"                   },
+  // { img: "/home/s2/award10.webp",title: "G2",                   desc: "Best Local SEO Agency"             },
+  // { img: "/home/s2/award11.webp",title: "Software World",       desc: "Best Marketing Consultant"         },
+  // { img: "/home/s2/award12.webp",title: "Clouds Ways",          desc: "Best SEO Company in World"         },
 ]
 
 const STATS = [
   { count: 12,  suffix: '+', label: 'Awards Won'          },
-  { count: 500, suffix: '+', label: 'Clients Served'      },
-  { count: 8,   suffix: '+', label: 'Years Active'        },
-  { count: 98,  suffix: '%', label: 'Client Satisfaction' },
+  { count: 40, suffix: '+', label: 'Clients Served'      },
+  { count: 5,   suffix: '+', label: 'Years Active'        },
+  { count: 90,  suffix: '%', label: 'Client Satisfaction' },
 ]
 
 const ACCENT_COLORS = ['#7c3aed', '#4f46e5', '#0ea5e9', '#06b6d4']
@@ -469,8 +469,8 @@ export default function S3() {
                   transition: 'opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.1s, transform 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.1s',
                 }}
               >
-                <VariableProximityText text="Trusted by the World," style={{ display: 'block' }} />
-                <VariableProximityText text="Recognised Everywhere" style={{ display: 'block' }} />
+                <VariableProximityText text="We're Obsessed With Quality," style={{ display: 'block' }} />
+                <VariableProximityText text="Not Vanity Metrics." style={{ display: 'block' }} />
               </h2>
             </div>
 
@@ -488,8 +488,7 @@ export default function S3() {
                 transition: 'opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.18s, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.18s',
               }}
             >
-              Our work has earned recognition from the world&apos;s most respected industry
-              bodies - a testament to the results we deliver every day.
+              We have a system that works and leads that qualify. Our clients see a consistent 40%+ qualified lead rate.
             </p>
 
             <div

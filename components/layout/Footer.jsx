@@ -156,9 +156,7 @@ export default function Footer() {
               <ul className="flex flex-col gap-2.5 m-0 p-0 list-none">
                 <li><a href="/services/digital-marketing" className="footer-link">Digital Marketing</a></li>
                 <li><a href="/services/seo" className="footer-link">SEO</a></li>
-                <li><a href="/services/web-development" className="footer-link">Web Development</a></li>
-                <li><a href="/services/video-editing" className="footer-link">Video Editing</a></li>
-                <li><a href="/services/graphic-designing" className="footer-link">Graphic Design</a></li>
+                <li><a href="/services/web-development" className="footer-link">Web Development</a></li> 
                 <li><a href="/services/lead-generation" className="footer-link">Lead Generation</a></li>
               </ul>
             </div>

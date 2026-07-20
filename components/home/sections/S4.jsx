@@ -5,33 +5,33 @@ import React, { useState, useEffect, useRef, useMemo } from "react";
 const servicesData = [
   {
     id: "digital-marketing",
-    title: "Digital Marketing",
+    title: "Holistic Digital Marketing",
     subServices: [
       {
-        sub_title: "Digital Marketing Services",
+        sub_title: "Google Advertising",
         cards: [
           {
             img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=75&auto=format",
-            headline: "Google Ads Management",
-            para: "Drive qualified leads through high-converting Google Ads campaigns, smart bidding strategies, audience targeting, and continuous performance optimization.",
+            headline: "Google Advertising",
+            para: "Reach customers actively searching for your products or services with strategically managed Google Ads campaigns. We optimize targeting, bidding, and ad performance to maximize leads, sales, and return on investment.",
             gradient: "linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%)",
           },
           {
             img: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&q=75&auto=format",
             headline: "Meta Advertising",
-            para: "Generate consistent customer acquisition using Facebook and Instagram ads with advanced audience segmentation and creative testing.",
+            para: "Capture attention across Facebook and Instagram with high-performing ad campaigns. From compelling creatives to precise audience targeting, we help you generate quality leads, boost sales, and grow your brand.",
             gradient: "linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%)",
           },
           {
             img: "https://images.unsplash.com/photo-1557838923-2985c318be48?w=600&q=75&auto=format",
             headline: "Social Media Growth",
-            para: "Build strong brand visibility through strategic content planning, engagement campaigns, and platform-specific growth initiatives.",
+            para: "Improve your visibility on Google with data-driven SEO strategies that increase organic traffic, strengthen your online presence, and attract customers actively searching for your business.",
             gradient: "linear-gradient(135deg, #ffe4e6 0%, #fecdd3 100%)",
           },
           {
             img: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=75&auto=format",
-            headline: "Marketing Analytics",
-            para: "Track campaign performance with detailed reporting, conversion insights, customer behavior analysis, and ROI-focused improvements.",
+            headline: "Social Media Management",
+            para: "Create a consistent and engaging social media presence with strategic content, creative visuals, and community management that builds trust, increases engagement, and keeps your audience connected.",
             gradient: "linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%)",
           },
         ],
@@ -48,25 +48,25 @@ const servicesData = [
           {
             img: "https://images.unsplash.com/photo-1571844307880-751c6d86f3f3?w=600&q=75&auto=format",
             headline: "Technical SEO",
-            para: "Improve website performance through crawl optimization, indexing enhancements, structured data implementation, and site health monitoring.",
+            para: "Optimize your website's speed, crawlability, indexing, and technical health to help search engines understand your site and improve organic visibility.",
             gradient: "linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%)",
           },
           {
             img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&q=75&auto=format",
             headline: "Keyword Research",
-            para: "Identify profitable search opportunities using competitor analysis, search intent mapping, and data-driven keyword strategies.",
+            para: "Identify high-intent keywords and uncover valuable opportunities through competitor analysis and search intent research to attract the right audience.",
             gradient: "linear-gradient(135deg, #fef9c3 0%, #fef08a 100%)",
           },
           {
             img: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=75&auto=format",
             headline: "Content SEO",
-            para: "Create optimized content structures that improve rankings, increase organic visibility, and attract qualified website traffic.",
+            para: "Enhance titles, meta descriptions, headings, content, internal linking, and page structure to improve search rankings and user experience.",
             gradient: "linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%)",
           },
           {
             img: "https://images.unsplash.com/photo-1556155092-490a1ba16284?w=600&q=75&auto=format",
             headline: "Link Building",
-            para: "Strengthen domain authority through quality backlink acquisition, outreach campaigns, and long-term authority development.",
+            para: "Strengthen your website's credibility with high-quality backlinks and ethical outreach strategies that improve domain authority and long-term search rankings.",
             gradient: "linear-gradient(135deg, #fde68a 0%, #fcd34d 100%)",
           },
         ],
@@ -83,101 +83,32 @@ const servicesData = [
           {
             img: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&q=75&auto=format",
             headline: "Business Websites",
-            para: "Develop modern and responsive business websites designed for performance, engagement, and long-term digital growth.",
+            para: "Create modern, responsive websites that showcase your brand, engage visitors, and turn potential customers into loyal clients with a seamless user experience.",
             gradient: "linear-gradient(135deg, #ccfbf1 0%, #99f6e4 100%)",
           },
           {
             img: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&q=75&auto=format",
             headline: "E-Commerce Stores",
-            para: "Build scalable online stores with secure payments, product management systems, and seamless customer experiences.",
+            para: "Launch secure, fast, and scalable e-commerce websites designed to deliver smooth shopping experiences, simplify store management, and maximize online sales.",
             gradient: "linear-gradient(135deg, #fae8ff 0%, #f5d0fe 100%)",
           },
           {
             img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&q=75&auto=format",
             headline: "Custom Web Apps",
-            para: "Create tailored web applications with advanced functionality, secure architecture, and optimized user workflows.",
+            para: "Design high-converting landing pages optimized for lead generation, product launches, and marketing campaigns that maximize conversions and ROI.",
             gradient: "linear-gradient(135deg, #ffedd5 0%, #fed7aa 100%)",
           },
           {
             img: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=600&q=75&auto=format",
             headline: "Website Maintenance",
-            para: "Ensure continuous performance through updates, security monitoring, bug fixes, and technical support services.",
+            para: "Ensure your website stays updated, protected, and performing at its best with regular maintenance, security monitoring, performance optimization, and technical support.",
             gradient: "linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%)",
           },
         ],
       },
     ],
   },
-  {
-    id: "video-editing",
-    title: "Video Editing",
-    subServices: [
-      {
-        sub_title: "Professional Video Production",
-        cards: [
-          {
-            img: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&q=75&auto=format",
-            headline: "Reels & Shorts Editing",
-            para: "Produce engaging short-form videos with dynamic transitions, captions, sound design, and audience retention techniques.",
-            gradient: "linear-gradient(135deg, #ffe4e6 0%, #fecdd3 100%)",
-          },
-          {
-            img: "https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?w=600&q=75&auto=format",
-            headline: "YouTube Video Editing",
-            para: "Create polished long-form content featuring professional cuts, motion graphics, and storytelling enhancements.",
-            gradient: "linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%)",
-          },
-          {
-            img: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=600&q=75",
-            headline: "Corporate Videos",
-            para: "Develop impactful business presentations with branded visuals, clean editing, and professional production standards.",
-            gradient: "linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%)",
-          },
-          {
-            img: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&q=75&auto=format",
-            headline: "Motion Graphics",
-            para: "Enhance visual communication using animated graphics, kinetic typography, and engaging visual storytelling elements.",
-            gradient: "linear-gradient(135deg, #fef9c3 0%, #fef08a 100%)",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: "graphic-designing",
-    title: "Graphic Designing",
-    subServices: [
-      {
-        sub_title: "Creative Design Services",
-        cards: [
-          {
-            img: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=75&auto=format",
-            headline: "Logo Design",
-            para: "Craft memorable brand identities through unique logo concepts, strategic design systems, and visual consistency.",
-            gradient: "linear-gradient(135deg, #fae8ff 0%, #f5d0fe 100%)",
-          },
-          {
-            img: "https://images.unsplash.com/photo-1586717799252-bd134ad00e26?w=600&q=75&auto=format",
-            headline: "Social Media Creatives",
-            para: "Design engaging visual assets that improve brand recognition, audience interaction, and campaign effectiveness.",
-            gradient: "linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%)",
-          },
-          {
-            img: "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=600&q=75",
-            headline: "Branding Materials",
-            para: "Develop professional marketing materials including brochures, business cards, and brand communication assets.",
-            gradient: "linear-gradient(135deg, #ffedd5 0%, #fed7aa 100%)",
-          },
-          {
-            img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&q=75&auto=format",
-            headline: "UI/UX Design",
-            para: "Create intuitive digital experiences through user-centered interfaces, wireframes, and conversion-focused layouts.",
-            gradient: "linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%)",
-          },
-        ],
-      },
-    ],
-  },
+
   {
     id: "ai-automation",
     title: "AI Automation",

@@ -1,14 +1,14 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { 
-  FiArrowRight, 
-  FiArrowLeft, 
-  FiCheck, 
-  FiMail, 
-  FiPhone, 
-  FiMapPin, 
-  FiClock, 
+import {
+  FiArrowRight,
+  FiArrowLeft,
+  FiCheck,
+  FiMail,
+  FiPhone,
+  FiMapPin,
+  FiClock,
   FiSend,
   FiUser,
   FiMessageSquare,
@@ -16,7 +16,7 @@ import {
   FiTwitter,
   FiLinkedin,
   FiFacebook,
-  FiZap
+  FiZap,
 } from "react-icons/fi";
 
 /* ─────────────────────────────────────────────────────────────
@@ -39,7 +39,10 @@ function useInView(options = {}) {
           setInView(false);
         }
       },
-      { threshold: options.threshold || 0.1, rootMargin: options.margin || '0px' }
+      {
+        threshold: options.threshold || 0.1,
+        rootMargin: options.margin || "0px",
+      },
     );
 
     observer.observe(node);
@@ -60,10 +63,13 @@ function S5() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState({});
 
-  const [badgeRef, badgeInView] = useInView({ once: true, margin: '-50px' });
-  const [headingRef, headingInView] = useInView({ once: true, margin: '-50px' });
-  const [descRef, descInView] = useInView({ once: true, margin: '-50px' });
-  const [formRef, formInView] = useInView({ once: true, margin: '-50px' });
+  const [badgeRef, badgeInView] = useInView({ once: true, margin: "-50px" });
+  const [headingRef, headingInView] = useInView({
+    once: true,
+    margin: "-50px",
+  });
+  const [descRef, descInView] = useInView({ once: true, margin: "-50px" });
+  const [formRef, formInView] = useInView({ once: true, margin: "-50px" });
 
   const totalSteps = 5;
 
@@ -77,8 +83,8 @@ function S5() {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-    if (errors[name]) setErrors(prev => ({ ...prev, [name]: "" }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    if (errors[name]) setErrors((prev) => ({ ...prev, [name]: "" }));
   };
 
   const validateStep = (step) => {
@@ -86,11 +92,13 @@ function S5() {
     if (step === 2) {
       if (!formData.name.trim()) newErrors.name = "Name is required";
       if (!formData.email.trim()) newErrors.email = "Email is required";
-      else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = "Invalid email format";
+      else if (!/\S+@\S+\.\S+/.test(formData.email))
+        newErrors.email = "Invalid email format";
     }
     if (step === 3) {
       if (!formData.phone.trim()) newErrors.phone = "Phone is required";
-      else if (!/^\+?[\d\s-]{10,}$/.test(formData.phone)) newErrors.phone = "Invalid phone number";
+      else if (!/^\+?[\d\s-]{10,}$/.test(formData.phone))
+        newErrors.phone = "Invalid phone number";
       if (!formData.message.trim()) newErrors.message = "Message is required";
     }
     setErrors(newErrors);
@@ -98,24 +106,25 @@ function S5() {
   };
 
   const handleNext = () => {
-    if ((currentStep === 2 || currentStep === 3) && !validateStep(currentStep)) return;
-    if (currentStep < totalSteps) setCurrentStep(prev => prev + 1);
+    if ((currentStep === 2 || currentStep === 3) && !validateStep(currentStep))
+      return;
+    if (currentStep < totalSteps) setCurrentStep((prev) => prev + 1);
   };
 
   const handleBack = () => {
-    if (currentStep > 1) setCurrentStep(prev => prev - 1);
+    if (currentStep > 1) setCurrentStep((prev) => prev - 1);
   };
 
   const handleSubmit = async () => {
     if (!validateStep(3)) return;
-    
+
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/api/save-enquiry', {
-        method: 'POST',
+      const response = await fetch("/api/save-enquiry", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           name: formData.name,
@@ -133,23 +142,38 @@ function S5() {
         alert(`Error: ${result.message}`);
       }
     } catch (error) {
-      console.error('Submission error:', error);
-      alert('Failed to submit. Please try again.');
+      console.error("Submission error:", error);
+      alert("Failed to submit. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  const progressPercentage = currentStep < 5 ? ((currentStep - 1) / (totalSteps - 2)) * 100 : 100;
+  const progressPercentage =
+    currentStep < 5 ? ((currentStep - 1) / (totalSteps - 2)) * 100 : 100;
 
   const contactItems = [
-    { icon: FiMail, title: "Email Us", value: "Info@digitalstag.in", href: "mailto:Info@digitalstag.in" },
-    { icon: FiPhone, title: "Call Us", value: "9354683813", href: "tel:+15551234567" },
-    { icon: FiMapPin, title: "Visit Us", value: "1ST FLOOR  A-64 SECTOR 04 NOIDA BUILDING", href: "#" },
-    { icon: FiClock, title: "Working Hours", value: "Mon - Fri, 9:00 AM - 6:00 PM", href: "#" },
+    {
+      icon: FiMail,
+      title: "Email Us",
+      value: "Info@digitalstag.in",
+      href: "mailto:Info@digitalstag.in",
+    },
+    {
+      icon: FiMapPin,
+      title: "Visit Us",
+      value: "1st Floor, A-64, Sector 4, Noida, Uttar Pradesh, India, 201301",
+      href: "#",
+    },
+    {
+      icon: FiClock,
+      title: "Working Hours",
+      value: "Mon - Fri, 10 AM - 6 PM",
+      href: "#",
+    },
   ];
 
-  const socialIcons = [FiInstagram, FiTwitter, FiLinkedin, FiFacebook];
+  const socialIcons = [FiInstagram, FiLinkedin, FiFacebook];
 
   return (
     <section
@@ -384,7 +408,7 @@ function S5() {
             {/* Badge - only purple accent here */}
             <div
               ref={badgeRef}
-              className={`fade-in-up ${badgeInView ? 'visible' : ''}`}
+              className={`fade-in-up ${badgeInView ? "visible" : ""}`}
               style={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -405,7 +429,15 @@ function S5() {
                   background: "#7c3aed",
                 }}
               />
-              <span style={{ fontSize: "12px", fontWeight: 600, color: "#7c3aed", letterSpacing: "0.06em", textTransform: "uppercase" }}>
+              <span
+                style={{
+                  fontSize: "12px",
+                  fontWeight: 600,
+                  color: "#7c3aed",
+                  letterSpacing: "0.06em",
+                  textTransform: "uppercase",
+                }}
+              >
                 Get In Touch
               </span>
             </div>
@@ -413,7 +445,7 @@ function S5() {
             {/* Heading - black & white */}
             <h2
               ref={headingRef}
-              className={`s5-heading fade-in-up ${headingInView ? 'visible' : ''}`}
+              className={`s5-heading fade-in-up ${headingInView ? "visible" : ""}`}
               style={{
                 fontSize: "clamp(32px, 4.5vw, 56px)",
                 fontWeight: 800,
@@ -421,20 +453,18 @@ function S5() {
                 lineHeight: 1.15,
                 letterSpacing: "-0.02em",
                 marginBottom: "20px",
-                transitionDelay: headingInView ? '0.1s' : '0s',
+                transitionDelay: headingInView ? "0.1s" : "0s",
               }}
             >
               Let&apos;s Start a
               <br />
-              <span style={{ color: "#0a0a0a" }}>
-                Conversation
-              </span>
+              <span style={{ color: "#0a0a0a" }}>Conversation</span>
             </h2>
 
             {/* Description */}
             <p
               ref={descRef}
-              className={`s5-desc fade-in-up ${descInView ? 'visible' : ''}`}
+              className={`s5-desc fade-in-up ${descInView ? "visible" : ""}`}
               style={{
                 fontSize: "clamp(14px, 1.2vw, 16px)",
                 color: "#737373",
@@ -442,23 +472,36 @@ function S5() {
                 marginBottom: "40px",
                 maxWidth: "480px",
                 width: "100%",
-                transitionDelay: descInView ? '0.2s' : '0s',
+                transitionDelay: descInView ? "0.2s" : "0s",
               }}
             >
-              Have a project in mind? We&apos;d love to hear about it. Send us a message
-              and we&apos;ll respond within 24 hours.
+              Have a project in mind? We&apos;d love to hear about it. Send us a
+              message and we&apos;ll respond within 24 hours.
             </p>
 
             {/* Contact Cards - Same width on all screens */}
-            <div className="contact-cards" style={{ display: "flex", flexDirection: "column", gap: "14px", marginBottom: "40px", width: "100%", maxWidth: "380px" }}>
+            <div
+              className="contact-cards"
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "14px",
+                marginBottom: "40px",
+                width: "100%",
+                maxWidth: "380px",
+              }}
+            >
               {contactItems.map((item, index) => {
-                const [cardRef, cardInView] = useInView({ once: true, margin: '-30px' });
+                const [cardRef, cardInView] = useInView({
+                  once: true,
+                  margin: "-30px",
+                });
                 return (
                   <a
                     key={index}
                     ref={cardRef}
                     href={item.href}
-                    className={`contact-card fade-in-left ${cardInView ? 'visible' : ''}`}
+                    className={`contact-card fade-in-left ${cardInView ? "visible" : ""}`}
                     style={{
                       display: "flex",
                       alignItems: "center",
@@ -473,18 +516,41 @@ function S5() {
                       transitionDelay: `${0.3 + index * 0.1}s`,
                     }}
                   >
-                    <div style={{
-                      width: "40px", height: "40px", borderRadius: "10px",
-                      background: "#f5f5f5",
-                      display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
-                    }}>
+                    <div
+                      style={{
+                        width: "40px",
+                        height: "40px",
+                        borderRadius: "10px",
+                        background: "#f5f5f5",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        flexShrink: 0,
+                      }}
+                    >
                       <item.icon size={18} color="#0a0a0a" />
                     </div>
                     <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ fontSize: "11px", fontWeight: 600, color: "#a3a3a3", letterSpacing: "0.05em", textTransform: "uppercase", marginBottom: "3px" }}>
+                      <div
+                        style={{
+                          fontSize: "11px",
+                          fontWeight: 600,
+                          color: "#a3a3a3",
+                          letterSpacing: "0.05em",
+                          textTransform: "uppercase",
+                          marginBottom: "3px",
+                        }}
+                      >
                         {item.title}
                       </div>
-                      <div style={{ fontSize: "14px", fontWeight: 500, color: "#0a0a0a", wordBreak: "break-word" }}>
+                      <div
+                        style={{
+                          fontSize: "14px",
+                          fontWeight: 500,
+                          color: "#0a0a0a",
+                          wordBreak: "break-word",
+                        }}
+                      >
                         {item.value}
                       </div>
                     </div>
@@ -495,14 +561,24 @@ function S5() {
 
             {/* Social Links */}
             <div
-              className={`social-icons-container fade-in-up ${descInView ? 'visible' : ''}`}
+              className={`social-icons-container fade-in-up ${descInView ? "visible" : ""}`}
               style={{
-                display: "flex", gap: "10px", alignItems: "center",
-                transitionDelay: '0.7s',
+                display: "flex",
+                gap: "10px",
+                alignItems: "center",
+                transitionDelay: "0.7s",
                 flexWrap: "wrap",
               }}
             >
-              <span style={{ fontSize: "12px", fontWeight: 600, color: "#a3a3a3", letterSpacing: "0.06em", marginRight: "4px" }}>
+              <span
+                style={{
+                  fontSize: "12px",
+                  fontWeight: 600,
+                  color: "#a3a3a3",
+                  letterSpacing: "0.06em",
+                  marginRight: "4px",
+                }}
+              >
                 FOLLOW US
               </span>
               {socialIcons.map((Icon, index) => (
@@ -511,10 +587,16 @@ function S5() {
                   href="#"
                   className="social-icon"
                   style={{
-                    width: "34px", height: "34px", borderRadius: "8px",
-                    background: "#fff", border: "1px solid #f0f0f0",
-                    display: "flex", alignItems: "center", justifyContent: "center",
-                    color: "#737373", textDecoration: "none",
+                    width: "34px",
+                    height: "34px",
+                    borderRadius: "8px",
+                    background: "#fff",
+                    border: "1px solid #f0f0f0",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    color: "#737373",
+                    textDecoration: "none",
                   }}
                 >
                   <Icon size={15} />
@@ -526,12 +608,13 @@ function S5() {
           {/* ── RIGHT - FORM ── */}
           <div
             ref={formRef}
-            className={`form-fade-in ${formInView ? 'visible' : ''}`}
+            className={`form-fade-in ${formInView ? "visible" : ""}`}
             style={{
               background: "#fff",
               borderRadius: "20px",
               padding: "clamp(24px, 4vw, 44px)",
-              boxShadow: "0 1px 3px rgba(0,0,0,0.04), 0 8px 32px rgba(0,0,0,0.04)",
+              boxShadow:
+                "0 1px 3px rgba(0,0,0,0.04), 0 8px 32px rgba(0,0,0,0.04)",
               border: "1px solid #f0f0f0",
               position: "relative",
               overflow: "hidden",
@@ -539,47 +622,100 @@ function S5() {
             }}
           >
             {/* Top accent line - only purple decorative element */}
-            <div style={{
-              position: "absolute", top: 0, left: 0, right: 0, height: "3px",
-              background: "#7c3aed",
-            }} />
+            <div
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                right: 0,
+                height: "3px",
+                background: "#7c3aed",
+              }}
+            />
 
             {/* Progress Bar */}
             {currentStep < 5 && (
               <div style={{ marginBottom: "clamp(24px, 3vw, 36px)" }}>
-                <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "18px", position: "relative" }}>
-                  <div style={{ position: "absolute", top: "15px", left: "0", right: "0", height: "1.5px", background: "#f0f0f0", zIndex: 0 }}>
-                    <div style={{
-                      height: "100%", background: "#0a0a0a",
-                      width: `${progressPercentage}%`,
-                      transition: "width 0.5s ease",
-                    }} />
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    marginBottom: "18px",
+                    position: "relative",
+                  }}
+                >
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: "15px",
+                      left: "0",
+                      right: "0",
+                      height: "1.5px",
+                      background: "#f0f0f0",
+                      zIndex: 0,
+                    }}
+                  >
+                    <div
+                      style={{
+                        height: "100%",
+                        background: "#0a0a0a",
+                        width: `${progressPercentage}%`,
+                        transition: "width 0.5s ease",
+                      }}
+                    />
                   </div>
 
                   {steps.slice(0, -1).map((step) => (
-                    <div key={step.id} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "6px", position: "relative", zIndex: 1 }}>
+                    <div
+                      key={step.id}
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                        gap: "6px",
+                        position: "relative",
+                        zIndex: 1,
+                      }}
+                    >
                       <div
                         className={`step-indicator ${currentStep > step.id ? "completed" : currentStep === step.id ? "active" : ""}`}
                         style={{
-                          width: "clamp(24px, 3vw, 30px)", 
-                          height: "clamp(24px, 3vw, 30px)", 
+                          width: "clamp(24px, 3vw, 30px)",
+                          height: "clamp(24px, 3vw, 30px)",
                           borderRadius: "50%",
-                          display: "flex", alignItems: "center", justifyContent: "center",
-                          background: currentStep > step.id ? "#0a0a0a" : currentStep === step.id ? "#0a0a0a" : "#f5f5f5",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          background:
+                            currentStep > step.id
+                              ? "#0a0a0a"
+                              : currentStep === step.id
+                                ? "#0a0a0a"
+                                : "#f5f5f5",
                           color: currentStep >= step.id ? "#fff" : "#a3a3a3",
-                          fontWeight: 600, fontSize: "clamp(10px, 1.2vw, 12px)",
-                          border: currentStep === step.id ? "2px solid #e5e5e5" : "2px solid transparent",
+                          fontWeight: 600,
+                          fontSize: "clamp(10px, 1.2vw, 12px)",
+                          border:
+                            currentStep === step.id
+                              ? "2px solid #e5e5e5"
+                              : "2px solid transparent",
                         }}
                       >
-                        {currentStep > step.id ? <FiCheck size={14} /> : <step.icon size={14} />}
+                        {currentStep > step.id ? (
+                          <FiCheck size={14} />
+                        ) : (
+                          <step.icon size={14} />
+                        )}
                       </div>
-                      <span style={{
-                        fontSize: "clamp(8px, 1vw, 10px)", 
-                        fontWeight: currentStep === step.id ? 600 : 500,
-                        color: currentStep >= step.id ? "#0a0a0a" : "#b0b0b0", 
-                        letterSpacing: "0.03em",
-                        textAlign: "center",
-                      }}>
+                      <span
+                        style={{
+                          fontSize: "clamp(8px, 1vw, 10px)",
+                          fontWeight: currentStep === step.id ? 600 : 500,
+                          color: currentStep >= step.id ? "#0a0a0a" : "#b0b0b0",
+                          letterSpacing: "0.03em",
+                          textAlign: "center",
+                        }}
+                      >
                         {step.title}
                       </span>
                     </div>
@@ -589,168 +725,523 @@ function S5() {
             )}
 
             {/* Step Content */}
-            <div style={{ minHeight: "clamp(260px, 30vw, 300px)", position: "relative" }}>
+            <div
+              style={{
+                minHeight: "clamp(260px, 30vw, 300px)",
+                position: "relative",
+              }}
+            >
               {/* Step 1 */}
-              <div className={`step-content ${currentStep === 1 ? 'active' : ''}`} style={{ display: currentStep === 1 ? 'flex' : 'none', flexDirection: "column", alignItems: "center", justifyContent: "center", minHeight: "clamp(260px, 30vw, 300px)", textAlign: "center" }}>
-                <div className="float-animation" style={{
-                  width: "clamp(56px, 6vw, 72px)", 
-                  height: "clamp(56px, 6vw, 72px)", 
-                  borderRadius: "20px",
-                  background: "#f5f5f5",
-                  display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "24px",
-                }}>
-                  <FiZap size={32} color="#7c3aed" />
-                </div>
-                <h3 style={{ fontSize: "clamp(18px, 2vw, 22px)", fontWeight: 700, color: "#0a0a0a", marginBottom: "10px" }}>Start Your Project</h3>
-                <p style={{ fontSize: "clamp(13px, 1.2vw, 14px)", color: "#737373", lineHeight: 1.6, marginBottom: "28px", maxWidth: "380px", padding: "0 10px" }}>
-                  Ready to bring your ideas to life? Let&apos;s begin your journey with us. It only takes a few minutes.
-                </p>
-                <button onClick={handleNext} className="btn-primary"
+              <div
+                className={`step-content ${currentStep === 1 ? "active" : ""}`}
+                style={{
+                  display: currentStep === 1 ? "flex" : "none",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  minHeight: "clamp(260px, 30vw, 300px)",
+                  textAlign: "center",
+                }}
+              >
+                <div
+                  className="float-animation"
                   style={{
-                    padding: "clamp(12px, 2vw, 14px) clamp(28px, 4vw, 36px)", 
-                    background: "#0a0a0a", color: "#fff",
-                    border: "none", borderRadius: "12px", 
-                    fontSize: "clamp(14px, 1.5vw, 15px)", fontWeight: 600,
-                    display: "flex", alignItems: "center", gap: "8px",
+                    width: "clamp(56px, 6vw, 72px)",
+                    height: "clamp(56px, 6vw, 72px)",
+                    borderRadius: "20px",
+                    background: "#f5f5f5",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    marginBottom: "24px",
                   }}
                 >
-                  Get Started <FiArrowRight size={16} />
+                  <FiZap size={32} color="#7c3aed" />
+                </div>
+                <h3
+                  style={{
+                    fontSize: "clamp(18px, 2vw, 22px)",
+                    fontWeight: 700,
+                    color: "#0a0a0a",
+                    marginBottom: "10px",
+                  }}
+                >
+                  Stop Chasing Vanity Metrics. <br /> Start Converting.
+                </h3>
+                <p
+                  style={{
+                    fontSize: "clamp(13px, 1.2vw, 14px)",
+                    color: "#737373",
+                    lineHeight: 1.6,
+                    marginBottom: "28px",
+                    maxWidth: "380px",
+                    padding: "0 10px",
+                  }}
+                >
+                Let's build a system that works for your business. No fluff, just results.
+
+                </p>
+                <button
+                  onClick={handleNext}
+                  className="btn-primary"
+                  style={{
+                    padding: "clamp(12px, 2vw, 14px) clamp(28px, 4vw, 36px)",
+                    background: "#0a0a0a",
+                    color: "#fff",
+                    border: "none",
+                    borderRadius: "12px",
+                    fontSize: "clamp(14px, 1.5vw, 15px)",
+                    fontWeight: 600,
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "8px",
+                  }}
+                >
+                 Schedule Your Strategy Call Today <FiArrowRight size={16} />
                 </button>
               </div>
 
               {/* Step 2 */}
-              <div className={`step-content ${currentStep === 2 ? 'active' : ''}`} style={{ display: currentStep === 2 ? 'block' : 'none' }}>
-                <h3 style={{ fontSize: "clamp(18px, 2vw, 20px)", fontWeight: 700, color: "#0a0a0a", marginBottom: "6px" }}>Tell us about yourself</h3>
-                <p style={{ fontSize: "clamp(12px, 1.2vw, 13px)", color: "#a3a3a3", marginBottom: "clamp(20px, 3vw, 28px)" }}>We&apos;ll use this to get in touch with you.</p>
-                <div style={{ display: "flex", flexDirection: "column", gap: "clamp(14px, 2vw, 18px)" }}>
+              <div
+                className={`step-content ${currentStep === 2 ? "active" : ""}`}
+                style={{ display: currentStep === 2 ? "block" : "none" }}
+              >
+                <h3
+                  style={{
+                    fontSize: "clamp(18px, 2vw, 20px)",
+                    fontWeight: 700,
+                    color: "#0a0a0a",
+                    marginBottom: "6px",
+                  }}
+                >
+                  Tell us about yourself
+                </h3>
+                <p
+                  style={{
+                    fontSize: "clamp(12px, 1.2vw, 13px)",
+                    color: "#a3a3a3",
+                    marginBottom: "clamp(20px, 3vw, 28px)",
+                  }}
+                >
+                  We&apos;ll use this to get in touch with you.
+                </p>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "clamp(14px, 2vw, 18px)",
+                  }}
+                >
                   <div>
-                    <label style={{ display: "block", fontSize: "clamp(11px, 1vw, 12px)", fontWeight: 600, color: "#0a0a0a", marginBottom: "6px", letterSpacing: "0.02em" }}>Full Name *</label>
-                    <input type="text" name="name" value={formData.name} onChange={handleInputChange} placeholder="John Doe" className={`input-field ${errors.name ? "error" : ""}`} />
-                    {errors.name && <span style={{ color: "#dc2626", fontSize: "11px", marginTop: "4px", display: "block" }}>{errors.name}</span>}
+                    <label
+                      style={{
+                        display: "block",
+                        fontSize: "clamp(11px, 1vw, 12px)",
+                        fontWeight: 600,
+                        color: "#0a0a0a",
+                        marginBottom: "6px",
+                        letterSpacing: "0.02em",
+                      }}
+                    >
+                      Full Name *
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      placeholder="John Doe"
+                      className={`input-field ${errors.name ? "error" : ""}`}
+                    />
+                    {errors.name && (
+                      <span
+                        style={{
+                          color: "#dc2626",
+                          fontSize: "11px",
+                          marginTop: "4px",
+                          display: "block",
+                        }}
+                      >
+                        {errors.name}
+                      </span>
+                    )}
                   </div>
                   <div>
-                    <label style={{ display: "block", fontSize: "clamp(11px, 1vw, 12px)", fontWeight: 600, color: "#0a0a0a", marginBottom: "6px", letterSpacing: "0.02em" }}>Email Address *</label>
-                    <input type="email" name="email" value={formData.email} onChange={handleInputChange} placeholder="john@example.com" className={`input-field ${errors.email ? "error" : ""}`} />
-                    {errors.email && <span style={{ color: "#dc2626", fontSize: "11px", marginTop: "4px", display: "block" }}>{errors.email}</span>}
+                    <label
+                      style={{
+                        display: "block",
+                        fontSize: "clamp(11px, 1vw, 12px)",
+                        fontWeight: 600,
+                        color: "#0a0a0a",
+                        marginBottom: "6px",
+                        letterSpacing: "0.02em",
+                      }}
+                    >
+                      Email Address *
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      placeholder="john@example.com"
+                      className={`input-field ${errors.email ? "error" : ""}`}
+                    />
+                    {errors.email && (
+                      <span
+                        style={{
+                          color: "#dc2626",
+                          fontSize: "11px",
+                          marginTop: "4px",
+                          display: "block",
+                        }}
+                      >
+                        {errors.email}
+                      </span>
+                    )}
                   </div>
                 </div>
               </div>
 
               {/* Step 3 */}
-              <div className={`step-content ${currentStep === 3 ? 'active' : ''}`} style={{ display: currentStep === 3 ? 'block' : 'none' }}>
-                <h3 style={{ fontSize: "clamp(18px, 2vw, 20px)", fontWeight: 700, color: "#0a0a0a", marginBottom: "6px" }}>Project Details</h3>
-                <p style={{ fontSize: "clamp(12px, 1.2vw, 13px)", color: "#a3a3a3", marginBottom: "clamp(20px, 3vw, 28px)" }}>Help us understand your needs better.</p>
-                <div style={{ display: "flex", flexDirection: "column", gap: "clamp(14px, 2vw, 18px)" }}>
+              <div
+                className={`step-content ${currentStep === 3 ? "active" : ""}`}
+                style={{ display: currentStep === 3 ? "block" : "none" }}
+              >
+                <h3
+                  style={{
+                    fontSize: "clamp(18px, 2vw, 20px)",
+                    fontWeight: 700,
+                    color: "#0a0a0a",
+                    marginBottom: "6px",
+                  }}
+                >
+                  Project Details
+                </h3>
+                <p
+                  style={{
+                    fontSize: "clamp(12px, 1.2vw, 13px)",
+                    color: "#a3a3a3",
+                    marginBottom: "clamp(20px, 3vw, 28px)",
+                  }}
+                >
+                  Help us understand your needs better.
+                </p>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "clamp(14px, 2vw, 18px)",
+                  }}
+                >
                   <div>
-                    <label style={{ display: "block", fontSize: "clamp(11px, 1vw, 12px)", fontWeight: 600, color: "#0a0a0a", marginBottom: "6px", letterSpacing: "0.02em" }}>Phone Number *</label>
-                    <input type="tel" name="phone" value={formData.phone} onChange={handleInputChange} placeholder="9354683813" className={`input-field ${errors.phone ? "error" : ""}`} />
-                    {errors.phone && <span style={{ color: "#dc2626", fontSize: "11px", marginTop: "4px", display: "block" }}>{errors.phone}</span>}
+                    <label
+                      style={{
+                        display: "block",
+                        fontSize: "clamp(11px, 1vw, 12px)",
+                        fontWeight: 600,
+                        color: "#0a0a0a",
+                        marginBottom: "6px",
+                        letterSpacing: "0.02em",
+                      }}
+                    >
+                      Phone Number *
+                    </label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      placeholder="9354683813"
+                      className={`input-field ${errors.phone ? "error" : ""}`}
+                    />
+                    {errors.phone && (
+                      <span
+                        style={{
+                          color: "#dc2626",
+                          fontSize: "11px",
+                          marginTop: "4px",
+                          display: "block",
+                        }}
+                      >
+                        {errors.phone}
+                      </span>
+                    )}
                   </div>
                   <div>
-                    <label style={{ display: "block", fontSize: "clamp(11px, 1vw, 12px)", fontWeight: 600, color: "#0a0a0a", marginBottom: "6px", letterSpacing: "0.02em" }}>Message *</label>
-                    <textarea name="message" value={formData.message} onChange={handleInputChange} placeholder="Tell us about your project..." className={`input-field ${errors.message ? "error" : ""}`} rows={4} style={{ resize: "vertical", minHeight: "clamp(90px, 12vw, 110px)" }} />
-                    {errors.message && <span style={{ color: "#dc2626", fontSize: "11px", marginTop: "4px", display: "block" }}>{errors.message}</span>}
+                    <label
+                      style={{
+                        display: "block",
+                        fontSize: "clamp(11px, 1vw, 12px)",
+                        fontWeight: 600,
+                        color: "#0a0a0a",
+                        marginBottom: "6px",
+                        letterSpacing: "0.02em",
+                      }}
+                    >
+                      Message *
+                    </label>
+                    <textarea
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      placeholder="Tell us about your project..."
+                      className={`input-field ${errors.message ? "error" : ""}`}
+                      rows={4}
+                      style={{
+                        resize: "vertical",
+                        minHeight: "clamp(90px, 12vw, 110px)",
+                      }}
+                    />
+                    {errors.message && (
+                      <span
+                        style={{
+                          color: "#dc2626",
+                          fontSize: "11px",
+                          marginTop: "4px",
+                          display: "block",
+                        }}
+                      >
+                        {errors.message}
+                      </span>
+                    )}
                   </div>
                 </div>
               </div>
 
               {/* Step 4 */}
-              <div className={`step-content ${currentStep === 4 ? 'active' : ''}`} style={{ display: currentStep === 4 ? 'block' : 'none' }}>
-                <h3 style={{ fontSize: "clamp(18px, 2vw, 20px)", fontWeight: 700, color: "#0a0a0a", marginBottom: "6px" }}>Review Your Details</h3>
-                <p style={{ fontSize: "clamp(12px, 1.2vw, 13px)", color: "#a3a3a3", marginBottom: "clamp(20px, 3vw, 28px)" }}>Please verify your information before submitting.</p>
-                <div style={{ background: "#fafafa", borderRadius: "12px", padding: "clamp(16px, 2vw, 20px)", display: "flex", flexDirection: "column", gap: "14px", border: "1px solid #f0f0f0" }}>
+              <div
+                className={`step-content ${currentStep === 4 ? "active" : ""}`}
+                style={{ display: currentStep === 4 ? "block" : "none" }}
+              >
+                <h3
+                  style={{
+                    fontSize: "clamp(18px, 2vw, 20px)",
+                    fontWeight: 700,
+                    color: "#0a0a0a",
+                    marginBottom: "6px",
+                  }}
+                >
+                  Review Your Details
+                </h3>
+                <p
+                  style={{
+                    fontSize: "clamp(12px, 1.2vw, 13px)",
+                    color: "#a3a3a3",
+                    marginBottom: "clamp(20px, 3vw, 28px)",
+                  }}
+                >
+                  Please verify your information before submitting.
+                </p>
+                <div
+                  style={{
+                    background: "#fafafa",
+                    borderRadius: "12px",
+                    padding: "clamp(16px, 2vw, 20px)",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "14px",
+                    border: "1px solid #f0f0f0",
+                  }}
+                >
                   {[
                     { label: "Name", value: formData.name },
                     { label: "Email", value: formData.email },
                     { label: "Phone", value: formData.phone },
                     { label: "Message", value: formData.message },
                   ].map((item, index) => (
-                    <div key={index} style={{
-                      display: "flex", justifyContent: "space-between", alignItems: "flex-start",
-                      paddingBottom: index < 3 ? "14px" : "0",
-                      borderBottom: index < 3 ? "1px solid #e5e5e5" : "none",
-                      flexDirection: "column",
-                      gap: "4px",
-                    }}>
-                      <span style={{ fontSize: "clamp(11px, 1vw, 12px)", fontWeight: 600, color: "#a3a3a3" }}>{item.label}</span>
-                      <span style={{ fontSize: "clamp(12px, 1.2vw, 13px)", fontWeight: 500, color: "#0a0a0a", wordBreak: "break-word" }}>{item.value}</span>
+                    <div
+                      key={index}
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "flex-start",
+                        paddingBottom: index < 3 ? "14px" : "0",
+                        borderBottom: index < 3 ? "1px solid #e5e5e5" : "none",
+                        flexDirection: "column",
+                        gap: "4px",
+                      }}
+                    >
+                      <span
+                        style={{
+                          fontSize: "clamp(11px, 1vw, 12px)",
+                          fontWeight: 600,
+                          color: "#a3a3a3",
+                        }}
+                      >
+                        {item.label}
+                      </span>
+                      <span
+                        style={{
+                          fontSize: "clamp(12px, 1.2vw, 13px)",
+                          fontWeight: 500,
+                          color: "#0a0a0a",
+                          wordBreak: "break-word",
+                        }}
+                      >
+                        {item.value}
+                      </span>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* Step 5 */}
-              <div className={`step-content ${currentStep === 5 ? 'active' : ''}`} style={{ display: currentStep === 5 ? 'flex' : 'none', flexDirection: "column", alignItems: "center", justifyContent: "center", minHeight: "clamp(260px, 30vw, 300px)", textAlign: "center" }}>
-                <div className="scale-in" style={{
-                  width: "clamp(56px, 6vw, 72px)", 
-                  height: "clamp(56px, 6vw, 72px)", 
-                  borderRadius: "50%",
-                  background: "#0a0a0a",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  marginBottom: "24px",
-                }}>
+              <div
+                className={`step-content ${currentStep === 5 ? "active" : ""}`}
+                style={{
+                  display: currentStep === 5 ? "flex" : "none",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  minHeight: "clamp(260px, 30vw, 300px)",
+                  textAlign: "center",
+                }}
+              >
+                <div
+                  className="scale-in"
+                  style={{
+                    width: "clamp(56px, 6vw, 72px)",
+                    height: "clamp(56px, 6vw, 72px)",
+                    borderRadius: "50%",
+                    background: "#0a0a0a",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    marginBottom: "24px",
+                  }}
+                >
                   <FiCheck size={36} color="#fff" />
                 </div>
-                <h3 style={{ fontSize: "clamp(20px, 2.5vw, 24px)", fontWeight: 700, color: "#0a0a0a", marginBottom: "10px" }}>Thank You!</h3>
-                <p style={{ fontSize: "clamp(13px, 1.2vw, 14px)", color: "#737373", lineHeight: 1.6, marginBottom: "6px", maxWidth: "380px", padding: "0 10px" }}>
+                <h3
+                  style={{
+                    fontSize: "clamp(20px, 2.5vw, 24px)",
+                    fontWeight: 700,
+                    color: "#0a0a0a",
+                    marginBottom: "10px",
+                  }}
+                >
+                  Thank You!
+                </h3>
+                <p
+                  style={{
+                    fontSize: "clamp(13px, 1.2vw, 14px)",
+                    color: "#737373",
+                    lineHeight: 1.6,
+                    marginBottom: "6px",
+                    maxWidth: "380px",
+                    padding: "0 10px",
+                  }}
+                >
                   Your enquiry has been submitted successfully.
                 </p>
-                <p style={{ fontSize: "clamp(12px, 1.1vw, 13px)", color: "#a3a3a3", lineHeight: 1.6, maxWidth: "380px", padding: "0 10px" }}>
-                  We&apos;ll review your request and get back to you within 24 hours.
+                <p
+                  style={{
+                    fontSize: "clamp(12px, 1.1vw, 13px)",
+                    color: "#a3a3a3",
+                    lineHeight: 1.6,
+                    maxWidth: "380px",
+                    padding: "0 10px",
+                  }}
+                >
+                  We&apos;ll review your request and get back to you within 24
+                  hours.
                 </p>
               </div>
             </div>
 
             {/* Navigation Buttons */}
             {currentStep > 1 && currentStep < 5 && (
-              <div className="step-buttons" style={{ display: "flex", justifyContent: "space-between", marginTop: "clamp(24px, 3vw, 36px)", gap: "14px" }}>
-                <button onClick={handleBack} className="btn-secondary"
+              <div
+                className="step-buttons"
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  marginTop: "clamp(24px, 3vw, 36px)",
+                  gap: "14px",
+                }}
+              >
+                <button
+                  onClick={handleBack}
+                  className="btn-secondary"
                   style={{
-                    padding: "clamp(10px, 1.5vw, 12px) clamp(20px, 3vw, 24px)", 
-                    background: "#fff", color: "#0a0a0a",
-                    border: "1.5px solid #e5e5e5", borderRadius: "10px", 
+                    padding: "clamp(10px, 1.5vw, 12px) clamp(20px, 3vw, 24px)",
+                    background: "#fff",
+                    color: "#0a0a0a",
+                    border: "1.5px solid #e5e5e5",
+                    borderRadius: "10px",
                     fontSize: "clamp(12px, 1.2vw, 13px)",
-                    fontWeight: 600, display: "flex", alignItems: "center", gap: "6px",
+                    fontWeight: 600,
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "6px",
                   }}
                 >
                   <FiArrowLeft size={14} /> Back
                 </button>
 
                 {currentStep === 4 ? (
-                  <button onClick={handleSubmit} disabled={isSubmitting} className="btn-primary"
+                  <button
+                    onClick={handleSubmit}
+                    disabled={isSubmitting}
+                    className="btn-primary"
                     style={{
-                      padding: "clamp(10px, 1.5vw, 12px) clamp(24px, 3vw, 28px)", 
+                      padding:
+                        "clamp(10px, 1.5vw, 12px) clamp(24px, 3vw, 28px)",
                       background: isSubmitting ? "#737373" : "#0a0a0a",
-                      color: "#fff", border: "none", borderRadius: "10px", 
+                      color: "#fff",
+                      border: "none",
+                      borderRadius: "10px",
                       fontSize: "clamp(12px, 1.2vw, 13px)",
-                      fontWeight: 600, display: "flex", alignItems: "center", gap: "6px",
-                      cursor: isSubmitting ? "not-allowed" : "pointer", 
-                      minWidth: "110px", justifyContent: "center",
+                      fontWeight: 600,
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "6px",
+                      cursor: isSubmitting ? "not-allowed" : "pointer",
+                      minWidth: "110px",
+                      justifyContent: "center",
                     }}
                   >
                     {isSubmitting ? (
                       <>
-                        <div className="spin-animation" style={{
-                          width: "16px", height: "16px",
-                          border: "2px solid #fff", borderTopColor: "transparent", borderRadius: "50%",
-                        }} />
+                        <div
+                          className="spin-animation"
+                          style={{
+                            width: "16px",
+                            height: "16px",
+                            border: "2px solid #fff",
+                            borderTopColor: "transparent",
+                            borderRadius: "50%",
+                          }}
+                        />
                         Sending...
                       </>
                     ) : (
-                      <>Submit <FiSend size={14} /></>
+                      <>
+                        Submit <FiSend size={14} />
+                      </>
                     )}
                   </button>
                 ) : (
-                  <button onClick={handleNext} className="btn-primary"
+                  <button
+                    onClick={handleNext}
+                    className="btn-primary"
                     style={{
-                      padding: "clamp(10px, 1.5vw, 12px) clamp(24px, 3vw, 28px)", 
-                      background: "#0a0a0a", color: "#fff",
-                      border: "none", borderRadius: "10px", 
-                      fontSize: "clamp(12px, 1.2vw, 13px)", fontWeight: 600,
-                      display: "flex", alignItems: "center", gap: "6px",
+                      padding:
+                        "clamp(10px, 1.5vw, 12px) clamp(24px, 3vw, 28px)",
+                      background: "#0a0a0a",
+                      color: "#fff",
+                      border: "none",
+                      borderRadius: "10px",
+                      fontSize: "clamp(12px, 1.2vw, 13px)",
+                      fontWeight: 600,
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "6px",
                     }}
                   >
-                    {currentStep === 3 ? "Review" : "Continue"} <FiArrowRight size={14} />
+                    {currentStep === 3 ? "Review" : "Continue"}{" "}
+                    <FiArrowRight size={14} />
                   </button>
                 )}
               </div>
