@@ -10,25 +10,25 @@
       {
         "id": 1,
         "title": "Google Ads Management",
-        "description": "Maximize your ROI with highly targeted search and display campaigns designed to capture high-intent buyers and drive immediate conversions.",
+        "description": "Reach customers with high purchase intent through expertly managed Search, Display, Performance Max, and YouTube campaigns designed to maximize conversions and ROI.",
         "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format"
       },
       {
         "id": 2,
         "title": "Meta Advertising",
-        "description": "Engage your ideal audience on Facebook and Instagram with visually compelling, data-backed ad campaigns that scale your revenue.",
+        "description": "Generate high-quality leads and sales with strategic Facebook and Instagram campaigns that reach the right audience at the right time.",
         "image": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&auto=format"
       },
       {
         "id": 3,
-        "title": "Social Media Growth",
-        "description": "Build a loyal community and amplify your organic reach with strategic content planning and active audience engagement.",
+        "title": "Social Media Advertising",
+        "description": "Scale your business with paid social campaigns that increase brand awareness, engagement, website traffic, and customer acquisitions across leading platforms.",
         "image": "https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=800&auto=format"
       },
       {
         "id": 4,
-        "title": "Marketing Analytics",
-        "description": "Transform raw data into actionable strategies with comprehensive tracking, reporting, and conversion rate optimization.",
+        "title": "Campaign Analytics & Optimization",
+        "description": "Track every click, lead, and conversion with detailed reporting and continuous optimization to ensure your campaigns deliver consistent, profitable growth.",
         "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format"
       }
     ]
@@ -119,8 +119,7 @@
         "id": 2,
         "title": "YouTube Video Editing",
         "description": "Retain viewership and grow your channel with professional long-form editing that ensures crisp pacing, sound design, and visual polish.",
-         "image": "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80"
-
+        "image": "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80"
       },
       {
         "id": 3,
@@ -205,37 +204,37 @@
     ]
   },
   {
-  "slug": "/lead-generation",
-  "title": "Lead Generation",
-  "meta_title": "Lead Generation Services | High-Quality Sales Leads",
-  "meta_description": "Generate qualified leads consistently with data-driven prospecting, outreach campaigns, CRM integration, and conversion-focused lead nurturing.",
-  "meta_keywords": "lead generation services, b2b lead generation, sales leads, lead nurturing, crm integration, prospecting services",
-  "description": "Fuel your sales pipeline with qualified prospects through strategic outreach, automation, and conversion-focused lead nurturing campaigns.",
-  "cards": [
-    {
-      "id": 1,
-      "title": "B2B Lead Prospecting",
-      "description": "Identify and connect with decision-makers using advanced targeting strategies that deliver high-quality business opportunities.",
-      "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&auto=format"
-    },
-    {
-      "id": 2,
-      "title": "Email Outreach Campaigns",
-      "description": "Launch personalized cold email campaigns that generate responses, book meetings, and build meaningful business relationships.",
-      "image": "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&auto=format"
-    },
-    {
-      "id": 3,
-      "title": "Lead Nurturing",
-      "description": "Convert prospects into customers with automated follow-ups, targeted content, and strategic engagement workflows.",
-      "image": "https://images.unsplash.com/photo-1556740749-887f6717d7e4?w=800&auto=format"
-    },
-    {
-      "id": 4,
-      "title": "CRM Integration & Management",
-      "description": "Organize, track, and optimize every lead with seamless CRM integration and data-driven sales pipeline management.",
-      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format"
-    }
-  ]
-}
+    "slug": "/lead-generation",
+    "title": "Lead Generation",
+    "meta_title": "Lead Generation Services | High-Quality Sales Leads",
+    "meta_description": "Generate qualified leads consistently with data-driven prospecting, outreach campaigns, CRM integration, and conversion-focused lead nurturing.",
+    "meta_keywords": "lead generation services, b2b lead generation, sales leads, lead nurturing, crm integration, prospecting services",
+    "description": "Generate a steady pipeline of qualified leads with data-driven strategies designed to attract the right audience, increase conversions, and accelerate your business growth.",
+    "cards": [
+      {
+        "id": 1,
+        "title": "Meta Lead Generation",
+        "description": "Reach your ideal customers through highly targeted Meta Ads campaigns that generate quality enquiries at the lowest possible cost.",
+        "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&auto=format"
+      },
+      {
+        "id": 2,
+        "title": "Google Lead Generation",
+        "description": "Capture high-intent customers actively searching for your products or services with conversion-focused Google Ads campaigns.",
+        "image": "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&auto=format"
+      },
+      {
+        "id": 3,
+        "title": "Landing Pages & Funnels",
+        "description": "High-converting landing pages designed to maximize conversions, reduce drop-offs, and turn visitors into qualified leads.",
+        "image": "https://images.unsplash.com/photo-1556740749-887f6717d7e4?w=800&auto=format"
+      },
+      {
+        "id": 4,
+        "title": "CRM Integration & Lead Management",
+        "description": "Automatically organize, track, and nurture every lead with seamless CRM integration, ensuring no opportunity is ever missed.",
+        "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format"
+      }
+    ]
+  }
 ]

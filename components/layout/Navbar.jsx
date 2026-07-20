@@ -13,12 +13,18 @@ import { IoShareSocialOutline } from "react-icons/io5";
    SERVICES sub-menu data
 ───────────────────────────────────────────────────────────────── */
 const SERVICES = [
-  { label: "SEO", href: "/services/seo", icon: <TbSeo /> },
+  {
+    label: "Lead Generation",
+    href: "/services/lead-generation",
+    icon: <MdOutlineGraphicEq />,
+  },
+
   {
     label: "Web Development",
     href: "/services/web-development",
     icon: <CgWebsite />,
   },
+  { label: "SEO", href: "/services/seo", icon: <TbSeo /> },
   {
     label: "Digital Marketing",
     href: "/services/digital-marketing",
@@ -39,11 +45,6 @@ const SERVICES = [
     href: "/services/ai-automation",
     icon: <IoShareSocialOutline />,
   },
-  {
-    label: "Lead Generation",
-    href:"/services/lead-generation",
-     icon: <MdOutlineGraphicEq />
-  }
 ];
 
 /* ─────────────────────────────────────────────────────────────────
@@ -674,7 +675,9 @@ const PillNav = ({
                       <svg
                         className="w-4 h-4 transition-transform"
                         style={{
-                          transform: mobileServicesOpen ? "rotate(180deg)" : "rotate(0deg)",
+                          transform: mobileServicesOpen
+                            ? "rotate(180deg)"
+                            : "rotate(0deg)",
                         }}
                         fill="none"
                         stroke="currentColor"
