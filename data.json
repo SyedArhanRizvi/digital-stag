@@ -5,7 +5,7 @@
     "meta_title": "Expert Digital Marketing Services | Scale Your Growth",
     "meta_description": "Data-driven digital marketing campaigns engineered to capture attention, convert prospects, and compound your brand authority across every channel.",
     "meta_keywords": "digital marketing services, growth at scale, google ads management, meta advertising, social media growth, marketing analytics",
-    "description": "Data-driven campaigns engineered to capture attention, convert prospects, and compound your brand authority across every digital channel.",
+    "description": "Accelerate your business growth with data-driven advertising strategies that generate qualified leads, maximize ROI, and turn every marketing dollar into measurable results",
     "cards": [
       {
         "id": 1,
@@ -35,34 +35,34 @@
   },
   {
     "slug": "/seo",
-    "title": "SEO",
+    "title": "Search Engine Optimization (SEO)",
     "meta_title": "Professional SEO Services | Rank & Dominate Search",
     "meta_description": "End-to-end search engine optimization that places your business at the top of relevant queries. Technical SEO, keyword research, content, and link building.",
     "meta_keywords": "SEO services, search engine optimization, technical SEO, keyword research, content SEO, link building services",
-    "description": "End-to-end search engine optimisation that places your business at the top of every relevant query - and keeps it there for the long term.",
+    "description": "Increase your online visibility, attract high-intent customers, and drive sustainable organic growth with data-driven SEO strategies that help your business rank higher and stay ahead of the competition.",
     "cards": [
       {
         "id": 1,
         "title": "Technical SEO",
-        "description": "Ensure your website is perfectly optimized for search engine crawlers with fast load times, clean code, and flawless site architecture.",
+        "description": "Build a strong SEO foundation by optimizing your website's speed, crawlability, indexing, site architecture, and Core Web Vitals for better search performance.",
         "image": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=800&auto=format"
       },
       {
         "id": 2,
         "title": "Keyword Research",
-        "description": "Discover high-value search terms and uncover untapped opportunities to drive qualified, high-converting traffic to your website.",
+        "description": "Discover the search terms your ideal customers use and build a strategic SEO roadmap that targets high-value keywords with real business potential.",
         "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&auto=format"
       },
       {
         "id": 3,
-        "title": "Content SEO",
-        "description": "Craft deeply researched, engaging content that perfectly aligns with search intent and satisfies both users and search algorithms.",
+        "title": "On-Page & Content SEO",
+        "description": "Optimize your website content with search-friendly copy, strategic keyword placement, internal linking, and user-focused content that ranks and converts.",
         "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&auto=format&fit=crop"
       },
       {
         "id": 4,
-        "title": "Link Building",
-        "description": "Acquire high-authority, relevant backlinks through strategic outreach and digital PR to boost your domain rating and search visibility.",
+        "title": "Off-Page SEO & Link Building",
+        "description": "Strengthen your website's authority with high-quality backlinks, digital outreach, local citations, and proven off-page strategies that improve rankings.",
         "image": "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&auto=format"
       }
     ]
@@ -73,30 +73,30 @@
     "meta_title": "Custom Web Development Services | Fast & Scalable Sites",
     "meta_description": "Architect and build digital products that perform beautifully. We offer business websites, e-commerce stores, custom web apps, and website maintenance.",
     "meta_keywords": "web development services, business websites, e-commerce stores, custom web apps, website maintenance, web design",
-    "description": "From blazing-fast business sites to complex web applications - we architect and build digital products that perform beautifully and convert visitors.",
+    "description": "Build a website that does more than just look great. We create fast, secure, and conversion-focused websites that deliver exceptional user experiences and help your business generate more leads and sales.",
     "cards": [
       {
         "id": 1,
         "title": "Business Websites",
-        "description": "Establish a powerful online presence with custom-designed, fast-loading corporate websites that build trust and capture leads.",
+        "description": "Create a professional online presence with custom-designed websites that build trust, showcase your brand, and convert visitors into customers.",
         "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&auto=format"
       },
       {
         "id": 2,
         "title": "E-Commerce Stores",
-        "description": "Launch scalable, highly optimized online stores equipped with seamless checkout experiences to maximize your digital sales.",
+        "description": "Launch a powerful online store with secure payments, intuitive navigation, and a seamless shopping experience designed to maximize sales.",
         "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&auto=format"
       },
       {
         "id": 3,
-        "title": "Custom Web Apps",
-        "description": "Develop complex, tailored web applications designed to solve unique business challenges and streamline your digital operations.",
+        "title": "Custom Web Applications",
+        "description": "Develop scalable web applications tailored to your unique business processes, improving efficiency, automation, and customer engagement.",
         "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&auto=format"
       },
       {
         "id": 4,
-        "title": "Website Maintenance",
-        "description": "Keep your digital assets secure, up-to-date, and running flawlessly with comprehensive ongoing support and performance monitoring.",
+        "title": "Website Maintenance & Support",
+        "description": "Keep your website secure, updated, and performing at its best with ongoing maintenance, backups, performance optimization, and technical support.",
         "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format"
       }
     ]

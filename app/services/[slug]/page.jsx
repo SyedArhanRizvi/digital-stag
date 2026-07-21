@@ -134,10 +134,113 @@ const getBenefits = (slug) => {
       "Transparent reporting & campaign optimization",
       " Lower Cost Per Lead (CPL)",
     ],
+    "/digital-marketing": [
+      "ROI-focused advertising strategies",
+      "Highly targeted audience segmentation",
+      "Continuous campaign optimization",
+      "Transparent reporting and performance tracking",
+      "Lower Cost Per Lead (CPL) & Higher ROAS",
+    ],
+
+    "/web-development": [
+      "Mobile-first, responsive designs",
+      "Lightning-fast loading speeds",
+      "SEO-friendly development",
+      "Secure, scalable, and future-ready solutions",
+      "Conversion-focused UI/UX that drives results",
+    ],
+
+    "/seo": [
+      "Data-driven SEO strategies tailored to your business",
+      "Higher rankings for high-intent keywords",
+      "Sustainable organic traffic growth",
+      "Technical optimization for better performance",
+      "Transparent reporting with measurable results",
+    ],
   };
   return benefits[slug] || benefits["/technical-seo"];
 };
+const getStats = (slug) => {
+  const stats = {
+    "/lead-generation": [
+      {
+        value: "1200+",
+        label: "Qualified Leads Generated Every Month",
+      },
+      {
+        value: "95%",
+        label: "Client Retention Rate",
+      },
+      {
+        value: "5+ Years",
+        label: "Performance Marketing Experience",
+      },
+      {
+        value: "₹6.5 Cr+",
+        label: "Ad Spend Successfully Managed",
+      },
+    ],
 
+    "/digital-marketing": [
+      {
+        value: "500+",
+        label: "Successful Campaigns Managed",
+      },
+      {
+        value: "95%",
+        label: "Client Satisfaction",
+      },
+      {
+        value: "5+ Years",
+        label: "Performance Marketing Experience",
+      },
+      {
+        value: "₹6.5 Cr+",
+        label: "Advertising Budget Managed",
+      },
+    ],
+
+    "/web-development": [
+      {
+        value: "120+",
+        label: "Websites Successfully Delivered",
+      },
+      {
+        value: "99.9%",
+        label: "Reliable Website Uptime",
+      },
+      {
+        value: "5+ Years",
+        label: "Web Development Experience",
+      },
+      {
+        value: "100%",
+        label: "Custom-Built Solutions",
+      },
+    ],
+
+    "/seo": [
+      {
+        value: "100+",
+        label: "Keywords Ranked on Page One",
+      },
+      {
+        value: "95%",
+        label: "Client Satisfaction Rate",
+      },
+      {
+        value: "5+ Years",
+        label: "SEO & Digital Marketing Experience",
+      },
+      {
+        value: "Long-Term",
+        label: "Sustainable Organic Growth",
+      },
+    ],
+  };
+
+  return stats[slug] || stats["/lead-generation"];
+};
 function ServicePage() {
   const params = useParams();
   const slug = `/${params.slug}`;
@@ -153,7 +256,7 @@ function ServicePage() {
   const colorScheme = getServiceColorScheme(slug);
   const serviceIcon = getServiceIcon(slug);
   const benefits = getBenefits(slug);
-
+   const stats = getStats(slug);
   useEffect(() => {
     if (!serviceData) return;
 
@@ -411,12 +514,7 @@ function ServicePage() {
             {/* Right - Stats/Visual */}
             <div className="relative">
               <div className="grid grid-cols-2 gap-4">
-                {[
-                  { value: "1200+", label: "Qualified Leads Generated Every Month" },
-                  { value: "95%", label: "Client Retention Rate" },
-                  { value: "5+ Years", label: "Performance Marketing Experience" },
-                  { value: "6.5 Cr+", label: "Ad Spend Successfully Managed" },
-                ].map((stat, index) => (
+                {stats.map((stat, index) => (
                   <div
                     key={index}
                     className="bg-white/80 backdrop-blur-sm border border-gray-200 rounded-2xl p-4 sm:p-6 text-center hover:shadow-lg transition-all duration-300 hover:scale-105"
@@ -473,7 +571,7 @@ function ServicePage() {
                 </button>
                 <button className="px-6 sm:px-8 py-3 sm:py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold rounded-full hover:bg-white/20 transition-all duration-300 hover:scale-105 active:scale-95">
                   <Link href={"/contact"} alt="Contact us">
-                  Get Quote
+                    Get Quote
                   </Link>
                 </button>
               </div>
