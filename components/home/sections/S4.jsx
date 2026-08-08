@@ -261,7 +261,12 @@ function CardGrid({ cards, isFirstPanel }) {
   }, [cards]);
 
   return (
-    <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+    <div
+      onClick={() => {
+        window.open("/contact", "_blank");
+      }}
+      className="w-full cursor-pointer grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch"
+    >
       {cards.map((card, cIdx) => (
         <div
           key={card.headline}
@@ -340,7 +345,7 @@ function ServicePanel({ svc, isFirst }) {
   return (
     <div
       ref={panelRef}
-      className="service-panel relative w-full min-h-screen lg:h-screen flex flex-col justify-start items-center bg-[#F9F9F9] pt-12 pb-16 lg:py-0 lg:justify-center"
+      className="service-panel  relative w-full min-h-screen lg:h-screen flex flex-col justify-start items-center bg-[#F9F9F9] pt-12 pb-16 lg:py-0 lg:justify-center"
     >
       <div className="w-full max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16 flex flex-col h-full justify-center">
         <div className="w-full mb-8 lg:mb-10">

@@ -31,7 +31,7 @@ if (typeof window !== 'undefined') {
 // ── Timeline Data ──────────────────────────────────────────────────────
 const TIMELINE_DATA = [
   {
-    year: "2018",
+    year: "2020",
     title: "The Beginning",
     subtitle: "Foundation of Digital Stag",
     description: "Started as a small team of 3 passionate designers with a vision to transform digital experiences. Our journey began in a modest co-working space with big dreams.",
@@ -49,7 +49,7 @@ const TIMELINE_DATA = [
     side: "left",
   },
   {
-    year: "2019",
+    year: "2022",
     title: "Growth Phase",
     subtitle: "Expanding Our Horizons",
     description: "Expanded to 10+ team members and moved to our own office space. Launched our first international client project and established key partnerships.",
@@ -67,7 +67,7 @@ const TIMELINE_DATA = [
     side: "right",
   },
   {
-    year: "2020",
+    year: "2023",
     title: "Digital Transformation",
     subtitle: "Adapting to New Challenges",
     description: "Pivoted to remote-first culture during global changes. Launched innovative digital solutions helping businesses adapt and thrive in the new normal.",
@@ -85,7 +85,7 @@ const TIMELINE_DATA = [
     side: "left",
   },
   {
-    year: "2021",
+    year: "2024",
     title: "Industry Recognition",
     subtitle: "Award-Winning Agency",
     description: "Received multiple industry awards for design excellence. Partnered with leading brands across sectors and established ourselves as industry leaders.",
@@ -103,13 +103,13 @@ const TIMELINE_DATA = [
     side: "right",
   },
   {
-    year: "2022",
+    year: "2025",
     title: "Innovation Hub",
     subtitle: "Pushing Creative Boundaries",
     description: "Established our innovation lab focusing on emerging technologies. Launched products that serve millions of users across the globe.",
     achievements: [
       { text: "Innovation lab launched", icon: <FaLightbulb /> },
-      { text: "500+ total projects", icon: <FaProjectDiagram /> },
+      { text: "100+ total projects", icon: <FaProjectDiagram /> },
       { text: "Million+ end users", icon: <FaGlobe /> }
     ],
     icon: <FaLightbulb />,
@@ -121,7 +121,7 @@ const TIMELINE_DATA = [
     side: "left",
   },
   {
-    year: "2023",
+    year: "2025",
     title: "Global Excellence",
     subtitle: "Setting Industry Standards",
     description: "Expanded to international markets with offices across continents. Recognized as a top digital agency with cutting-edge solutions.",

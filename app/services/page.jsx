@@ -184,61 +184,7 @@ const services = [
       { name: "Marketing Analytics", slug: "digital-marketing" },
     ],
   },
-  {
-    id: "graphic-designing",
-    number: "05",
-    title: "Graphic Designing",
-    tagline: "Identity that speaks first",
-    description:
-      "Strategic visual design that builds instant brand recognition, communicates value, and makes your business utterly unforgettable.",
-    accent: "#D97706",
-    lightBg: "#FFFBEB",
-    icon: (
-      <svg viewBox="0 0 48 48" fill="none" className="w-full h-full">
-        <circle
-          cx="24"
-          cy="24"
-          r="18"
-          fill="#FEF3C7"
-          stroke="#D97706"
-          strokeWidth="1.5"
-        />
-        <circle
-          cx="24"
-          cy="16"
-          r="4"
-          fill="#D97706"
-          opacity="0.3"
-          stroke="#D97706"
-          strokeWidth="1.2"
-        />
-        <circle
-          cx="16"
-          cy="28"
-          r="4"
-          fill="#D97706"
-          opacity="0.5"
-          stroke="#D97706"
-          strokeWidth="1.2"
-        />
-        <circle
-          cx="32"
-          cy="28"
-          r="4"
-          fill="#D97706"
-          opacity="0.7"
-          stroke="#D97706"
-          strokeWidth="1.2"
-        />
-      </svg>
-    ),
-    subServices: [
-      { name: "Logo Design", slug: "graphic-designing" },
-      { name: "Social Media Creatives", slug: "graphic-designing" },
-      { name: "Branding Materials", slug: "graphic-designing" },
-      { name: "UI/UX Design", slug: "graphic-designing" },
-    ],
-  },
+  
   {
     id: "ai-automation",
     number: "06",

@@ -168,7 +168,7 @@ const getStats = (slug) => {
         label: "Qualified Leads Generated Every Month",
       },
       {
-        value: "95%",
+        value: "90%",
         label: "Client Retention Rate",
       },
       {
@@ -187,7 +187,7 @@ const getStats = (slug) => {
         label: "Successful Campaigns Managed",
       },
       {
-        value: "95%",
+        value: "90%",
         label: "Client Satisfaction",
       },
       {
@@ -225,7 +225,7 @@ const getStats = (slug) => {
         label: "Keywords Ranked on Page One",
       },
       {
-        value: "95%",
+        value: "90%",
         label: "Client Satisfaction Rate",
       },
       {

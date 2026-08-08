@@ -30,16 +30,16 @@ const SERVICES = [
     href: "/services/digital-marketing",
     icon: <IoAnalytics />,
   },
-  {
-    label: "Video Editing",
-    href: "/services/video-editing",
-    icon: <FaPhotoVideo />,
-  },
-  {
-    label: "Graphic Designing",
-    href: "/services/graphic-designing",
-    icon: <MdOutlineGraphicEq />,
-  },
+  // {
+  //   label: "Video Editing",
+  //   href: "/services/video-editing",
+  //   icon: <FaPhotoVideo />,
+  // },
+  // {
+  //   label: "Graphic Designing",
+  //   href: "/services/graphic-designing",
+  //   icon: <MdOutlineGraphicEq />,
+  // },
   {
     label: "AI Automation",
     href: "/services/ai-automation",

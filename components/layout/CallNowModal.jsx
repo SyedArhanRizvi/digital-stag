@@ -1,68 +1,75 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import gsap from "gsap";
-import { 
-  FiX, 
-  FiCheck, 
-  FiUser, 
-  FiMail, 
-  FiPhone, 
-  FiMessageSquare, 
-  FiPhoneCall, 
-  FiLoader 
-} from "react-icons/fi";
+import { FiX, FiCheck, FiLoader } from "react-icons/fi";
 
 export default function CallNowModal({ isOpen, onClose }) {
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  
-  // Removed overlayRef entirely
+  const [shouldRender, setShouldRender] = useState(false);
+
+  const overlayRef = useRef(null);
   const modalRef = useRef(null);
-  const contentRef = useRef(null);
 
   useEffect(() => {
-    // Safety check to ensure refs are attached
-    if (!modalRef.current || !contentRef.current) return;
-
     if (isOpen) {
-      gsap.set(modalRef.current, { display: "flex" });
-      
-      // Fade in the background
-      gsap.fromTo(
-        modalRef.current,
-        { opacity: 0 },
-        { opacity: 1, duration: 0.3, ease: "power2.out" }
-      );
-      
-      // Pop in the content
-      gsap.fromTo(
-        contentRef.current,
-        { opacity: 0, y: 30, scale: 0.95 },
-        { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "back.out(1.7)" }
-      );
-    } else {
-      // Fade out content
-      gsap.to(contentRef.current, {
-        opacity: 0,
-        y: 30,
-        scale: 0.95,
-        duration: 0.3,
-        ease: "power2.in",
-      });
-      
-      // Fade out background and hide modal
-      gsap.to(modalRef.current, {
-        opacity: 0,
-        duration: 0.3,
-        ease: "power2.in",
-        onComplete: () => {
-          gsap.set(modalRef.current, { display: "none" });
-        },
-      });
+      setShouldRender(true);
     }
   }, [isOpen]);
+
+  useEffect(() => {
+    if (!shouldRender) return;
+
+    if (isOpen) {
+      // Entry Animation
+      gsap.set(overlayRef.current, { opacity: 0 });
+      gsap.set(modalRef.current, { opacity: 0, scale: 0.94, y: 20 });
+
+      const tl = gsap.timeline();
+      tl.to(overlayRef.current, {
+        opacity: 1,
+        duration: 0.3,
+        ease: "power2.out",
+      }).to(
+        modalRef.current,
+        {
+          opacity: 1,
+          scale: 1,
+          y: 0,
+          duration: 0.4,
+          ease: "back.out(1.2)",
+        },
+        "-=0.15"
+      );
+    } else {
+      // Exit Animation
+      const tl = gsap.timeline({
+        onComplete: () => {
+          setShouldRender(false);
+        },
+      });
+
+      tl.to(modalRef.current, {
+        opacity: 0,
+        scale: 0.95,
+        y: 15,
+        duration: 0.2,
+        ease: "power2.in",
+      }).to(
+        overlayRef.current,
+        {
+          opacity: 0,
+          duration: 0.2,
+        },
+        "-=0.1"
+      );
+    }
+  }, [isOpen, shouldRender]);
+
+  if (!shouldRender) return null;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -74,17 +81,12 @@ export default function CallNowModal({ isOpen, onClose }) {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/api/save-enquiry', {
-        method: 'POST',
+      const response = await fetch("/api/save-enquiry", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          message: formData.message,
-        }),
+        body: JSON.stringify(formData),
       });
 
       const result = await response.json();
@@ -95,206 +97,242 @@ export default function CallNowModal({ isOpen, onClose }) {
           onClose();
           setSubmitted(false);
           setFormData({ name: "", email: "", phone: "", message: "" });
-        }, 1500);
+        }, 1800);
       } else {
         alert(`Error: ${result.message}`);
       }
     } catch (error) {
-      console.error('Submission error:', error);
-      alert('Failed to submit. Please try again.');
+      console.error("Submission error:", error);
+      alert("Failed to submit. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-    <div
-      ref={modalRef}
-      className="fixed inset-0 z-[9999] hidden items-center justify-center p-4"
-      style={{ background: "rgba(0,0,0,0.65)", backdropFilter: "blur(8px)" }}
-      onClick={onClose}
-    >
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
+      {/* Backdrop Overlay */}
       <div
-        ref={contentRef}
-        className="relative w-full max-w-md mx-auto rounded-2xl shadow-2xl overflow-hidden bg-white"
+        ref={overlayRef}
+        onClick={onClose}
+        className="absolute inset-0 bg-slate-950/70 backdrop-blur-md"
+      />
+
+      {/* Modal Container */}
+      <div
+        ref={modalRef}
+        className="
+          relative
+          z-10
+          flex
+          w-full
+          max-w-3xl
+          overflow-hidden
+          rounded-2xl
+          bg-white
+          shadow-[0_25px_60px_-15px_rgba(0,0,0,0.3)]
+          ring-1
+          ring-white/20
+        "
         onClick={(e) => e.stopPropagation()}
       >
+        {/* Close Button */}
+        <button
+          type="button"
+          onClick={onClose}
+          className="
+            absolute
+            right-3.5
+            top-3.5
+            z-30
+            flex
+            h-8
+            w-8
+            cursor-pointer
+            items-center
+            justify-center
+            rounded-full
+            bg-slate-900/10
+            text-slate-500
+            backdrop-blur-md
+            transition-all
+            duration-200
+            hover:bg-slate-900
+            hover:text-white
+            hover:scale-105
+            active:scale-95
+          "
+          aria-label="Close modal"
+        >
+          <FiX className="h-4 w-4" />
+        </button>
+
         {submitted ? (
-          /* ── Success State ── */
-          <div className="px-6 py-12 flex flex-col items-center justify-center text-center">
-            <div className="relative mb-5">
-              <div 
-                className="w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center"
-                style={{ background: "linear-gradient(135deg, #10b981 0%, #059669 100%)" }}
-              >
-                <FiCheck className="text-white text-3xl sm:text-4xl" />
+          <div className="flex w-full flex-col items-center justify-center p-12 text-center bg-white">
+            <div className="relative mb-6">
+              <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-tr from-emerald-500 to-teal-400 shadow-lg shadow-emerald-500/30">
+                <FiCheck className="text-4xl text-white" />
               </div>
-              <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-300 rounded-full animate-ping" />
-              <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+              <div className="absolute -top-1 -right-1 h-4 w-4 animate-ping rounded-full bg-emerald-300" />
             </div>
-            
-            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
-              Thank You!
+
+            <h3 className="text-2xl font-bold tracking-tight text-slate-900">
+              Request Received!
             </h3>
-            <p className="text-sm sm:text-base text-gray-600 max-w-[250px]">
-              We received your message and will get back to you within 24 hours.
+            <p className="mt-2 max-w-xs text-xs text-slate-500 leading-relaxed">
+              We have received your details. Our team will reach out to you within 24 hours.
             </p>
-            
-            <div className="mt-5 w-12 h-1 bg-gradient-to-r from-green-400 to-green-600 rounded-full" />
           </div>
         ) : (
-          /* ── Form State ── */
           <>
-            <div className="relative px-6 pt-6 pb-4">
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900" />
-              
-              <div className="flex items-start justify-between">
-                <div>
-                  <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-1">
-                    Let's Talk
-                  </h2>
-                  <p className="text-xs sm:text-sm text-gray-500">
-                    Fill in the details and we'll call you back
-                  </p>
-                </div>
-                
-                <button
-                  onClick={onClose}
-                  aria-label="Close modal"
-                  className="w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200 hover:rotate-90 hover:bg-gray-100 bg-gray-50 text-gray-500 hover:text-gray-900"
-                >
-                  <FiX className="text-lg" />
-                </button>
+            {/* Left Banner */}
+            <div className="relative hidden w-[45%] flex-col justify-between overflow-hidden bg-slate-950 p-8 sm:flex">
+              <Image
+                src="/popup.jpg"
+                alt="Enquiry backdrop"
+                fill
+                priority
+                className="object-cover opacity-60 transition-transform duration-700 hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+
+              <div className="relative z-10">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 text-[10px] font-semibold tracking-widest text-white backdrop-blur-md ring-1 ring-white/20 uppercase">
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  Exclusive Access
+                </span>
+              </div>
+
+              <div className="relative z-10 space-y-2">
+                <h2 className="text-2xl font-light tracking-tight text-white">
+                  Let&apos;s Build <span className="font-semibold text-amber-200">Something Great</span>
+                </h2>
+
+                <p className="text-xs leading-relaxed text-slate-300">
+                  Share your vision with us and our advisory team will connect with you within 24 hours.
+                </p>
               </div>
             </div>
 
-            <form onSubmit={handleSubmit} className="px-6 pb-6">
-              <div className="flex flex-col gap-3.5">
-                {/* Name Field */}
-                <div className="group">
-                  <label className="block text-xs font-semibold text-gray-700 mb-1.5 ml-1">
-                    Full Name
-                  </label>
-                  <div className="relative">
-                    <div className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-gray-900 transition-colors">
-                      <FiUser className="text-lg" />
-                    </div>
+            {/* Right Form Container */}
+            <div className="flex w-full sm:w-[55%] items-center bg-white p-7 sm:p-8">
+              <div className="w-full">
+                <div className="mb-6">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-amber-600">
+                    Get In Touch
+                  </p>
+                  <h3 className="mt-1 text-xl font-bold tracking-tight text-slate-900">
+                    Elevate Your Project
+                  </h3>
+                </div>
+
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="group relative">
                     <input
                       type="text"
                       name="name"
+                      required
                       value={formData.name}
                       onChange={handleChange}
-                      placeholder="John Doe"
-                      required
-                      className="w-full pl-10 pr-4 py-2.5 text-sm rounded-xl border border-gray-200 text-gray-900 placeholder-gray-400 outline-none transition-all duration-200 focus:border-gray-900 focus:bg-gray-50 focus:shadow-sm hover:border-gray-300"
+                      placeholder="Your Full Name"
+                      id="call-form-name"
+                      className="peer w-full border-b border-slate-200 bg-transparent py-2 text-xs font-medium text-slate-900 placeholder-transparent outline-none transition-all focus:border-slate-900"
                     />
+                    <label
+                      htmlFor="call-form-name"
+                      className="absolute left-0 -top-3.5 text-[10px] font-medium text-slate-400 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-xs peer-placeholder-shown:text-slate-400 peer-focus:-top-3.5 peer-focus:text-[10px] peer-focus:font-semibold peer-focus:text-slate-900"
+                    >
+                      Full Name
+                    </label>
                   </div>
-                </div>
 
-                {/* Email Field */}
-                <div className="group">
-                  <label className="block text-xs font-semibold text-gray-700 mb-1.5 ml-1">
-                    Email Address
-                  </label>
-                  <div className="relative">
-                    <div className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-gray-900 transition-colors">
-                      <FiMail className="text-lg" />
-                    </div>
+                  <div className="group relative">
                     <input
                       type="email"
                       name="email"
+                      required
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder="john@example.com"
-                      required
-                      className="w-full pl-10 pr-4 py-2.5 text-sm rounded-xl border border-gray-200 text-gray-900 placeholder-gray-400 outline-none transition-all duration-200 focus:border-gray-900 focus:bg-gray-50 focus:shadow-sm hover:border-gray-300"
+                      placeholder="Your Email Address"
+                      id="call-form-email"
+                      className="peer w-full border-b border-slate-200 bg-transparent py-2 text-xs font-medium text-slate-900 placeholder-transparent outline-none transition-all focus:border-slate-900"
                     />
+                    <label
+                      htmlFor="call-form-email"
+                      className="absolute left-0 -top-3.5 text-[10px] font-medium text-slate-400 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-xs peer-placeholder-shown:text-slate-400 peer-focus:-top-3.5 peer-focus:text-[10px] peer-focus:font-semibold peer-focus:text-slate-900"
+                    >
+                      Email Address
+                    </label>
                   </div>
-                </div>
 
-                {/* Phone Field */}
-                <div className="group">
-                  <label className="block text-xs font-semibold text-gray-700 mb-1.5 ml-1">
-                    Phone Number
-                  </label>
-                  <div className="relative">
-                    <div className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-gray-900 transition-colors">
-                      <FiPhone className="text-lg" />
-                    </div>
+                  <div className="group relative">
                     <input
                       type="tel"
                       name="phone"
+                      required
                       value={formData.phone}
                       onChange={handleChange}
-                      placeholder="+91 98765 43210"
-                      required
-                      className="w-full pl-10 pr-4 py-2.5 text-sm rounded-xl border border-gray-200 text-gray-900 placeholder-gray-400 outline-none transition-all duration-200 focus:border-gray-900 focus:bg-gray-50 focus:shadow-sm hover:border-gray-300"
+                      placeholder="Your Phone Number"
+                      id="call-form-phone"
+                      className="peer w-full border-b border-slate-200 bg-transparent py-2 text-xs font-medium text-slate-900 placeholder-transparent outline-none transition-all focus:border-slate-900"
                     />
+                    <label
+                      htmlFor="call-form-phone"
+                      className="absolute left-0 -top-3.5 text-[10px] font-medium text-slate-400 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-xs peer-placeholder-shown:text-slate-400 peer-focus:-top-3.5 peer-focus:text-[10px] peer-focus:font-semibold peer-focus:text-slate-900"
+                    >
+                      Phone Number
+                    </label>
                   </div>
-                </div>
 
-                {/* Message Field */}
-                <div className="group">
-                  <label className="block text-xs font-semibold text-gray-700 mb-1.5 ml-1">
-                    Message
-                  </label>
-                  <div className="relative">
-                    <div className="absolute left-3.5 top-3 text-gray-400 group-focus-within:text-gray-900 transition-colors">
-                      <FiMessageSquare className="text-lg" />
-                    </div>
+                  <div className="group relative">
                     <textarea
                       name="message"
+                      rows={2}
+                      required
                       value={formData.message}
                       onChange={handleChange}
-                      placeholder="Tell us about your requirements..."
-                      required
-                      rows="3"
-                      className="w-full pl-10 pr-4 py-2.5 text-sm rounded-xl border border-gray-200 text-gray-900 placeholder-gray-400 outline-none transition-all duration-200 focus:border-gray-900 focus:bg-gray-50 focus:shadow-sm hover:border-gray-300 resize-none"
+                      placeholder="Brief Details"
+                      id="call-form-message"
+                      className="peer w-full resize-none border-b border-slate-200 bg-transparent py-2 text-xs font-medium text-slate-900 placeholder-transparent outline-none transition-all focus:border-slate-900"
                     />
+                    <label
+                      htmlFor="call-form-message"
+                      className="absolute left-0 -top-3.5 text-[10px] font-medium text-slate-400 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-xs peer-placeholder-shown:text-slate-400 peer-focus:-top-3.5 peer-focus:text-[10px] peer-focus:font-semibold peer-focus:text-slate-900"
+                    >
+                      Project Summary
+                    </label>
                   </div>
-                </div>
 
-                {/* Submit Button */}
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full py-3 mt-1 rounded-xl font-bold text-sm transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-wait"
-                  style={{ 
-                    background: "linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%)",
-                    color: "white",
-                    boxShadow: "0 4px 10px rgba(0,0,0,0.15)"
-                  }}
-                  onMouseEnter={(e) => {
-                    if (!isSubmitting) {
-                      e.currentTarget.style.transform = "translateY(-1px)";
-                      e.currentTarget.style.boxShadow = "0 6px 15px rgba(0,0,0,0.2)";
-                    }
-                  }}
-                  onMouseLeave={(e) => {
-                    if (!isSubmitting) {
-                      e.currentTarget.style.transform = "translateY(0)";
-                      e.currentTarget.style.boxShadow = "0 4px 10px rgba(0,0,0,0.15)";
-                    }
-                  }}
-                >
-                  {isSubmitting ? (
-                    <>
-                      <FiLoader className="animate-spin text-lg" />
-                      <span>Sending...</span>
-                    </>
-                  ) : (
-                    <>
-                      <FiPhoneCall className="text-lg" />
-                      <span>Call Me Back</span>
-                    </>
-                  )}
-                </button>
-
-                <p className="text-center text-[10px] text-gray-400 mt-1">
-                  🔒 Your information is secure and will never be shared
-                </p>
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="
+                      group relative mt-4 flex w-full cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-xl bg-slate-900 px-5 py-3 text-xs font-semibold text-white shadow-lg shadow-slate-900/10 transition-all duration-300 hover:bg-slate-800 hover:shadow-slate-900/25 active:scale-[0.99] disabled:opacity-70 disabled:cursor-wait
+                    "
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <FiLoader className="animate-spin text-sm" />
+                        <span>Sending Request...</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>Request Callback</span>
+                        <svg
+                          className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                      </>
+                    )}
+                  </button>
+                </form>
               </div>
-            </form>
+            </div>
           </>
         )}
       </div>

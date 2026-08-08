@@ -25,11 +25,11 @@ const FOUNDER_DATA = {
   name: "Anshu Singh",
   role: "Founder & CEO",
   image: "/founder/founder.jpeg", // Replace with actual founder image
-  tagline: "Building Digital Excellence Since 2018",
-  bio: "A visionary entrepreneur with over 8+ years of experience in digital marketing, web development, and brand strategy. Passionate about transforming businesses through innovative digital solutions.",
+  tagline: "Building Digital Excellence Since 2020",
+  bio: "A visionary entrepreneur with over 5+ years of experience in digital marketing, web development, and brand strategy. Passionate about transforming businesses through innovative digital solutions.",
   fullStory: [
-    "Started Digital Stag in 2018 with a vision to help businesses establish a powerful online presence. What began as a one-person operation has grown into a full-service digital agency serving clients worldwide.",
-    "With expertise spanning SEO, web development, digital marketing, and brand strategy, Arhan has helped over 320+ businesses achieve their digital goals. His leadership philosophy centers on innovation, integrity, and delivering measurable results.",
+    "Started Digital Stag in 2020 with a vision to help businesses establish a powerful online presence. What began as a one-person operation has grown into a full-service digital agency serving clients worldwide.",
+    "With expertise spanning SEO, web development, digital marketing, and brand strategy, Arhan has helped over 160+ businesses achieve their digital goals. His leadership philosophy centers on innovation, integrity, and delivering measurable results.",
     "When not strategizing for clients, Arhan is an avid tech enthusiast, speaker at industry conferences, and mentor to aspiring digital marketers. He believes in continuous learning and staying ahead of digital trends."
   ],
   expertise: [
@@ -41,9 +41,9 @@ const FOUNDER_DATA = {
     "Growth Marketing"
   ],
   achievements: [
-    { value: "320+", label: "Projects Delivered" },
-    { value: "8+", label: "Years Experience" },
-    { value: "50+", label: "Team Members" },
+    { value: "160+", label: "Projects Delivered" },
+    { value: "5+", label: "Years Experience" },
+    { value: "5L+", label: "Leads Generated" },
     { value: "98%", label: "Client Satisfaction" }
   ],
   socialLinks: {

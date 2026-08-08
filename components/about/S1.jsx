@@ -18,10 +18,10 @@ const TEAM_IMAGES = [
 ]
 
 const STATS = [
-  { value: "150+", label: "Projects Completed" },
-  { value: "12+", label: "Years Experience" },
+  { value: "160+", label: "Projects Completed" },
+  { value: "5+", label: "Years Experience" },
   { value: "50+", label: "Team Members" },
-  { value: "98%", label: "Client Retention" },
+  { value: "90%", label: "Client Retention" },
 ]
 
 const VALUES = [
