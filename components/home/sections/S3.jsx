@@ -27,7 +27,7 @@ const STATS = [
   { count: 90,  suffix: '%', label: 'Client Satisfaction' },
 ]
 
-const ACCENT_COLORS = ['#7c3aed', '#4f46e5', '#0ea5e9', '#06b6d4']
+const ACCENT_COLORS = ['#5B3700', '#C57A00', '#FFAA00', '#5B3700']
 
 /* ─────────────────────────────────────────────────────────────
    CUSTOM HOOK: Intersection Observer
@@ -87,7 +87,7 @@ function VariableProximityText({ text, style }) {
         const weight = Math.round(400 + t * 500)
         
         el.style.fontWeight = String(weight)
-        el.style.color = t > 0.5 ? '#7c3aed' : `rgba(15,15,15,${0.45 + t * 0.55})`
+        el.style.color = t > 0.5 ? '#5B3700' : `rgba(15,15,15,${0.45 + t * 0.55})`
       })
     }
 
@@ -384,15 +384,15 @@ export default function S3() {
       <section
         className="s3-wrap"
         style={{
-          background: 'linear-gradient(150deg, #fafafa 0%, #f3f0ff 45%, #eef6ff 100%)',
+          background: 'linear-gradient(150deg, #fffdfb 0%, #F8EAD5 45%, #fffaf1 100%)',
           padding: 'clamp(72px, 10vw, 128px) 0',
           position: 'relative',
           overflow: 'hidden',
         }}
       >
         {[
-          { top: '-160px', right: '-160px', size: '520px', color: 'rgba(124,58,237,0.06)' },
-          { bottom: '-100px', left: '-100px', size: '380px', color: 'rgba(14,165,233,0.07)' },
+          { top: '-160px', right: '-160px', size: '520px', color: 'rgba(91,55,0,0.06)' },
+          { bottom: '-100px', left: '-100px', size: '380px', color: 'rgba(255,170,0,0.07)' },
         ].map((orb, i) => (
           <div key={i} style={{
             position: 'absolute',
@@ -411,12 +411,12 @@ export default function S3() {
         <div style={{
           position: 'absolute', top: '-140px', right: '-140px',
           width: '500px', height: '500px', borderRadius: '50%',
-          border: '1px solid rgba(124,58,237,0.08)', pointerEvents: 'none',
+          border: '1px solid rgba(91,55,0,0.08)', pointerEvents: 'none',
         }} />
         <div style={{
           position: 'absolute', bottom: '-80px', left: '-80px',
           width: '340px', height: '340px', borderRadius: '50%',
-          border: '1px solid rgba(14,165,233,0.07)', pointerEvents: 'none',
+          border: '1px solid rgba(255,170,0,0.07)', pointerEvents: 'none',
         }} />
 
         <div style={{
@@ -435,7 +435,7 @@ export default function S3() {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '8px',
-                background: 'linear-gradient(135deg, #7c3aed, #4f46e5)',
+                background: 'linear-gradient(135deg, #5B3700, #C57A00)',
                 color: '#fff',
                 fontFamily: "'Poppins', sans-serif",
                 fontWeight: 600,
@@ -496,7 +496,7 @@ export default function S3() {
               style={{
                 width: '48px',
                 height: '3px',
-                background: 'linear-gradient(90deg, #7c3aed, #4f46e5)',
+                background: 'linear-gradient(90deg, #5B3700, #C57A00)',
                 borderRadius: '2px',
                 margin: '28px auto 0',
                 transformOrigin: 'left center',

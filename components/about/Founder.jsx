@@ -248,12 +248,12 @@ function Founder() {
     >
       {/* ── Floating Decorative Elements ── */}
       {[
-        { icon: <FaStar />, position: "top-20 left-[8%]", size: "text-xl", color: "text-violet-300/40" },
-        { icon: <FaRocket />, position: "top-32 right-[12%]", size: "text-2xl", color: "text-indigo-300/30" },
-        { icon: <FaAward />, position: "bottom-40 left-[10%]", size: "text-2xl", color: "text-violet-300/40" },
-        { icon: <FaUsers />, position: "bottom-32 right-[8%]", size: "text-xl", color: "text-indigo-300/30" },
-        { icon: <FaStar />, position: "top-1/2 left-[5%]", size: "text-lg", color: "text-violet-200/50" },
-        { icon: <FaRocket />, position: "top-[60%] right-[15%]", size: "text-xl", color: "text-indigo-200/40" },
+        { icon: <FaStar />, position: "top-20 left-[8%]", size: "text-xl", color: "text-[#C57A00]/40" },
+        { icon: <FaRocket />, position: "top-32 right-[12%]", size: "text-2xl", color: "text-[#FFAA00]/30" },
+        { icon: <FaAward />, position: "bottom-40 left-[10%]", size: "text-2xl", color: "text-[#C57A00]/40" },
+        { icon: <FaUsers />, position: "bottom-32 right-[8%]", size: "text-xl", color: "text-[#FFAA00]/30" },
+        { icon: <FaStar />, position: "top-1/2 left-[5%]", size: "text-lg", color: "text-[#C57A00]/50" },
+        { icon: <FaRocket />, position: "top-[60%] right-[15%]", size: "text-xl", color: "text-[#FFAA00]/40" },
       ].map((item, index) => (
         <div
           key={index}
@@ -275,7 +275,7 @@ function Founder() {
             Meet The{" "}
             <span className="relative">
               <span className="relative z-10">Founder</span>
-              <span className="absolute bottom-0.5 left-0 w-full h-2 sm:h-3 bg-violet-200/60 -z-0" />
+              <span className="absolute bottom-0.5 left-0 w-full h-2 sm:h-3 bg-[#C57A00]/50 -z-0" />
             </span>
           </h2>
         </div>
@@ -289,22 +289,22 @@ function Founder() {
             {/* Left - Image */}
             <div 
               ref={imageContainerRef}
-              className="relative bg-gradient-to-br from-violet-50 to-indigo-50 p-8 sm:p-10 lg:p-12 flex items-center justify-center min-h-[400px] sm:min-h-[500px]"
+              className="relative bg-gradient-to-br from-[#F8EAD5] to-[#FFE19A]/70 p-8 sm:p-10 lg:p-12 flex items-center justify-center min-h-[400px] sm:min-h-[500px]"
             >
               {/* Decorative circles behind image */}
-              <div className="absolute top-10 left-10 w-32 h-32 border-2 border-violet-200/50 rounded-full" />
-              <div className="absolute bottom-10 right-10 w-40 h-40 border-2 border-indigo-200/50 rounded-full" />
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-violet-100/30 rounded-full blur-xl" />
+              <div className="absolute top-10 left-10 w-32 h-32 border-2 border-[#C57A00]/50 rounded-full" />
+              <div className="absolute bottom-10 right-10 w-40 h-40 border-2 border-[#FFAA00]/50 rounded-full" />
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#C57A00]/30 rounded-full blur-xl" />
               
               {/* Image Container */}
-              <div className="relative w-56 h-56 sm:w-64 sm:h-64 lg:w-72 lg:h-72 rounded-full overflow-hidden border-4 border-white shadow-2xl shadow-violet-200/50">
+              <div className="relative w-56 h-56 sm:w-64 sm:h-64 lg:w-72 lg:h-72 rounded-full overflow-hidden border-4 border-white shadow-2xl shadow-[#C57A00]/50">
                 <img 
                   src={FOUNDER_DATA.image} 
                   alt={FOUNDER_DATA.name}
                   className="w-full h-full object-cover"
                 />
                 {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-violet-900/10 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#5B3700]/10 to-transparent" />
               </div>
 
               {/* Floating badge */}
@@ -324,7 +324,7 @@ function Founder() {
                 <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-1" style={{ fontFamily: "'Sora', 'DM Sans', sans-serif" }}>
                   {FOUNDER_DATA.name}
                 </h3>
-                <p className="text-violet-600 font-semibold text-sm sm:text-base">
+                <p className="text-[#5B3700] font-semibold text-sm sm:text-base">
                   {FOUNDER_DATA.role}
                 </p>
                 <p className="text-gray-500 text-sm mt-1">
@@ -372,7 +372,7 @@ function Founder() {
                   {FOUNDER_DATA.expertise.map((skill, index) => (
                     <span 
                       key={index}
-                      className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded-full text-xs font-medium text-gray-600 hover:bg-violet-50 hover:border-violet-200 hover:text-violet-600 transition-all duration-300"
+                      className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded-full text-xs font-medium text-gray-600 hover:bg-[#F8EAD5] hover:border-[#C57A00]/40 hover:text-[#5B3700] transition-all duration-300"
                     >
                       {skill}
                     </span>
@@ -392,7 +392,7 @@ function Founder() {
                 key={index}
                 className="p-6 sm:p-8 text-center hover:bg-gray-50/50 transition-all duration-300 group"
               >
-                <div className="text-2xl sm:text-3xl font-bold text-violet-600 mb-1 group-hover:scale-110 transition-transform duration-300">
+                <div className="text-2xl sm:text-3xl font-bold text-[#5B3700] mb-1 group-hover:scale-110 transition-transform duration-300">
                   {achievement.value}
                 </div>
                 <div className="text-xs sm:text-sm text-gray-500">
@@ -409,7 +409,7 @@ function Founder() {
           {/* Story */}
           <div className="lg:col-span-2 bg-white rounded-2xl sm:rounded-3xl p-8 sm:p-10 shadow-[0_2px_40px_-15px_rgba(0,0,0,0.08)] border border-gray-100">
             <div className="flex items-center gap-3 mb-6">
-              <FaRocket className="text-violet-600 text-xl" />
+              <FaRocket className="text-[#5B3700] text-xl" />
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900" style={{ fontFamily: "'Sora', 'DM Sans', sans-serif" }}>
                 The Journey
               </h3>
@@ -427,7 +427,7 @@ function Founder() {
           {/* Quote */}
           <div 
             ref={quoteRef}
-            className="bg-gradient-to-br from-violet-600 to-indigo-600 rounded-2xl sm:rounded-3xl p-8 sm:p-10 text-white flex flex-col justify-center relative overflow-hidden"
+            className="bg-gradient-to-br from-[#5B3700] via-[#C57A00] to-[#FFAA00] rounded-2xl sm:rounded-3xl p-8 sm:p-10 text-white flex flex-col justify-center relative overflow-hidden"
           >
             {/* Decorative quote marks */}
             <FaQuoteLeft className="text-white/10 text-6xl absolute top-4 left-4" />
@@ -436,7 +436,7 @@ function Founder() {
               <p className="text-lg sm:text-xl font-medium leading-relaxed italic mb-6">
                 "{FOUNDER_DATA.quote}"
               </p>
-              <p className="text-violet-200 font-semibold">
+              <p className="text-[#FFE19A] font-semibold">
                 — {FOUNDER_DATA.name}
               </p>
             </div>
@@ -452,7 +452,7 @@ function Founder() {
 
         {/* ── CTA ── */}
         <div ref={ctaRef} className="text-center">
-          <button className="group inline-flex items-center gap-3 px-8 py-4 bg-gray-900 text-white font-semibold rounded-2xl hover:bg-violet-600 transition-all duration-300 hover:shadow-xl hover:shadow-violet-200 active:scale-[0.98]">
+          <button className="group inline-flex items-center gap-3 px-8 py-4 bg-gray-900 text-white font-semibold rounded-2xl hover:bg-[#5B3700] transition-all duration-300 hover:shadow-xl hover:shadow-[#C57A00]/30 active:scale-[0.98]">
             <span>Work With {FOUNDER_DATA.name.split(' ')[0]}</span>
             <FaArrowRight className="group-hover:translate-x-1 transition-transform duration-300" />
           </button>

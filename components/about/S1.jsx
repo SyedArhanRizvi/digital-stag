@@ -192,9 +192,9 @@ function S1() {
       {/* ── Animated Background Elements ── */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Gradient orbs */}
-        <div className="absolute -top-20 left-10 w-72 h-72 bg-violet-300/30 rounded-full blur-3xl animate-pulse-slow" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-indigo-200/20 rounded-full blur-3xl animate-pulse-slower" />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-violet-300/20 to-orange-200/20 rounded-full blur-3xl" />
+        <div className="absolute -top-20 left-10 w-72 h-72 bg-[#C57A00]/30 rounded-full blur-3xl animate-pulse-slow" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#FFAA00]/20 rounded-full blur-3xl animate-pulse-slower" />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-[#C57A00]/20 to-[#FFAA00]/20 rounded-full blur-3xl" />
         
         {/* Grid overlay */}
         <div 
@@ -208,20 +208,20 @@ function S1() {
         {/* Decorative circle */}
         <div 
           ref={decorativeCircleRef}
-          className="absolute top-1/4 right-1/4 w-64 h-64 border border-violet-300/40 rounded-full"
+          className="absolute top-1/4 right-1/4 w-64 h-64 border border-[#C57A00]/40 rounded-full"
         >
-          <div className="absolute inset-4 border border-violet-300/30 rounded-full" />
-          <div className="absolute inset-8 border border-violet-300/20 rounded-full" />
+          <div className="absolute inset-4 border border-[#C57A00]/30 rounded-full" />
+          <div className="absolute inset-8 border border-[#C57A00]/20 rounded-full" />
         </div>
       </div>
 
       {/* ── Floating Decorative Elements ── */}
       {[
-        { icon: "●", color: "text-violet-400/60", size: "text-2xl", position: "top-32 left-[15%]" },
-        { icon: "◆", color: "text-indigo-400/40", size: "text-xl", position: "top-48 right-[20%]" },
+        { icon: "●", color: "text-[#C57A00]/60", size: "text-2xl", position: "top-32 left-[15%]" },
+        { icon: "◆", color: "text-[#FFAA00]/40", size: "text-xl", position: "top-48 right-[20%]" },
         { icon: "▲", color: "text-orange-400/50", size: "text-lg", position: "bottom-32 left-[25%]" },
-        { icon: "■", color: "text-violet-300/30", size: "text-3xl", position: "bottom-48 right-[15%]" },
-        { icon: "✦", color: "text-violet-400/50", size: "text-xl", position: "top-[60%] right-[30%]" },
+        { icon: "■", color: "text-[#C57A00]/30", size: "text-3xl", position: "bottom-48 right-[15%]" },
+        { icon: "✦", color: "text-[#5B3700]/50", size: "text-xl", position: "top-[60%] right-[30%]" },
       ].map((item, index) => (
         <div
           key={index}
@@ -240,15 +240,15 @@ function S1() {
             <div className="flex -space-x-3 sm:-space-x-4 p-2">
               {TEAM_IMAGES.map((image, index) => (
                 <div key={index} className="relative group">
-                  <div className="absolute inset-0 bg-gradient-to-r from-violet-500 to-indigo-500 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#5B3700] via-[#C57A00] to-[#FFAA00] rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <img
                     src={image}
                     alt={`Team member ${index + 1}`}
-                    className="relative w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-full border-2 sm:border-3 border-white object-cover ring-2 ring-violet-200 hover:ring-violet-400 transition-all duration-300 hover:scale-110 shadow-lg"
+                    className="relative w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-full border-2 sm:border-3 border-white object-cover ring-2 ring-[#C57A00]/50 hover:ring-[#5B3700] transition-all duration-300 hover:scale-110 shadow-lg"
                   />
                 </div>
               ))}
-              <div className="relative w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-full bg-gradient-to-br from-violet-600 to-indigo-600 border-2 sm:border-3 border-white flex items-center justify-center text-white text-xs sm:text-sm font-bold ring-2 ring-violet-200 shadow-lg">
+              <div className="relative w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-full bg-gradient-to-br from-[#5B3700] via-[#C57A00] to-[#FFAA00] border-2 sm:border-3 border-white flex items-center justify-center text-white text-xs sm:text-sm font-bold ring-2 ring-[#C57A00]/50 shadow-lg">
                 25+
               </div>
             </div>
@@ -262,15 +262,15 @@ function S1() {
             style={{ fontFamily: "'Sora', 'DM Sans', sans-serif" }}
           >
             <span>Crafting </span>
-            <span className="text-violet-600">Digital</span>
+            <span className="text-[#5B3700]">Digital</span>
             <br className="sm:hidden" />
             <span> Excellence </span>
             <span className="relative inline-block">
               <span className="relative z-10">Through</span>
-              <span className="absolute bottom-1 sm:bottom-2 left-0 w-full h-2 sm:h-3 bg-violet-200/70 -z-0" />
+              <span className="absolute bottom-1 sm:bottom-2 left-0 w-full h-2 sm:h-3 bg-[#C57A00]/50 -z-0" />
             </span>
             <br />
-            <span className="bg-gradient-to-r from-violet-600 to-indigo-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#5B3700] via-[#C57A00] to-[#FFAA00] bg-clip-text text-transparent">
               Creative Innovation
             </span>
           </h1>
@@ -287,13 +287,13 @@ function S1() {
 
           {/* ── CTA Buttons ── */}
           <div ref={ctaRef} className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-12 sm:mb-16 lg:mb-20 opacity-0 w-full sm:w-auto px-4 sm:px-0">
-            <button className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-gray-900 text-white font-semibold rounded-full text-sm sm:text-base transition-all duration-300 hover:shadow-[0_8px_30px_rgba(109,40,217,0.35)] hover:scale-105 active:scale-95 w-full sm:w-auto">
+            <button className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-gray-900 text-white font-semibold rounded-full text-sm sm:text-base transition-all duration-300 hover:shadow-[0_8px_30px_rgba(91,55,0,0.35)] hover:scale-105 active:scale-95 w-full sm:w-auto">
               <span className="relative z-10 flex items-center gap-2">
                 Discover Our Work
-                <span className="inline-flex h-5 w-5 sm:h-6 sm:w-6 items-center justify-center rounded-full bg-violet-500 text-xs transition-transform duration-300 group-hover:translate-x-1">→</span>
+                <span className="inline-flex h-5 w-5 sm:h-6 sm:w-6 items-center justify-center rounded-full bg-[#C57A00] text-xs transition-transform duration-300 group-hover:translate-x-1">→</span>
               </span>
             </button>
-            <button className="group px-6 sm:px-8 py-3 sm:py-4 bg-white/80 backdrop-blur-sm border border-gray-200 text-gray-700 font-semibold rounded-full text-sm sm:text-base transition-all duration-300 hover:bg-white hover:border-violet-300 hover:shadow-lg hover:scale-105 active:scale-95 w-full sm:w-auto">
+            <button className="group px-6 sm:px-8 py-3 sm:py-4 bg-white/80 backdrop-blur-sm border border-gray-200 text-gray-700 font-semibold rounded-full text-sm sm:text-base transition-all duration-300 hover:bg-white hover:border-[#C57A00] hover:shadow-lg hover:scale-105 active:scale-95 w-full sm:w-auto">
               Meet the Team
               <span className="ml-2 inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
             </button>
@@ -307,11 +307,11 @@ function S1() {
             {STATS.map((stat, index) => (
               <div 
                 key={index}
-                className="group relative bg-white/80 backdrop-blur-sm border border-gray-200 rounded-2xl sm:rounded-3xl p-4 sm:p-6 transition-all duration-300 hover:bg-white hover:border-violet-300 hover:shadow-lg hover:scale-105"
+                className="group relative bg-white/80 backdrop-blur-sm border border-gray-200 rounded-2xl sm:rounded-3xl p-4 sm:p-6 transition-all duration-300 hover:bg-white hover:border-[#C57A00] hover:shadow-lg hover:scale-105"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-violet-100/50 to-indigo-100/50 rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#F8EAD5]/60 to-[#FFE19A]/50 rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="relative z-10">
-                  <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-violet-600 mb-1 sm:mb-2">
+                  <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#5B3700] mb-1 sm:mb-2">
                     {stat.value}
                   </div>
                   <div className="text-xs sm:text-sm text-gray-500 group-hover:text-gray-700 transition-colors">
@@ -330,9 +330,9 @@ function S1() {
             {VALUES.map((value, index) => (
               <div 
                 key={index}
-                className="group relative bg-white/80 backdrop-blur-sm border border-gray-200 rounded-2xl sm:rounded-3xl p-5 sm:p-6 transition-all duration-300 hover:bg-white hover:border-violet-300 hover:shadow-lg hover:-translate-y-1"
+                className="group relative bg-white/80 backdrop-blur-sm border border-gray-200 rounded-2xl sm:rounded-3xl p-5 sm:p-6 transition-all duration-300 hover:bg-white hover:border-[#C57A00] hover:shadow-lg hover:-translate-y-1"
               >
-                <div className="text-2xl sm:text-3xl mb-3 sm:mb-4 text-violet-600 group-hover:scale-110 transition-transform duration-300 inline-block">
+                <div className="text-2xl sm:text-3xl mb-3 sm:mb-4 text-[#5B3700] group-hover:scale-110 transition-transform duration-300 inline-block">
                   {value.icon}
                 </div>
                 <h3 className="text-gray-900 font-semibold text-base sm:text-lg mb-1 sm:mb-2">

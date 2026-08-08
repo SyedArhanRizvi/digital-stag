@@ -21,7 +21,7 @@ const MOCKUP_RIGHT_BADGE =
 
 // ── Floating tag data ────────────────────────────────────────────────────────
 const FLOAT_TAGS = [
-  { id: 1, label: "UI/UX Design", color: "bg-violet-100 text-violet-700" },
+  { id: 1, label: "UI/UX Design", color: "bg-[#F8EAD5] text-[#5B3700]" },
   { id: 2, label: "Branding", color: "bg-amber-100 text-amber-700" },
   { id: 3, label: "Web Dev", color: "bg-sky-100 text-sky-700" },
 ];
@@ -65,8 +65,8 @@ export default function HeroSection() {
     <section className="relative min-h-[100vh] sm:min-h-[110vh] w-full overflow-hidden bg-[#e8ecf4] flex items-center font-sans">
       {/* ── Soft background blobs ── */}
       <div className="pointer-events-none absolute inset-0 z-0">
-        <div className="absolute -top-20 sm:-top-32 -left-20 sm:-left-32 h-[280px] sm:h-[340px] md:h-[420px] w-[280px] sm:w-[340px] md:w-[420px] rounded-full bg-violet-300/30 blur-[80px] sm:blur-[100px]" />
-        <div className="absolute top-1/3 sm:top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[240px] sm:h-[280px] md:h-[340px] w-[360px] sm:w-[480px] md:w-[640px] rounded-full bg-indigo-200/20 blur-[80px] sm:blur-[100px] md:blur-[120px]" />
+        <div className="absolute -top-20 sm:-top-32 -left-20 sm:-left-32 h-[280px] sm:h-[340px] md:h-[420px] w-[280px] sm:w-[340px] md:w-[420px] rounded-full bg-[#C57A00]/30 blur-[80px] sm:blur-[100px]" />
+        <div className="absolute top-1/3 sm:top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[240px] sm:h-[280px] md:h-[340px] w-[360px] sm:w-[480px] md:w-[640px] rounded-full bg-[#FFAA00]/20 blur-[80px] sm:blur-[100px] md:blur-[120px]" />
         <div className="absolute -bottom-16 sm:-bottom-24 right-0 h-[240px] sm:h-[300px] md:h-[360px] w-[240px] sm:w-[300px] md:w-[360px] rounded-full bg-orange-300/25 blur-[80px] sm:blur-[100px]" />
       </div>
 
@@ -167,9 +167,9 @@ export default function HeroSection() {
             >
               More{" "}
               <span className="relative inline-block">
-                <span className="relative z-10 text-violet-600"> Leads . </span>
+                <span className="relative z-10 text-[#5B3700]"> Leads . </span>
                 <span
-                  className="absolute inset-x-0 bottom-0.5 sm:bottom-1 h-2 sm:h-3 rounded-sm bg-violet-200/70 -z-0 animate-underline-reveal"
+                  className="absolute inset-x-0 bottom-0.5 sm:bottom-1 h-2 sm:h-3 rounded-sm bg-[#C57A00]/50 -z-0 animate-underline-reveal"
                   style={{ transformOrigin: "left" }}
                 />
               </span>{" "}
@@ -177,7 +177,7 @@ export default function HeroSection() {
               <br />
               <span className="text-gray-800">More</span>
               <br />
-              <span className="bg-gradient-to-r from-violet-600 to-indigo-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#5B3700] via-[#C57A00] to-[#FFAA00] bg-clip-text text-transparent">
                 Growth .
               </span>
             </h1>

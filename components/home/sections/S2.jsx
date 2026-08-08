@@ -6,11 +6,11 @@ import { useRef, useLayoutEffect, useState, useMemo, useCallback, useEffect } fr
    ACCENT PALETTE
 ───────────────────────────────────────────────────────────── */
 const ACCENTS = [
-  '#7c3aed',
-  '#4f46e5', 
-  '#0ea5e9',
-  '#a855f7',
-  '#06b6d4',
+  '#5B3700',
+  '#C57A00',
+  '#FFAA00',
+  '#5B3700',
+  '#C57A00',
 ];
 
 // Stable seed-based accent assignment (won't change between renders)
@@ -361,7 +361,7 @@ export const ScrollVelocity = ({
         style={{
           position: 'relative',
           overflow: 'hidden',
-          background: 'linear-gradient(160deg, #fafafa 0%, #f3f0ff 50%, #eef6ff 100%)',
+          background: 'linear-gradient(160deg, #fffdfb 0%, #F8EAD5 50%, #fffaf1 100%)',
           padding: '0',
         }}
       >
@@ -370,7 +370,7 @@ export const ScrollVelocity = ({
           position: 'absolute',
           top: 0, left: 0, right: 0,
           height: '1px',
-          background: 'linear-gradient(90deg, #7c3aed, #4f46e5, #0ea5e9, #06b6d4)',
+          background: 'linear-gradient(90deg, #5B3700, #C57A00, #FFAA00)',
           zIndex: 2,
         }} />
 
@@ -379,7 +379,7 @@ export const ScrollVelocity = ({
           position: 'absolute',
           bottom: 0, left: 0, right: 0,
           height: '1px',
-          background: 'linear-gradient(90deg, #06b6d4, #0ea5e9, #4f46e5, #7c3aed)',
+          background: 'linear-gradient(90deg, #FFAA00, #C57A00, #5B3700)',
           zIndex: 2,
         }} />
 

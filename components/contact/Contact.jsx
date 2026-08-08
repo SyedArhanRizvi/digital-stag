@@ -133,8 +133,8 @@ function Contact() {
       value: "+91 9354683813",
       href: "tel:9354683813",
       sub: "Mon-Sat 10am-7pm",
-      color: "bg-violet-50 text-violet-600 border-violet-200",
-      iconBg: "bg-violet-100"
+      color: "bg-[#F8EAD5] text-[#5B3700] border-[#C57A00]/40",
+      iconBg: "bg-[#F8EAD5]"
     },
     {
       icon: <MailIcon />,
@@ -166,7 +166,7 @@ function Contact() {
       }}
     >
       {/* Subtle top accent */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-violet-400 via-indigo-400 to-violet-400" />
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#5B3700] via-[#C57A00] to-[#FFAA00]" />
 
       <div className="relative z-10 w-full max-w-6xl mx-auto">
         {/* Section Label */}
@@ -178,7 +178,7 @@ function Contact() {
             Let's work{" "}
             <span className="relative">
               <span className="relative z-10">together</span>
-              <span className="absolute bottom-0.5 left-0 w-full h-2 bg-violet-200/60 -z-0" />
+              <span className="absolute bottom-0.5 left-0 w-full h-2 bg-[#C57A00]/50 -z-0" />
             </span>
           </h2>
         </div>
@@ -205,7 +205,7 @@ function Contact() {
                     </div>
                     <div className="min-w-0">
                       <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-0.5">{item.label}</p>
-                      <p className="text-sm sm:text-base font-semibold text-gray-900 group-hover:text-violet-600 transition-colors truncate">
+                      <p className="text-sm sm:text-base font-semibold text-gray-900 group-hover:text-[#5B3700] transition-colors truncate">
                         {item.value}
                       </p>
                       <p className="text-xs text-gray-400 mt-0.5">{item.sub}</p>
@@ -259,7 +259,7 @@ function Contact() {
                       required
                       className={`w-full px-4 py-3 rounded-xl border bg-white transition-all duration-300 text-sm placeholder:text-gray-300 outline-none
                         ${focused === 'name' 
-                          ? 'border-violet-400 ring-2 ring-violet-50' 
+                          ? 'border-[#C57A00] ring-2 ring-[#F8EAD5]' 
                           : formData.name 
                             ? 'border-gray-300' 
                             : 'border-gray-200 hover:border-gray-300'
@@ -284,7 +284,7 @@ function Contact() {
                       required
                       className={`w-full px-4 py-3 rounded-xl border bg-white transition-all duration-300 text-sm placeholder:text-gray-300 outline-none
                         ${focused === 'phone' 
-                          ? 'border-violet-400 ring-2 ring-violet-50' 
+                          ? 'border-[#C57A00] ring-2 ring-[#F8EAD5]' 
                           : formData.phone 
                             ? 'border-gray-300' 
                             : 'border-gray-200 hover:border-gray-300'
@@ -310,7 +310,7 @@ function Contact() {
                     required
                     className={`w-full px-4 py-3 rounded-xl border bg-white transition-all duration-300 text-sm placeholder:text-gray-300 outline-none
                       ${focused === 'email' 
-                        ? 'border-violet-400 ring-2 ring-violet-50' 
+                        ? 'border-[#C57A00] ring-2 ring-[#F8EAD5]' 
                         : formData.email 
                           ? 'border-gray-300' 
                           : 'border-gray-200 hover:border-gray-300'
@@ -334,7 +334,7 @@ function Contact() {
                       required
                       className={`w-full px-4 py-3 rounded-xl border bg-white transition-all duration-300 text-sm outline-none appearance-none cursor-pointer
                         ${focused === 'service' 
-                          ? 'border-violet-400 ring-2 ring-violet-50' 
+                          ? 'border-[#C57A00] ring-2 ring-[#F8EAD5]' 
                           : formData.service 
                             ? 'border-gray-300 text-gray-900' 
                             : 'border-gray-200 text-gray-400 hover:border-gray-300'
@@ -373,7 +373,7 @@ function Contact() {
                     required
                     className={`w-full px-4 py-3 rounded-xl border bg-white transition-all duration-300 text-sm placeholder:text-gray-300 outline-none resize-none
                       ${focused === 'message' 
-                        ? 'border-violet-400 ring-2 ring-violet-50' 
+                        ? 'border-[#C57A00] ring-2 ring-[#F8EAD5]' 
                         : formData.message 
                           ? 'border-gray-300' 
                           : 'border-gray-200 hover:border-gray-300'
@@ -388,7 +388,7 @@ function Contact() {
                   className={`w-full font-semibold py-3.5 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 text-sm tracking-wide
                     ${submitted 
                       ? 'bg-emerald-500 text-white' 
-                      : 'bg-gray-900 text-white hover:bg-violet-600 hover:shadow-lg hover:shadow-violet-200'
+                      : 'bg-gray-900 text-white hover:bg-[#5B3700] hover:shadow-lg hover:shadow-[#C57A00]/30'
                     }
                     ${isSubmitting ? 'opacity-70 cursor-wait' : 'active:scale-[0.98]'}
                   `}

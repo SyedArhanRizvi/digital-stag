@@ -10,8 +10,8 @@ const services = [
     tagline: "MORE QUALIFIED LEADS. MORE REVENUE.",
     description:
 "Build a predictable sales pipeline with high-quality leads generated through targeted campaigns, strategic funnels, and conversion-focused marketing designed to grow your business consistently.",
-    accent: "#7C3AED",
-    lightBg: "#F5F0FF",
+    accent: "#5B3700",
+    lightBg: "#F8EAD5",
     icon: (
       <svg viewBox="0 0 48 48" fill="none" className="w-full h-full">
         <rect
@@ -20,16 +20,16 @@ const services = [
           width="40"
           height="28"
           rx="4"
-          fill="#EDE9FE"
-          stroke="#7C3AED"
+          fill="#F8EAD5"
+          stroke="#5B3700"
           strokeWidth="1.5"
         />
-        <path d="M4 18h40" stroke="#7C3AED" strokeWidth="1.5" />
-        <circle cx="10" cy="14" r="1.5" fill="#7C3AED" />
-        <circle cx="15" cy="14" r="1.5" fill="#A78BFA" />
+        <path d="M4 18h40" stroke="#5B3700" strokeWidth="1.5" />
+        <circle cx="10" cy="14" r="1.5" fill="#5B3700" />
+        <circle cx="15" cy="14" r="1.5" fill="#C57A00" />
         <path
           d="M12 28l6-6 5 5 7-8 6 6"
-          stroke="#7C3AED"
+          stroke="#5B3700"
           strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -192,8 +192,8 @@ const services = [
     tagline: "Work smarter, scale faster",
     description:
       "Intelligent systems that eliminate repetitive tasks, qualify leads automatically, and surface insights that power your strategic decisions.",
-    accent: "#7C3AED",
-    lightBg: "#F5F3FF",
+    accent: "#5B3700",
+    lightBg: "#F8EAD5",
     icon: (
       <svg viewBox="0 0 48 48" fill="none" className="w-full h-full">
         <rect
@@ -202,21 +202,21 @@ const services = [
           width="24"
           height="20"
           rx="4"
-          fill="#EDE9FE"
-          stroke="#7C3AED"
+          fill="#F8EAD5"
+          stroke="#5B3700"
           strokeWidth="1.5"
         />
         <path
           d="M20 28v6M28 28v6M16 34h16"
-          stroke="#7C3AED"
+          stroke="#5B3700"
           strokeWidth="1.5"
           strokeLinecap="round"
         />
-        <circle cx="19" cy="18" r="2.5" fill="#7C3AED" opacity="0.4" />
-        <circle cx="29" cy="18" r="2.5" fill="#7C3AED" opacity="0.4" />
+        <circle cx="19" cy="18" r="2.5" fill="#5B3700" opacity="0.4" />
+        <circle cx="29" cy="18" r="2.5" fill="#5B3700" opacity="0.4" />
         <path
           d="M19 22.5c1.3 1 3.4 1 5 0"
-          stroke="#7C3AED"
+          stroke="#5B3700"
           strokeWidth="1.2"
           strokeLinecap="round"
         />
@@ -523,7 +523,7 @@ export default function ServicesPage() {
         }
 
         .pill-btn-primary {
-          background: #7C3AED;
+          background: linear-gradient(90deg, #5B3700 0%, #C57A00 55%, #FFAA00 100%);
           color: white;
           padding: 0.85rem 2rem;
           border-radius: 100px;
@@ -533,11 +533,11 @@ export default function ServicesPage() {
           display: inline-flex; align-items: center; gap: 0.5rem;
           transition: transform 0.3s ease, box-shadow 0.3s ease;
           text-decoration: none;
-          box-shadow: 0 8px 24px rgba(124,58,237,0.3);
+          box-shadow: 0 8px 24px rgba(91,55,0,0.3);
         }
         .pill-btn-primary:hover {
           transform: translateY(-2px);
-          box-shadow: 0 14px 32px rgba(124,58,237,0.4);
+          box-shadow: 0 14px 32px rgba(91,55,0,0.4);
         }
         .pill-btn-outline {
           background: white;
@@ -608,7 +608,7 @@ export default function ServicesPage() {
                 >
                   Turn Clicks
                   <br />
-                  <span style={{ color: "#7C3AED" }}>Into Customers</span>
+                  <span className="bg-gradient-to-r from-[#5B3700] via-[#C57A00] to-[#FFAA00] bg-clip-text text-transparent">Into Customers</span>
                   <br />
                 </h1>
 
@@ -659,26 +659,26 @@ export default function ServicesPage() {
                 >
                   <div className="mockup-card p-4">
                     <div className="flex items-center gap-2 mb-3">
-                      <div className="w-6 h-6 rounded-lg bg-purple-100 flex items-center justify-center">
-                        <div className="w-3 h-3 rounded-sm bg-purple-500" />
+                   <div className="w-6 h-6 rounded-lg bg-[#F8EAD5] flex items-center justify-center">
+                     <div className="w-3 h-3 rounded-sm bg-[#C57A00]" />
                       </div>
                       <div>
                         <div className="h-2.5 w-24 bg-gray-200 rounded-full" />
                         <div className="h-2 w-16 bg-gray-100 rounded-full mt-1" />
                       </div>
                     </div>
-                    <div className="h-28 rounded-xl bg-gradient-to-br from-purple-50 to-blue-50 mb-3 flex items-center justify-center">
+                    <div className="h-28 rounded-xl bg-gradient-to-br from-[#F8EAD5] to-[#FFE19A] mb-3 flex items-center justify-center">
                       <svg viewBox="0 0 120 80" className="w-28 h-20">
                         <path
                           d="M10 60 Q30 20 50 40 Q70 55 90 25 Q100 15 110 30"
-                          stroke="#7C3AED"
+                       stroke="#5B3700"
                           strokeWidth="2"
                           fill="none"
                           strokeLinecap="round"
                         />
                         <path
                           d="M10 70 Q30 35 50 50 Q70 65 90 40 Q100 30 110 45"
-                          stroke="#A78BFA"
+                       stroke="#C57A00"
                           strokeWidth="1.5"
                           fill="none"
                           strokeLinecap="round"
@@ -691,7 +691,7 @@ export default function ServicesPage() {
                           key={i}
                           className="bg-gray-50 rounded-lg p-2 text-center"
                         >
-                          <p className="text-xs font-bold text-purple-600">
+                       <p className="text-xs font-bold text-[#5B3700]">
                             {v}
                           </p>
                           <p className="text-[9px] text-gray-400 mt-0.5">
@@ -823,12 +823,12 @@ export default function ServicesPage() {
                         <div className="flex items-center gap-1.5">
                           <div className="w-14 h-1.5 bg-gray-100 rounded-full overflow-hidden">
                             <div
-                              className="h-full bg-purple-500 rounded-full"
+                              className="h-full bg-[#C57A00] rounded-full"
                               style={{ width: row.w }}
                             />
                           </div>
                           <span
-                            className="text-[10px] font-bold text-purple-600"
+                            className="text-[10px] font-bold text-[#5B3700]"
                             style={{ fontFamily: "'DM Mono', monospace" }}
                           >
                             {row.val}
@@ -856,7 +856,7 @@ export default function ServicesPage() {
                   style={{ fontFamily: "'DM Mono', monospace" }}
                 >
                   {s.title}
-                  <span className="text-purple-300">✦</span>
+                  <span className="text-[#C57A00]">✦</span>
                 </span>
               )),
             )}
@@ -877,7 +877,7 @@ export default function ServicesPage() {
               className="opacity-0 text-center mb-16 lg:mb-20"
             >
               <p
-                className="text-xs font-bold tracking-widest uppercase text-purple-500 mb-4"
+                className="text-xs font-bold tracking-widest uppercase text-[#5B3700] mb-4"
                 style={{ fontFamily: "'DM Mono', monospace" }}
               >
                 What we offer
@@ -891,7 +891,7 @@ export default function ServicesPage() {
               >
                 Digital solutions built for
                 <br />
-                <span style={{ color: "#7C3AED" }}> real business growth</span>
+                <span className="bg-gradient-to-r from-[#5B3700] via-[#C57A00] to-[#FFAA00] bg-clip-text text-transparent"> real business growth</span>
               </h2>
               <p className="text-gray-500 max-w-xl mx-auto text-base leading-relaxed">
                 Whether you're looking to generate qualified leads, build a
@@ -921,7 +921,7 @@ export default function ServicesPage() {
           }}
         >
           {/* Background */}
-          {/* <div className="absolute inset-0 bg-fixed bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-700" /> */}
+          {/* <div className="absolute inset-0 bg-fixed bg-gradient-to-br from-[#5B3700] via-[#C57A00] to-[#FFAA00]" /> */}
           <div
             className="absolute inset-0 opacity-10"
             style={{
@@ -933,7 +933,7 @@ export default function ServicesPage() {
 
           <div className="relative z-10 max-w-3xl mx-auto text-center">
             <p
-              className="text-purple-200 text-xs font-bold tracking-widest uppercase mb-5"
+                className="text-[#F8EAD5] text-xs font-bold tracking-widest uppercase mb-5"
               style={{ fontFamily: "'DM Mono', monospace" }}
             >
               Ready to grow?
@@ -946,14 +946,14 @@ export default function ServicesPage() {
             >
               Let's build something remarkable together
             </h2>
-            <p className="text-purple-200 text-base mb-10 max-w-xl mx-auto leading-relaxed">
+            <p className="text-[#F8EAD5] text-base mb-10 max-w-xl mx-auto leading-relaxed">
               Book a free strategy call. No hard sell - just a genuine
               conversation about what's possible for your brand.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 bg-white text-purple-700 font-bold text-sm px-8 py-4 rounded-full hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
+                className="inline-flex items-center justify-center gap-2 bg-white text-[#5B3700] font-bold text-sm px-8 py-4 rounded-full hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
                 style={{
                   fontFamily: "'DM Sans', sans-serif",
                   boxShadow: "0 8px 24px rgba(0,0,0,0.15)",
@@ -963,7 +963,7 @@ export default function ServicesPage() {
                 <svg className="w-4 h-4" viewBox="0 0 16 16" fill="none">
                   <path
                     d="M3 8h10M9 4l4 4-4 4"
-                    stroke="#7C3AED"
+                    stroke="#5B3700"
                     strokeWidth="1.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"

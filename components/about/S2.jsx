@@ -20,8 +20,8 @@ const CONTACT_INFO = [
     label: "Email Address",
     value: "Info@digitalstag.in",
     href: "mailto:Info@digitalstag.in",
-    color: "from-violet-500 to-purple-500",
-    bgGlow: "rgba(109, 40, 217, 0.15)",
+    color: "from-[#5B3700] via-[#C57A00] to-[#FFAA00]",
+    bgGlow: "rgba(91, 55, 0, 0.15)",
   },
   {
     icon: (
@@ -206,9 +206,9 @@ function S2() {
     >
       {/* ── Animated Background ── */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-violet-300/30 rounded-full blur-3xl animate-pulse-slow" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-indigo-200/20 rounded-full blur-3xl animate-pulse-slower" />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-violet-300/20 to-orange-200/20 rounded-full blur-3xl" />
+        <div className="absolute top-0 left-0 w-96 h-96 bg-[#C57A00]/30 rounded-full blur-3xl animate-pulse-slow" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#FFAA00]/20 rounded-full blur-3xl animate-pulse-slower" />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-[#C57A00]/20 to-[#FFAA00]/20 rounded-full blur-3xl" />
         
         {/* Grid Pattern */}
         <div 
@@ -225,7 +225,7 @@ function S2() {
         <div
           key={index}
           ref={el => decorativeElementsRef.current[index] = el}
-          className={`absolute text-violet-400/30 text-2xl sm:text-3xl lg:text-4xl hidden sm:block ${
+          className={`absolute text-[#C57A00]/30 text-2xl sm:text-3xl lg:text-4xl hidden sm:block ${
             index === 0 ? 'top-20 left-[10%]' :
             index === 1 ? 'top-40 right-[15%]' :
             index === 2 ? 'bottom-32 left-[20%]' :
@@ -241,12 +241,12 @@ function S2() {
         {/* ── Section Header ── */}
         <div className="text-center mb-12 sm:mb-16 lg:mb-20">
           <div ref={headingRef} className="opacity-0">
-            <span className="inline-block px-4 py-1.5 bg-white/70 backdrop-blur-sm border border-violet-200 rounded-full text-violet-600 text-xs sm:text-sm font-medium mb-4 sm:mb-6 shadow-sm">
+            <span className="inline-block px-4 py-1.5 bg-white/70 backdrop-blur-sm border border-[#C57A00]/40 rounded-full text-[#5B3700] text-xs sm:text-sm font-medium mb-4 sm:mb-6 shadow-sm">
               Get In Touch
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6" style={{ fontFamily: "'Sora', 'DM Sans', sans-serif" }}>
               Let's Build Something{" "}
-              <span className="bg-gradient-to-r from-violet-600 to-indigo-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#5B3700] via-[#C57A00] to-[#FFAA00] bg-clip-text text-transparent">
                 Amazing
               </span>
             </h2>
@@ -266,7 +266,7 @@ function S2() {
                 key={index}
                 href={info.href || '#'}
                 ref={el => cardsRef.current[index] = el}
-                className="group relative bg-white/80 backdrop-blur-sm border border-gray-200 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 cursor-pointer transition-all duration-300 hover:bg-white hover:border-violet-300 hover:shadow-xl opacity-0"
+                className="group relative bg-white/80 backdrop-blur-sm border border-gray-200 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 cursor-pointer transition-all duration-300 hover:bg-white hover:border-[#C57A00] hover:shadow-xl opacity-0"
                 target={isExternalLink ? '_blank' : '_self'}
                 rel={isExternalLink ? 'noopener noreferrer' : undefined}
               >
@@ -279,7 +279,7 @@ function S2() {
                 <div className="relative z-10">
                   {/* Icon Container */}
                   <div className={`w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-2xl sm:rounded-3xl bg-gradient-to-br ${info.color} p-[1px] mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    <div className="w-full h-full bg-white rounded-2xl sm:rounded-3xl flex items-center justify-center text-violet-600 group-hover:text-violet-700 transition-colors duration-300">
+                    <div className="w-full h-full bg-white rounded-2xl sm:rounded-3xl flex items-center justify-center text-[#5B3700] group-hover:text-[#5B3700] transition-colors duration-300">
                       {info.icon}
                     </div>
                   </div>
@@ -288,7 +288,7 @@ function S2() {
                   <p className="text-gray-500 text-xs sm:text-sm mb-1 sm:mb-2">{info.label}</p>
                   
                   {/* Value */}
-                  <p className="text-gray-900 font-semibold text-sm sm:text-base lg:text-lg group-hover:text-violet-600 transition-all duration-300 break-all">
+                  <p className="text-gray-900 font-semibold text-sm sm:text-base lg:text-lg group-hover:text-[#5B3700] transition-all duration-300 break-all">
                     {info.value}
                   </p>
 
@@ -299,7 +299,7 @@ function S2() {
                         e.preventDefault()
                         copyToClipboard(info.value)
                       }}
-                      className="mt-4 sm:mt-6 px-3 sm:px-4 py-1.5 sm:py-2 bg-violet-50 border border-violet-200 rounded-full text-xs text-violet-600 hover:text-violet-700 hover:bg-violet-100 transition-all duration-300 opacity-0 group-hover:opacity-100"
+                      className="mt-4 sm:mt-6 px-3 sm:px-4 py-1.5 sm:py-2 bg-[#F8EAD5] border border-[#C57A00]/40 rounded-full text-xs text-[#5B3700] hover:text-[#5B3700] hover:bg-[#FFE19A]/60 transition-all duration-300 opacity-0 group-hover:opacity-100"
                     >
                       Click to copy
                     </button>
@@ -318,7 +318,7 @@ function S2() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
             {BUSINESS_INFO.map((info, index) => (
               <div key={index} className="flex items-start gap-3 sm:gap-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-violet-100 flex items-center justify-center text-violet-600 flex-shrink-0">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-[#F8EAD5] flex items-center justify-center text-[#5B3700] flex-shrink-0">
                   {info.icon}
                 </div>
                 <div>
@@ -335,7 +335,7 @@ function S2() {
           ref={mapPlaceholderRef}
           className="relative bg-white/80 backdrop-blur-sm border border-gray-200 rounded-2xl sm:rounded-3xl overflow-hidden opacity-0 shadow-sm h-[300px] sm:h-[400px] lg:h-[500px]"
         >
-          <div className="w-full h-full bg-gradient-to-br from-violet-100 to-indigo-50 flex flex-col items-center justify-center">
+          <div className="w-full h-full bg-gradient-to-br from-[#F8EAD5] to-[#FFE19A]/60 flex flex-col items-center justify-center">
             <div className="text-4xl sm:text-5xl lg:text-6xl mb-4 sm:mb-6">📍</div>
             <p className="text-gray-900 font-semibold text-base sm:text-lg lg:text-xl mb-2">
               Digital Stag Studio
@@ -347,7 +347,7 @@ function S2() {
               href="https://maps.google.com/?q=1st+Floor+A-64+Sector+04+Noida"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 sm:mt-6 px-4 sm:px-6 py-2 sm:py-3 bg-violet-600 hover:bg-violet-700 text-white rounded-full text-sm font-medium transition-all duration-300 hover:shadow-lg hover:scale-105 active:scale-95"
+              className="mt-4 sm:mt-6 px-4 sm:px-6 py-2 sm:py-3 bg-[#5B3700] hover:bg-[#C57A00] text-white rounded-full text-sm font-medium transition-all duration-300 hover:shadow-lg hover:scale-105 active:scale-95"
             >
               View on Google Maps
             </a>

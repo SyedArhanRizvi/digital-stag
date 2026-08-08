@@ -10,7 +10,7 @@ if (typeof window !== 'undefined') {
 }
 
 /* ── accent palette ── */
-const ACCENTS = ["#7c3aed", "#4f46e5", "#0ea5e9", "#06b6d4", "#a855f7"];
+const ACCENTS = ["#5B3700", "#C57A00", "#FFAA00", "#5B3700", "#C57A00"];
 
 /* ── data ── */
 const categories = [
@@ -849,8 +849,8 @@ export default function S6() {
               display: "inline-flex",
               alignItems: "center",
               gap: "8px",
-              background: "linear-gradient(135deg, rgba(124,58,237,0.12), rgba(79,70,229,0.12))",
-              color: "#7c3aed",
+              background: "linear-gradient(135deg, rgba(91,55,0,0.12), rgba(255,170,0,0.12))",
+              color: "#5B3700",
               fontFamily: "'Sora', sans-serif",
               fontWeight: 600,
               fontSize: "11px",
@@ -859,7 +859,7 @@ export default function S6() {
               padding: "7px 18px",
               borderRadius: "100px",
               marginBottom: "24px",
-              border: "1px solid rgba(124,58,237,0.2)",
+              border: "1px solid rgba(91,55,0,0.2)",
             }}
           >
             <span
@@ -867,9 +867,9 @@ export default function S6() {
                 width: "6px",
                 height: "6px",
                 borderRadius: "50%",
-                background: "#7c3aed",
+                background: "#C57A00",
                 display: "inline-block",
-                boxShadow: "0 0 10px rgba(124,58,237,0.5)",
+                boxShadow: "0 0 10px rgba(91,55,0,0.5)",
               }}
             />
             Our Portfolio

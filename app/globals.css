@@ -30,11 +30,11 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #7c3aed;
+  background: #C57A00;
 }
 
 ::-webkit-scrollbar-thumb:active {
-  background: #5b21b6;
+  background: #5B3700;
 }
 
 ::-webkit-scrollbar-corner {

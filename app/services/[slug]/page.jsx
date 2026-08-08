@@ -41,13 +41,13 @@ const getServiceIcon = (slug) => {
 const getServiceColorScheme = (slug) => {
   const schemes = {
     "/technical-seo": {
-      primary: "from-violet-600 to-purple-600",
-      accent: "violet",
-      bg: "from-violet-50 to-purple-50",
-      text: "text-violet-600",
-      border: "border-violet-200",
-      badge: "bg-violet-100 text-violet-700 border-violet-200",
-      glow: "rgba(124, 58, 237, 0.15)",
+      primary: "from-[#5B3700] via-[#C57A00] to-[#FFAA00]",
+      accent: "gold",
+      bg: "from-[#F8EAD5] to-[#FFE19A]",
+      text: "text-[#5B3700]",
+      border: "border-[#C57A00]/40",
+      badge: "bg-[#F8EAD5] text-[#5B3700] border-[#C57A00]/40",
+      glow: "rgba(91, 55, 0, 0.15)",
     },
     "/keyword-research": {
       primary: "from-blue-600 to-cyan-600",
@@ -461,7 +461,7 @@ function ServicePage() {
 
                 {/* Content */}
                 <div className="p-4 sm:p-5 lg:p-6">
-                  <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 group-hover:text-violet-600 transition-colors duration-300">
+                  <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 group-hover:text-[#5B3700] transition-colors duration-300">
                     {card.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">

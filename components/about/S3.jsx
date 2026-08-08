@@ -41,11 +41,11 @@ const TIMELINE_DATA = [
       { text: "Co-working space setup", icon: <FaBuilding /> }
     ],
     icon: <FaRocket />,
-    color: "from-violet-500 to-purple-500",
-    bgColor: "rgba(109, 40, 217, 0.08)",
-    borderColor: "border-violet-200",
-    dotColor: "bg-violet-500",
-    glowColor: "rgba(109, 40, 217, 0.3)",
+    color: "from-[#5B3700] via-[#C57A00] to-[#FFAA00]",
+    bgColor: "rgba(91, 55, 0, 0.08)",
+    borderColor: "border-[#C57A00]/50",
+    dotColor: "bg-[#C57A00]",
+    glowColor: "rgba(197, 122, 0, 0.3)",
     side: "left",
   },
   {
@@ -113,11 +113,11 @@ const TIMELINE_DATA = [
       { text: "Million+ end users", icon: <FaGlobe /> }
     ],
     icon: <FaLightbulb />,
-    color: "from-violet-500 to-indigo-500",
-    bgColor: "rgba(139, 92, 246, 0.08)",
-    borderColor: "border-violet-200",
-    dotColor: "bg-violet-500",
-    glowColor: "rgba(139, 92, 246, 0.3)",
+    color: "from-[#5B3700] via-[#C57A00] to-[#FFAA00]",
+    bgColor: "rgba(91, 55, 0, 0.08)",
+    borderColor: "border-[#C57A00]/50",
+    dotColor: "bg-[#C57A00]",
+    glowColor: "rgba(197, 122, 0, 0.3)",
     side: "left",
   },
   {
@@ -278,9 +278,9 @@ function S3() {
     >
       {/* ── Animated Background Elements ── */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-violet-300/30 rounded-full blur-3xl animate-pulse-slow" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-200/20 rounded-full blur-3xl animate-pulse-slower" />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-gradient-to-r from-violet-300/20 via-indigo-200/20 to-orange-200/20 rounded-full blur-3xl" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#C57A00]/30 rounded-full blur-3xl animate-pulse-slow" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#FFAA00]/20 rounded-full blur-3xl animate-pulse-slower" />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-gradient-to-r from-[#C57A00]/20 via-[#FFAA00]/20 to-[#5B3700]/20 rounded-full blur-3xl" />
         
         {/* Grid Pattern */}
         <div 
@@ -303,7 +303,7 @@ function S3() {
         <div
           key={index}
           ref={el => decorativeElementsRef.current[index] = el}
-          className={`absolute ${item.position} ${item.size} text-violet-300/50 hidden sm:block`}
+          className={`absolute ${item.position} ${item.size} text-[#C57A00]/50 hidden sm:block`}
         >
           {item.icon}
         </div>
@@ -313,12 +313,12 @@ function S3() {
         {/* ── Section Header ── */}
         <div className="text-center mb-16 sm:mb-20 lg:mb-24">
           <div ref={headingRef}>
-            <span className="inline-block px-4 py-1.5 bg-white/70 backdrop-blur-sm border border-violet-200 rounded-full text-violet-600 text-xs sm:text-sm font-medium mb-4 sm:mb-6 shadow-sm">
+            <span className="inline-block px-4 py-1.5 bg-white/70 backdrop-blur-sm border border-[#C57A00]/40 rounded-full text-[#5B3700] text-xs sm:text-sm font-medium mb-4 sm:mb-6 shadow-sm">
               Our Journey
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6" style={{ fontFamily: "'Sora', 'DM Sans', sans-serif" }}>
               The Story of{" "}
-              <span className="bg-gradient-to-r from-violet-600 to-indigo-500 bg-clip-text text-transparent animate-gradient">
+              <span className="bg-gradient-to-r from-[#5B3700] via-[#C57A00] to-[#FFAA00] bg-clip-text text-transparent animate-gradient">
                 Digital Stag
               </span>
             </h2>
@@ -334,7 +334,7 @@ function S3() {
           {/* Center Line: Positioned left-6 on mobile, centered on desktop */}
           <div 
             ref={timelineLineRef}
-            className="absolute left-6 sm:left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-violet-500 via-indigo-500 to-blue-500 opacity-40"
+            className="absolute left-6 sm:left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#5B3700] via-[#C57A00] to-[#FFAA00] opacity-40"
             style={{ transformOrigin: "top center" }}
           />
 
@@ -362,15 +362,15 @@ function S3() {
                     />
 
                     {/* Year Badge (Mobile) */}
-                    <div className="sm:hidden inline-flex items-center gap-2 px-3 py-1 bg-violet-50 border border-violet-200 rounded-full mb-4">
+                    <div className="sm:hidden inline-flex items-center gap-2 px-3 py-1 bg-[#F8EAD5] border border-[#C57A00]/40 rounded-full mb-4">
                       <span className={`w-2 h-2 rounded-full ${item.dotColor}`} />
-                      <span className="text-violet-700 font-bold text-sm">{item.year}</span>
+                      <span className="text-[#5B3700] font-bold text-sm">{item.year}</span>
                     </div>
                     
                     <div className="relative z-10">
                       {/* Icon */}
                       <div className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-2xl sm:rounded-3xl bg-gradient-to-br ${item.color} p-[1px] mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                        <div className="w-full h-full bg-white rounded-2xl sm:rounded-3xl flex items-center justify-center text-violet-600 text-xl sm:text-2xl lg:text-3xl group-hover:text-white group-hover:bg-gradient-to-br group-hover:from-violet-500 group-hover:to-indigo-500 transition-all duration-300">
+                        <div className="w-full h-full bg-white rounded-2xl sm:rounded-3xl flex items-center justify-center text-[#5B3700] text-xl sm:text-2xl lg:text-3xl group-hover:text-white group-hover:bg-gradient-to-br group-hover:from-[#5B3700] group-hover:via-[#C57A00] group-hover:to-[#FFAA00] transition-all duration-300">
                           {item.icon}
                         </div>
                       </div>
@@ -395,7 +395,7 @@ function S3() {
                             key={achIndex}
                             className="flex items-center gap-2 sm:gap-3 group/ach"
                           >
-                            <span className="text-violet-500 text-sm sm:text-base group-hover/ach:scale-110 transition-transform duration-300">
+                            <span className="text-[#C57A00] text-sm sm:text-base group-hover/ach:scale-110 transition-transform duration-300">
                               {achievement.icon}
                             </span>
                             <span className="text-gray-500 text-xs sm:text-sm group-hover/ach:text-gray-700 transition-colors duration-300">
@@ -434,7 +434,7 @@ function S3() {
 
           {/* Current Position Indicator */}
           <div className="flex justify-center mt-16 sm:mt-20 lg:mt-24">
-            <div className="group relative inline-flex items-center gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-gray-900 rounded-full cursor-pointer transition-all duration-300 hover:shadow-[0_8px_30px_rgba(109,40,217,0.35)] hover:scale-105 active:scale-95">
+            <div className="group relative inline-flex items-center gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-gray-900 rounded-full cursor-pointer transition-all duration-300 hover:shadow-[0_8px_30px_rgba(91,55,0,0.35)] hover:scale-105 active:scale-95">
               <span className="text-white font-semibold text-sm sm:text-base">
                 We're Just Getting Started
               </span>

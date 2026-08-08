@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef, useMemo } from "react";
 import { gsap } from "gsap";
 
 /* ── accent palette ── */
-const ACCENTS = ["#7c3aed", "#4f46e5", "#0ea5e9", "#06b6d4", "#a855f7"];
+const ACCENTS = ["#5B3700", "#C57A00", "#FFAA00", "#5B3700", "#C57A00"];
 
 function getAccent(ci, seed) {
   const h = ((ci * 2654435761 + seed) >>> 0);
@@ -42,7 +42,7 @@ function ProximityHeading({ text }) {
         
         el.style.fontWeight = String(weight);
         el.style.color = t > 0.5 
-          ? (el.dataset.accent || "#7c3aed") 
+          ? (el.dataset.accent || "#5B3700") 
           : `rgba(13,13,13,${0.4 + t * 0.6})`;
       });
     };

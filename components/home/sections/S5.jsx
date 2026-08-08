@@ -405,7 +405,7 @@ function S5() {
         >
           {/* ── LEFT ── */}
           <div className="s5-left">
-            {/* Badge - only purple accent here */}
+            {/* Badge - brand accent here */}
             <div
               ref={badgeRef}
               className={`fade-in-up ${badgeInView ? "visible" : ""}`}
@@ -426,14 +426,14 @@ function S5() {
                   width: "7px",
                   height: "7px",
                   borderRadius: "50%",
-                  background: "#7c3aed",
+                  background: "linear-gradient(90deg, #5B3700 0%, #C57A00 55%, #FFAA00 100%)",
                 }}
               />
               <span
                 style={{
                   fontSize: "12px",
                   fontWeight: 600,
-                  color: "#7c3aed",
+                  color: "#5B3700",
                   letterSpacing: "0.06em",
                   textTransform: "uppercase",
                 }}
@@ -621,7 +621,7 @@ function S5() {
               width: "100%",
             }}
           >
-            {/* Top accent line - only purple decorative element */}
+            {/* Top accent line - brand decorative element */}
             <div
               style={{
                 position: "absolute",
@@ -629,7 +629,7 @@ function S5() {
                 left: 0,
                 right: 0,
                 height: "3px",
-                background: "#7c3aed",
+                background: "linear-gradient(90deg, #5B3700 0%, #C57A00 55%, #FFAA00 100%)",
               }}
             />
 
@@ -756,7 +756,7 @@ function S5() {
                     marginBottom: "24px",
                   }}
                 >
-                  <FiZap size={32} color="#7c3aed" />
+                  <FiZap size={32} color="#5B3700" />
                 </div>
                 <h3
                   style={{
