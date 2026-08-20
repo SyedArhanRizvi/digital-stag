@@ -289,7 +289,7 @@ function CardGrid({ cards, isFirstPanel }) {
                 loading={isFirstPanel && cIdx < 2 ? "eager" : "lazy"}
                 decoding="async"
                 fetchPriority={isFirstPanel && cIdx === 0 ? "high" : "auto"}
-                className="w-full h-full object-cover select-none"
+                className="w-full h-full  select-none"
                 draggable={false}
               />
             </div>
