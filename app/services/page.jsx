@@ -187,7 +187,7 @@ const services = [
   
   {
     id: "ai-automation",
-    number: "06",
+    number: "05",
     title: "AI Automation",
     tagline: "Work smarter, scale faster",
     description:

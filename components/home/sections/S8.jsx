@@ -338,7 +338,7 @@ export default function S8() {
       <div className="relative z-10 text-center max-w-3xl mx-auto mt-2 sm:mt-4 px-2 sm:px-4">
         <ProximityHeading text="What Our Customers Say" />
         <p className="text-[#737373] text-xs sm:text-sm md:text-base font-normal max-w-2xl mx-auto leading-relaxed px-2 mt-2 sm:mt-3 pointer-events-none">
-          See how our customers share their real experiences with ShopEase and why they continue to trust us for their everyday shopping needs.
+         See how our customers share their real experiences with ShopEase and why they continue to trust us for their everyday shopping needs.
         </p>
       </div>
 

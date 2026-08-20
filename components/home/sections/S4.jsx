@@ -11,7 +11,7 @@ const servicesData = [
         sub_title: "Google Advertising",
         cards: [
           {
-            img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=75&auto=format",
+            img: "/updates/GoogleAdvertising2.png",
             headline: "Google Advertising",
             para: "Reach customers actively searching for your products or services with strategically managed Google Ads campaigns. We optimize targeting, bidding, and ad performance to maximize leads, sales, and return on investment.",
             gradient: "linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%)",
@@ -46,25 +46,25 @@ const servicesData = [
         sub_title: "Search Engine Optimization",
         cards: [
           {
-            img: "https://images.unsplash.com/photo-1571844307880-751c6d86f3f3?w=600&q=75&auto=format",
+            img:"/updates/TechnicalSEO.png",
             headline: "Technical SEO",
             para: "Optimize your website's speed, crawlability, indexing, and technical health to help search engines understand your site and improve organic visibility.",
             gradient: "linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%)",
           },
           {
-            img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&q=75&auto=format",
+            img: "/updates/KeywordResearch2.png",
             headline: "Keyword Research",
             para: "Identify high-intent keywords and uncover valuable opportunities through competitor analysis and search intent research to attract the right audience.",
             gradient: "linear-gradient(135deg, #fef9c3 0%, #fef08a 100%)",
           },
           {
-            img: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=75&auto=format",
+            img: "/updates/ContentSEO.png",
             headline: "Content SEO",
             para: "Enhance titles, meta descriptions, headings, content, internal linking, and page structure to improve search rankings and user experience.",
             gradient: "linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%)",
           },
           {
-            img: "https://images.unsplash.com/photo-1556155092-490a1ba16284?w=600&q=75&auto=format",
+            img: "/updates/LinkBuilding.png",
             headline: "Link Building",
             para: "Strengthen your website's credibility with high-quality backlinks and ethical outreach strategies that improve domain authority and long-term search rankings.",
             gradient: "linear-gradient(135deg, #fde68a 0%, #fcd34d 100%)",
@@ -87,19 +87,19 @@ const servicesData = [
             gradient: "linear-gradient(135deg, #ccfbf1 0%, #99f6e4 100%)",
           },
           {
-            img: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&q=75&auto=format",
+            img: "/updates/E-Commerce Stores.png",
             headline: "E-Commerce Stores",
             para: "Launch secure, fast, and scalable e-commerce websites designed to deliver smooth shopping experiences, simplify store management, and maximize online sales.",
             gradient: "linear-gradient(135deg, #fae8ff 0%, #f5d0fe 100%)",
           },
           {
-            img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&q=75&auto=format",
+            img: "/updates/CustomWebApps.png",
             headline: "Custom Web Apps",
             para: "Design high-converting landing pages optimized for lead generation, product launches, and marketing campaigns that maximize conversions and ROI.",
             gradient: "linear-gradient(135deg, #ffedd5 0%, #fed7aa 100%)",
           },
           {
-            img: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=600&q=75&auto=format",
+            img: "/updates/WebsiteMaintenance.png",
             headline: "Website Maintenance",
             para: "Ensure your website stays updated, protected, and performing at its best with regular maintenance, security monitoring, performance optimization, and technical support.",
             gradient: "linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%)",
@@ -123,19 +123,19 @@ const servicesData = [
             gradient: "linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%)",
           },
           {
-            img: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&q=75&auto=format",
+            img: "/updates/WorkflowAutomation2.png",
             headline: "Workflow Automation",
             para: "Reduce manual tasks through automated workflows that streamline operations and improve business efficiency.",
             gradient: "linear-gradient(135deg, #fef9c3 0%, #fef08a 100%)",
           },
           {
-            img: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=600&q=75&auto=format",
+            img: "/updates/AILeadGeneration.png",
             headline: "AI Lead Generation",
             para: "Capture and nurture prospects using AI-powered systems that optimize outreach and conversion processes.",
             gradient: "linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%)",
           },
           {
-            img: "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=600&q=75&auto=format",
+            img: "/updates/BusinessIntelligence.png",
             headline: "Business Intelligence",
             para: "Leverage AI-driven analytics to uncover actionable insights, forecast trends, and support strategic decisions.",
             gradient: "linear-gradient(135deg, #ffe4e6 0%, #fecdd3 100%)",

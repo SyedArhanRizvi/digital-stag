@@ -73,7 +73,7 @@ const TIMELINE_DATA = [
     description: "Pivoted to remote-first culture during global changes. Launched innovative digital solutions helping businesses adapt and thrive in the new normal.",
     achievements: [
       { text: "Remote team expansion", icon: <FaLaptopCode /> },
-      { text: "200+ projects completed", icon: <FaChartBar /> },
+      { text: "160+ projects completed", icon: <FaChartBar /> },
       { text: "New service verticals", icon: <FaIndustry /> }
     ],
     icon: <FaSyncAlt />,
@@ -106,7 +106,7 @@ const TIMELINE_DATA = [
     year: "2025",
     title: "Innovation Hub",
     subtitle: "Pushing Creative Boundaries",
-    description: "Established our innovation lab focusing on emerging technologies. Launched products that serve millions of users across the globe.",
+    description: "Built a performance-driven marketing engine focused on data, experimentation, and scalable growth. Delivered high-impact campaigns that turn audiences into measurable business results.",
     achievements: [
       { text: "Innovation lab launched", icon: <FaLightbulb /> },
       { text: "100+ total projects", icon: <FaProjectDiagram /> },
@@ -124,7 +124,7 @@ const TIMELINE_DATA = [
     year: "2025",
     title: "Global Excellence",
     subtitle: "Setting Industry Standards",
-    description: "Expanded to international markets with offices across continents. Recognized as a top digital agency with cutting-edge solutions.",
+    description: "Expanded our performance marketing capabilities across international markets, helping brands scale with data-led campaigns, conversion-focused strategies, and measurable ROI.",
     achievements: [
       { text: "Global presence", icon: <FaGlobe /> },
       { text: "Premium client portfolio", icon: <FaMedal /> },

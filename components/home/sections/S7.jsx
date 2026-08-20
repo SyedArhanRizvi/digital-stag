@@ -105,13 +105,7 @@ export default function S7() {
                 onMouseEnter={() => setHoveredId(logo.id)}
                 onMouseLeave={() => setHoveredId(null)}
                 className="group relative flex flex-col items-center justify-center bg-white border border-black/[0.04] rounded-xl p-6 h-32 transition-all duration-300 cursor-pointer"
-                style={{
-                  boxShadow: isHovered 
-                    ? "0 12px 30px rgba(0,0,0,0.04), 0 2px 4px rgba(242,92,5,0.05)" 
-                    : "0 2px 8px rgba(0,0,0,0.01)",
-                  borderColor: isHovered ? "rgba(242,92,5,0.2)" : "rgba(0,0,0,0.04)",
-                  transform: isHovered ? "translateY(-4px)" : "translateY(0)"
-                }}
+             
               >
                 {/* Micro Gradient Top Border Layer triggered on hover */}
                 <div 
@@ -133,10 +127,7 @@ export default function S7() {
                     src={logo.img} 
                     alt={`${logo.name} logo`} 
                     className="max-w-full max-h-full object-contain transition-all duration-500 ease-in-out"
-                    style={{
-                      // Premium touch: Logos appear slightly muted/grayscale until hovered
-                      filter: isHovered ? "grayscale(0%) opacity(100%)" : "grayscale(100%) opacity(50%)"
-                    }}
+                  
                   />
                 </div>
 

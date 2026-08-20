@@ -5,7 +5,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { 
   FaLinkedinIn, 
-  FaTwitter, 
+  FaFacebookF, 
   FaInstagram,
   FaAward,
   FaUsers,
@@ -20,17 +20,17 @@ if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger)
 }
 
-// ── Founder Data (Replace with actual data) ──────────────────────────
+// ── Founder Data ─────────────────────────────────────────────────────
 const FOUNDER_DATA = {
   name: "Anshu Singh",
   role: "Founder & CEO",
-  image: "/founder/founder.jpeg", // Replace with actual founder image
+  image: "/founder/founder.jpeg",
   tagline: "Building Digital Excellence Since 2020",
   bio: "A visionary entrepreneur with over 5+ years of experience in digital marketing, web development, and brand strategy. Passionate about transforming businesses through innovative digital solutions.",
   fullStory: [
     "Started Digital Stag in 2020 with a vision to help businesses establish a powerful online presence. What began as a one-person operation has grown into a full-service digital agency serving clients worldwide.",
-    "With expertise spanning SEO, web development, digital marketing, and brand strategy, Arhan has helped over 160+ businesses achieve their digital goals. His leadership philosophy centers on innovation, integrity, and delivering measurable results.",
-    "When not strategizing for clients, Arhan is an avid tech enthusiast, speaker at industry conferences, and mentor to aspiring digital marketers. He believes in continuous learning and staying ahead of digital trends."
+    "With expertise spanning SEO, web development, digital marketing, and brand strategy, Anshu has helped over 160+ businesses achieve their digital goals. His leadership philosophy centers on innovation, integrity, and delivering measurable results.",
+    "When not strategizing for clients, Anshu is an avid tech enthusiast, speaker at industry conferences, and mentor to aspiring digital marketers. He believes in continuous learning and staying ahead of digital trends."
   ],
   expertise: [
     "Digital Strategy",
@@ -44,12 +44,12 @@ const FOUNDER_DATA = {
     { value: "160+", label: "Projects Delivered" },
     { value: "5+", label: "Years Experience" },
     { value: "5L+", label: "Leads Generated" },
-    { value: "98%", label: "Client Satisfaction" }
+    { value: "90%", label: "Client Satisfaction" }
   ],
   socialLinks: {
-    linkedin: "https://www.facebook.com/share/1ELYGuVP5v/",
-    twitter: "https://www.facebook.com/share/1ELYGuVP5v/",
-    instagram: "https://www.instagram.com/digitalstagofficial?igsh=YTVuNjE1NnYyMHcw"
+    linkedin: "https://www.linkedin.com/in/anshu-singh-18056622b?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    facebook: "https://www.facebook.com/share/1Bdp9gRknK/",
+    instagram: "https://www.instagram.com/diamond_akki?igsi=MTN3dHRtZm81NTY3cQ=="
   },
   quote: "Success isn't just about what you accomplish, it's about what you inspire others to do."
 }
@@ -348,12 +348,12 @@ function Founder() {
                   <FaLinkedinIn />
                 </a>
                 <a 
-                  href={FOUNDER_DATA.socialLinks.twitter}
+                  href={FOUNDER_DATA.socialLinks.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-xl bg-[#1DA1F2]/10 text-[#1DA1F2] flex items-center justify-center hover:bg-[#1DA1F2] hover:text-white transition-all duration-300 hover:scale-110 hover:shadow-lg"
+                  className="w-10 h-10 rounded-xl bg-[#1877F2]/10 text-[#1877F2] flex items-center justify-center hover:bg-[#1877F2] hover:text-white transition-all duration-300 hover:scale-110 hover:shadow-lg"
                 >
-                  <FaTwitter />
+                  <FaFacebookF />
                 </a>
                 <a 
                   href={FOUNDER_DATA.socialLinks.instagram}

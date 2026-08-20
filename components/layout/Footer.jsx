@@ -103,14 +103,14 @@ export default function Footer() {
           {/* ── TOP SECTION: MASONRY GRID LAYOUT ── */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-y-10 gap-x-8 pb-12">
             
-            {/* Column 1: Brand & Intel Capture (Spans 5 Columns) */}
+            {/* Column 1: Brand & Intel Capture */}
             <div className="lg:col-span-5 flex flex-col gap-6">
               <div>
                 <h3 className="footer-heading text-xl font-black tracking-tighter text-[#0A0A0A] uppercase select-none">
                   Digital<span className="text-gray-400">.</span>Stag
                 </h3>
                 <p className="text-sm text-gray-400 mt-3 max-w-sm leading-relaxed font-medium">
-                  Architecture for elite digital platforms. We transform data metrics into hyper-optimized frontend interfaces.
+                  Performance marketing engineered for growth. We turn data, audience insights, and campaign metrics into high-converting digital experiences that drive measurable results.
                 </p>
               </div>
 
@@ -148,7 +148,7 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Column 2: Our Services Link Directory (Spans 3 Columns) */}
+            {/* Column 2: Our Services Link Directory */}
             <div className="lg:col-span-3 lg:col-start-7 flex flex-col gap-4">
               <span className="text-[11px] font-bold tracking-[0.2em] text-gray-400 uppercase block">
                 Services
@@ -161,7 +161,7 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Column 3: Corporate Studio Links (Spans 2 Columns) */}
+            {/* Column 3: Corporate Studio Links */}
             <div className="lg:col-span-2 flex flex-col gap-4">
               <span className="text-[11px] font-bold tracking-[0.2em] text-gray-400 uppercase block">
                 Company
@@ -174,7 +174,7 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Column 4: Legal Protocols (Spans 2 Columns) */}
+            {/* Column 4: Legal Protocols */}
             <div className="lg:col-span-2 flex flex-col gap-4">
               <span className="text-[11px] font-bold tracking-[0.2em] text-gray-400 uppercase block">
                 Protocols
@@ -200,49 +200,61 @@ export default function Footer() {
             </span>
 
             {/* Social Network Node Index */}
-        {/* Social Network Node Index */}
-<div className="flex items-center gap-3">
-  
-  {/* Instagram */}
-  <a
-    href="https://www.instagram.com/digitalstagofficial?igsh=YTVuNjE1NnYyMHcw"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="social-node"
-    aria-label="Instagram"
-  >
-    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zm8.75 1.25a1 1 0 110 2 1 1 0 010-2zM12 7a5 5 0 110 10 5 5 0 010-10zm0 1.5A3.5 3.5 0 1015.5 12 3.5 3.5 0 0012 8.5z" />
-    </svg>
-  </a>
+            <div className="flex items-center gap-3">
+              
+              {/* Instagram */}
+              <a
+                href="https://www.instagram.com/digitalstagofficial?igsi=YTVuNjE1NnYyMHcw"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-node"
+                aria-label="Instagram"
+              >
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zm8.75 1.25a1 1 0 110 2 1 1 0 010-2zM12 7a5 5 0 110 10 5 5 0 010-10zm0 1.5A3.5 3.5 0 1015.5 12 3.5 3.5 0 0012 8.5z" />
+                </svg>
+              </a>
 
-  {/* Facebook */}
-  <a
-    href="https://www.facebook.com/share/1ELYGuVP5v/"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="social-node"
-    aria-label="Facebook"
-  >
-    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M22 12a10 10 0 10-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.23.19 2.23.19v2.45h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.77l-.44 2.89h-2.33v6.99A10 10 0 0022 12z"/>
-    </svg>
-  </a>
+              {/* Facebook */}
+              <a
+                href="https://www.facebook.com/share/19Fwmqpcj5/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-node"
+                aria-label="Facebook"
+              >
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M22 12a10 10 0 10-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.23.19 2.23.19v2.45h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.77l-.44 2.89h-2.33v6.99A10 10 0 0022 12z"/>
+                </svg>
+              </a>
 
-  {/* WhatsApp */}
-  <a
-    href="https://wa.me/919354683813"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="social-node"
-    aria-label="WhatsApp"
-  >
-    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M12.04 2C6.52 2 2.05 6.46 2.05 11.98c0 1.77.46 3.5 1.34 5.02L2 22l5.15-1.35a9.9 9.9 0 004.89 1.25h.01c5.51 0 9.98-4.47 9.98-9.99C22.03 6.47 17.56 2 12.04 2zm5.82 14.13c-.24.68-1.41 1.3-1.95 1.38-.5.07-1.13.1-1.82-.12-.42-.14-.95-.31-1.64-.61-2.88-1.25-4.75-4.16-4.89-4.35-.14-.19-1.17-1.55-1.17-2.95s.73-2.08.99-2.36c.26-.28.56-.35.75-.35.19 0 .38 0 .55.01.17.01.4-.06.62.47.24.58.81 1.99.88 2.13.07.14.12.31.02.5-.1.19-.15.31-.3.47-.14.16-.3.35-.43.47-.14.14-.28.29-.12.57.17.28.74 1.22 1.59 1.98 1.1.98 2.03 1.28 2.31 1.42.28.14.45.12.62-.07.17-.19.71-.83.9-1.12.19-.28.38-.24.64-.14.26.09 1.64.77 1.92.91.28.14.47.21.54.33.07.12.07.7-.17 1.38z"/>
-    </svg>
-  </a>
+              {/* LinkedIn */}
+              <a
+                href="https://www.linkedin.com/company/digitalstag/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-node"
+                aria-label="LinkedIn"
+              >
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                </svg>
+              </a>
 
-</div>
+              {/* WhatsApp */}
+              <a
+                href="https://wa.me/919354683813"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-node"
+                aria-label="WhatsApp"
+              >
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12.04 2C6.52 2 2.05 6.46 2.05 11.98c0 1.77.46 3.5 1.34 5.02L2 22l5.15-1.35a9.9 9.9 0 004.89 1.25h.01c5.51 0 9.98-4.47 9.98-9.99C22.03 6.47 17.56 2 12.04 2zm5.82 14.13c-.24.68-1.41 1.3-1.95 1.38-.5.07-1.13.1-1.82-.12-.42-.14-.95-.31-1.64-.61-2.88-1.25-4.75-4.16-4.89-4.35-.14-.19-1.17-1.55-1.17-2.95s.73-2.08.99-2.36c.26-.28.56-.35.75-.35.19 0 .38 0 .55.01.17.01.4-.06.62.47.24.58.81 1.99.88 2.13.07.14.12.31.02.5-.1.19-.15.31-.3.47-.14.16-.3.35-.43.47-.14.14-.28.29-.12.57.17.28.74 1.22 1.59 1.98 1.1.98 2.03 1.28 2.31 1.42.28.14.45.12.62-.07.17-.19.71-.83.9-1.12.19-.28.38-.24.64-.14.26.09 1.64.77 1.92.91.28.14.47.21.54.33.07.12.07.7-.17 1.38z"/>
+                </svg>
+              </a>
+
+            </div>
 
           </div>
 
