@@ -1,0 +1,23 @@
+# Digital Stag Studio
+
+> Digital Stag Studio is a full-service digital agency delivering growth-focused solutions including Digital Marketing, SEO, Custom Web Development, High-Converting Lead Generation, Video Editing, Graphic Design, and AI Automation.
+
+## Main Pages
+- [Home Page](https://digitalstag.in/): Primary landing page highlighting services, value proposition, and client solutions.
+- [About Us](https://digitalstag.in/about): Learn about Digital Stag Studio's mission, process, and background.
+- [Services Overview](https://digitalstag.in/service): Comprehensive catalog of all agency offerings and digital solutions.
+- [Contact Us](https://digitalstag.in/contact): Book a call, request a quote, or reach out directly to our team.
+
+## Core Services & Solutions
+
+- [Digital Marketing Services](https://digitalstag.in/digital-marketing): Data-driven Google Ads, Meta Ads, and social media campaigns designed to scale brand awareness, ROI, and performance analytics.
+- [Search Engine Optimization (SEO)](https://digitalstag.in/seo): End-to-end Technical SEO, keyword research, on-page optimization, and authority link-building strategies to dominate search engine results.
+- [Web Development](https://digitalstag.in/web-development): Fast, scalable, and responsive custom business websites, e-commerce stores, web applications, and ongoing maintenance.
+- [Lead Generation](https://digitalstag.in/lead-generation): High-converting sales funnels, targeted advertising, custom landing pages, and CRM integration for continuous prospect qualification.
+- [Video Editing](https://digitalstag.in/video-editing): Post-production editing for Instagram Reels, YouTube Shorts, corporate videos, brand films, and custom motion graphics.
+- [Graphic Design](https://digitalstag.in/graphic-designing): Visual branding identity, logo design, social media creatives, print materials, and intuitive UI/UX interface design.
+- [AI Automation](https://digitalstag.in/ai-automation): Custom AI chatbots, workflow automation, automated lead qualification, and business intelligence dashboards.
+
+## Location & Support
+- Address: 1st Floor, A-64, Sector 04, Noida, Uttar Pradesh, India
+- Website: https://digitalstag.in/

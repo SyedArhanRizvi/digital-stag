@@ -461,17 +461,21 @@ export default function S3() {
             </div>
 
             <div ref={headRef}>
-              <h2
-                className="s3-heading"
-                style={{
-                  opacity: headInView ? 1 : 0,
-                  transform: headInView ? 'translateY(0)' : 'translateY(32px)',
-                  transition: 'opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.1s, transform 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.1s',
-                }}
-              >
-                <VariableProximityText text="We're Obsessed With Quality," style={{ display: 'block' }} />
-                <VariableProximityText text="Not Vanity Metrics." style={{ display: 'block' }} />
-              </h2>
+             <h2
+  className="s3-heading"
+  style={{
+    opacity: headInView ? 1 : 0,
+    transform: headInView ? 'translateY(0)' : 'translateY(32px)',
+    transition: 'opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.1s, transform 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.1s',
+  }}
+>
+  <span className="block font-semibold text-[rgba(15,15,15,0.85)]">
+    We're Obsessed With Quality,
+  </span>
+  <span className="block font-semibold text-[rgba(15,15,15,0.85)]">
+    Not Vanity Metrics.
+  </span>
+</h2>
             </div>
 
             <p

@@ -331,28 +331,20 @@ function S2() {
         </div>
 
         {/* ── Map Placeholder ── */}
-        <div 
-          ref={mapPlaceholderRef}
-          className="relative bg-white/80 backdrop-blur-sm border border-gray-200 rounded-2xl sm:rounded-3xl overflow-hidden opacity-0 shadow-sm h-[300px] sm:h-[400px] lg:h-[500px]"
-        >
-          <div className="w-full h-full bg-gradient-to-br from-[#F8EAD5] to-[#FFE19A]/60 flex flex-col items-center justify-center">
-            <div className="text-4xl sm:text-5xl lg:text-6xl mb-4 sm:mb-6">📍</div>
-            <p className="text-gray-900 font-semibold text-base sm:text-lg lg:text-xl mb-2">
-              Digital Stag Studio
-            </p>
-            <p className="text-gray-600 text-sm sm:text-base text-center px-4">
-              1st Floor, A-64, Sector 04, Noida, Uttar Pradesh
-            </p>
-            <a
-              href="https://maps.google.com/?q=1st+Floor+A-64+Sector+04+Noida"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-4 sm:mt-6 px-4 sm:px-6 py-2 sm:py-3 bg-[#5B3700] hover:bg-[#C57A00] text-white rounded-full text-sm font-medium transition-all duration-300 hover:shadow-lg hover:scale-105 active:scale-95"
-            >
-              View on Google Maps
-            </a>
-          </div>
-        </div>
+<div 
+  ref={mapPlaceholderRef}
+  className="relative bg-white/80 backdrop-blur-sm border border-gray-200 rounded-2xl sm:rounded-3xl overflow-hidden opacity-0 shadow-sm h-[300px] sm:h-[400px] lg:h-[500px]"
+>
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.596078569316!2d77.37365117550003!3d28.61189197567609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce561b0000001%3A0x935117f266868c51!2s1st%20Floor%20A%2C%2056%2F4%2C%20Block%20A%2C%20Sector%2064%2C%20Greater%20Noida%2C%20Noida%2C%20Uttar%20Pradesh%20201309!5e0!3m2!1sen!2sin!4v1787455760343!5m2!1sen!2sin"
+    className="w-full h-full border-0"
+    style={{ border: 0 }}
+    allowFullScreen=""
+    loading="lazy"
+    referrerPolicy="strict-origin-when-cross-origin"
+    title="Digital Stag Studio Location Map"
+  />
+</div>
       </div>
 
       {/* ── Bottom Gradient Fade ── */}

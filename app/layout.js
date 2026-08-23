@@ -43,18 +43,6 @@ const SERVICES = [
     icon: <IoAnalytics />,
     desc: "Results-driven campaigns",
   },
-  {
-    label: "Video Editing",
-    href: "/services/video-editing",
-    icon: <FaPhotoVideo />,
-    desc: "Cinematic post-production",
-  },
-  {
-    label: "Graphic Designing",
-    href: "/services/graphic-designing",
-    icon: <MdOutlineGraphicEq />,
-    desc: "Visuals that stop the scroll",
-  },
 
   {
     label: "Lead Generation",

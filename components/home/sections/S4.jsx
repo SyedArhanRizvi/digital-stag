@@ -11,25 +11,25 @@ const servicesData = [
         sub_title: "Google Advertising",
         cards: [
           {
-            img: "/updates/GoogleAdvertising2.png",
+            img: "/updates/Google-Advertising.png",
             headline: "Google Advertising",
             para: "Reach customers actively searching for your products or services with strategically managed Google Ads campaigns. We optimize targeting, bidding, and ad performance to maximize leads, sales, and return on investment.",
             gradient: "linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%)",
           },
           {
-            img: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&q=75&auto=format",
+            img: "/updates/Meta-Advertising.png",
             headline: "Meta Advertising",
             para: "Capture attention across Facebook and Instagram with high-performing ad campaigns. From compelling creatives to precise audience targeting, we help you generate quality leads, boost sales, and grow your brand.",
             gradient: "linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%)",
           },
           {
-            img: "https://images.unsplash.com/photo-1557838923-2985c318be48?w=600&q=75&auto=format",
+            img: "/updates/Social-Media-Growth.png",
             headline: "Social Media Growth",
             para: "Improve your visibility on Google with data-driven SEO strategies that increase organic traffic, strengthen your online presence, and attract customers actively searching for your business.",
             gradient: "linear-gradient(135deg, #ffe4e6 0%, #fecdd3 100%)",
           },
           {
-            img: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=75&auto=format",
+            img: "/updates/Social-Media-Management.png",
             headline: "Social Media Management",
             para: "Create a consistent and engaging social media presence with strategic content, creative visuals, and community management that builds trust, increases engagement, and keeps your audience connected.",
             gradient: "linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%)",
@@ -470,7 +470,7 @@ export default function S4() {
 
       <section
         ref={containerRef}
-        className="s4-section relative w-full min-h-screen"
+        className="s4-section relative w-full min-h-screen pt-8"
       >
         {servicesData.map((svc, idx) => (
           <ServicePanel key={svc.id} svc={svc} isFirst={idx === 0} />
