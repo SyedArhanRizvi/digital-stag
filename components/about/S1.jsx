@@ -27,17 +27,17 @@ const STATS = [
 const VALUES = [
   { 
     title: "Innovation First",
-    description: "Pushing boundaries with cutting-edge design solutions",
+    description: "Staying Ahead of the Digital Curve",
     icon: "✦"
   },
   { 
     title: "Client-Centric",
-    description: "Your success is our primary metric of achievement",
+    description: "Every Decision Backed by Insights",
     icon: "♡"
   },
   { 
     title: "Excellence",
-    description: "Delivering premium quality in every pixel and interaction",
+    description: "Marketing That Delivers Impact",
     icon: "◆"
   },
 ]
@@ -235,25 +235,7 @@ function S1() {
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           
-          {/* ── Team Avatars ── */}
-          <div ref={teamRef} className="mb-8 sm:mb-12 opacity-0">
-            <div className="flex -space-x-3 sm:-space-x-4 p-2">
-              {TEAM_IMAGES.map((image, index) => (
-                <div key={index} className="relative group">
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#5B3700] via-[#C57A00] to-[#FFAA00] rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <img
-                    src={image}
-                    alt={`Team member ${index + 1}`}
-                    className="relative w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-full border-2 sm:border-3 border-white object-cover ring-2 ring-[#C57A00]/50 hover:ring-[#5B3700] transition-all duration-300 hover:scale-110 shadow-lg"
-                  />
-                </div>
-              ))}
-              <div className="relative w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-full bg-gradient-to-br from-[#5B3700] via-[#C57A00] to-[#FFAA00] border-2 sm:border-3 border-white flex items-center justify-center text-white text-xs sm:text-sm font-bold ring-2 ring-[#C57A00]/50 shadow-lg">
-                25+
-              </div>
-            </div>
-            <p className="text-gray-600 text-sm sm:text-base mt-3 sm:mt-4">Meet our talented team</p>
-          </div>
+        
 
           {/* ── Main Heading ── */}
           <h1 
@@ -261,28 +243,23 @@ function S1() {
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] sm:leading-[1.15] mb-6 sm:mb-8 opacity-0 text-gray-900"
             style={{ fontFamily: "'Sora', 'DM Sans', sans-serif" }}
           >
-            <span>Crafting </span>
-            <span className="text-[#5B3700]">Digital</span>
+            <span>We're Not Your </span>
             <br className="sm:hidden" />
-            <span> Excellence </span>
-            <span className="relative inline-block">
-              <span className="relative z-10">Through</span>
-              <span className="absolute bottom-1 sm:bottom-2 left-0 w-full h-2 sm:h-3 bg-[#C57A00]/50 -z-0" />
-            </span>
-            <br />
+            <span>Typical Marketing  </span>
+            
             <span className="bg-gradient-to-r from-[#5B3700] via-[#C57A00] to-[#FFAA00] bg-clip-text text-transparent">
-              Creative Innovation
+           Agency
             </span>
           </h1>
 
           {/* ── Subtitle ── */}
           <p 
             ref={subtextRef}
-            className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 max-w-xl sm:max-w-2xl lg:max-w-3xl mx-auto mb-8 sm:mb-10 lg:mb-12 leading-relaxed opacity-0 px-4 sm:px-0"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 max-w-xl sm:max-w-2xl lg:max-w-4xl mx-auto mb-8 sm:mb-10 lg:mb-12 leading-relaxed opacity-0 px-4 sm:px-0"
           >
-            We're a passionate team of designers, developers, and strategists 
-            dedicated to transforming brands through innovative digital experiences 
-            that captivate and convert.
+          At Digital Stag, we believe great marketing is more than running ads-it's about building sustainable business growth. By combining strategy, creativity, technology, and data, we help brands attract the right audience, strengthen their online presence, and achieve measurable results.
+Whether you're a startup building your first digital footprint or an established business looking to scale, we're here to help you grow with confidence.
+
           </p>
 
           {/* ── CTA Buttons ── */}
