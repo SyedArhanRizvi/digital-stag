@@ -6,12 +6,13 @@ import S4 from "../home/sections/S4";
 import ScrollVelocity from "../home/sections/S2";
 import S5 from "../home/sections/S5";
 import Founder from "./Founder";
+import Projects from "./Projects";
 
 function About() {
   return (
     <>
       <S1></S1>
-
+      <Projects></Projects>
       <S2></S2>
       <Founder></Founder>
       <S5 />
